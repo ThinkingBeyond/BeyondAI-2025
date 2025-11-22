@@ -1,7 +1,7 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-# State Your Project Title Here With Capitalised Letters as Shown
-
+# PCA & Elastic Net VS Double Descent
+<!--
 ***Provide a description of your project including*** 
 
 1. motivating your research question
@@ -27,15 +27,59 @@
     | Lorem Ipsum         | 12345     |
 
 **Tip:** Use tools to create markdown tables. For example, Obsidian has a table plugin, that makes creating tables much easier than doing it by hand.
+-->
 
+## Overview
+
+This project examines the impact of Principal Component Analysis (PCA) and Elastic Net regularization on the double descent phenomenon in high-dimensional polynomial regression. Double descent appears when model complexity approaches the interpolation threshold, causing test error to spike before decreasing again in the overparameterized regime.
+
+We evaluate how PCA (with different variance-retention thresholds) and Elastic Net (with varying L1 ratios) reshape or suppress this behavior in polynomial regression trained on a controlled synthetic dataset.
+
+- ### Double Descent
+  A phenomenon in machine learning where test error first decreases, then increases near the interpolation threshold, and finally decreases again as model complexity continues to grow, showing a non-monotonic relationship between complexity and generalization.
+  
+- ### PCA (principal component analysis)
+  A dimensionality reduction technique that transforms correlated features into a smaller set of uncorrelated variables (principal components) while retaining most of the original data’s variance. It helps simplify models and reduce noise.
+  
+- ### Elastic Network
 ## Research Question
 
-State your research question here and elaborate on it.
+### How do PCA and Elastic Net regularization affect the emergence, severity, and shape of the double descent curve in high-dimensional polynomial regression models?
+We study whether these techniques suppress the interpolation spike, smooth the curve, or fundamentally alter model behavior.
 
 ## Motivation
 
 Explain your motivation for your chosen research question here.
 
+## Methodology
+### Dataset
+- a synthetic dataset generated
+    - 100 samples
+    - train/test split 80/20
+    - input feature is $X \sim U [-1,\,1]$
+      
+$$
+y = \sin(2\pi X) + \epsilon,\quad \epsilon \sim \mathcal{N}(0,\,1)
+$$
+
+### Model
+- a polynomial regression model with degrees 1 -> 129 , fitted using Ridge regression with minimal regularization.
+### Techniques
+- PCA (Principal Component Analysis)
+    - applied to the polynomial feature matrix to reduce the number of features based on the retained variance
+    - Variance: 95% -> 100% 
+- Elastic Net
+- Evaluation Metric: MSE ( mean square error )
+
+ $$
+\mathrm{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+$$
+### Program Language : PYTHON => 3.12.12
+### Libraries 
+- NumPy => 2.0.2
+- Scikit-Learn => 3.10.0
+- Matplotlib => 1.6.1
+<!--
 ## Your next subsection
 
 Continue working through the points listed above with the help of sensibly named subsections. 
@@ -45,12 +89,19 @@ If you want to see some good examples of README files check out:
 - [Example 2](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/shaana-karuna/README.md)
 
 [ ... ]
-
+-->
 ## Future Work
 
 State and explain what follow-up research could be conducted based on your work.
 
 ## References
+
+- Nakkiran et al. (2021). Deep Double Descent: [Where Bigger Models and More Data Hurt](https://iopscience.iop.org/article/10.1088/1742-5468/ac3a74/meta).
+
+- Gedon, D. et al. (2024). [The Effect of PCA on the Double Descent Risk Curve](https://proceedings.mlr.press/v235/gedon24a.html).
+
+- Zou, H., & Hastie, T. (2005). [Regularization and Variable Selection via the Elastic Net](https://academic.oup.com/jrsssb/article/67/2/301/7109482).
+<!--
 
 List all your references here. Remember to put links into markdown. For example:
 
@@ -61,6 +112,6 @@ List all your references here. Remember to put links into markdown. For example:
 2. Ask it to turn it into an unsorted list in markdown
 
 ---
-
+-->
 > The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://thinkingbeyond.education/beyondai_proceedings_2025/).
 
