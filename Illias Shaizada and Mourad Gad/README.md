@@ -71,6 +71,8 @@ $$
     - applied to the polynomial feature matrix to reduce the number of features based on the retained variance
     - Variance: 95% -> 100% 
 - Elastic Net
+    - applied to polynomial regression to regularize the model and reduce the noise
+    - l1_ratio: 0.2-0.9
 - Evaluation Metric: MSE ( mean square error )
 
  $$
