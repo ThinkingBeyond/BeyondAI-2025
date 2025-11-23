@@ -89,39 +89,11 @@ $$
 
 ```
 ├── README.md
-├── requirements.txt
-├── .gitignore
-├── base_model.py                # Polynomial regression model
-├── pca_model.py                 # PCA + model implementation
-├── pca_varience_model.py        # PCA variance analysis
-├── Elastic_Net_Curves.py        # Elastic Net regularization curves
-├── Elastic_Net_MSE.py           # Elastic Net MSE evaluation
-├── double_descent_animation.gif # Animated double descent visualization
+
 
 
 ```
 
-## Quick start (PowerShell)
-
-1. Create and activate a virtual environment:
-
-```powershell
-python -m venv venv; .\venv\Scripts\Activate.ps1
-```
-
-2. Install dependencies:
-
-```powershell
-pip install -r requirements.txt
-```
-
-3. Run the built-in sanity checks for each module (from project root):
-
-```powershell
-python src\base_model.py
-python src\pca_model.py
-python src\Elastic_Net_MSE.py
-```
 <!--
 ## Your next subsection
 
