@@ -38,7 +38,7 @@ Currently, the use of Large Language Models (LLMs) is widespread in various appl
 
 ## How to run our project
 
-It is very easy to run our project, simply run all the cells in the provided Jupyter Notebook file `Comparing_Transformers_to_LSTMs_with_Attention.ipynb` in order. To change the hyperparameters of the models, simply modify the respective variables located in the Configuration section.
+To start the projet, simply run all the cells in the provided Jupyter Notebook file `Comparing_Transformers_to_LSTMs_with_Attention.ipynb` in the provided order. To change the hyperparameters of the models, modify the respective variables located in the Configuration section.
 
 ## What we have done
 
