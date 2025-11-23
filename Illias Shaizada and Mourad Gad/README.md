@@ -41,7 +41,9 @@ We evaluate how PCA (with different variance-retention thresholds) and Elastic N
 - ### PCA (principal component analysis)
   A dimensionality reduction technique that transforms correlated features into a smaller set of uncorrelated variables (principal components) while retaining most of the original data’s variance. It helps simplify models and reduce noise.
   
-- ### Elastic Network
+- ### Elastic Net
+  A regularization method that penalizes model combining both L1 (Lasso) and L2 (Ridge) penalties. It performs better on datasets with correlated features and it is considered more robust than using either methods alone.
+  
 ## Research Question
 
 ### How do PCA and Elastic Net regularization affect the emergence, severity, and shape of the double descent curve in high-dimensional polynomial regression models?
