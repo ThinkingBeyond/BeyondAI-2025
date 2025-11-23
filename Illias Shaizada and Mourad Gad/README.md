@@ -52,7 +52,7 @@ We study whether these techniques suppress the interpolation spike, smooth the c
 
 ## Motivation
 
-Explain your motivation for your chosen research question here.
+Understanding the double descent phenomenon is crucial for developing robust machine learning models, particularly in high-dimensional settings where overparameterization is common, making it a compelling research topic. By investigating the effects of PCA and Elastic Net regularization, we aim to uncover strategies that mitigate excessive test error near the interpolation threshold. This knowledge can help practitioners design models that are both expressive and generalizable, especially when working with noisy or highly correlated features.
 
 ## Methodology
 ### Dataset
@@ -96,8 +96,13 @@ If you want to see some good examples of README files check out:
 [ ... ]
 -->
 ## Future Work
+### Future investigations could expand in several directions:
 
-State and explain what follow-up research could be conducted based on your work.
+1- Real-world datasets – Apply the PCA and Elastic Net analysis to real datasets with higher dimensionality or more complex feature correlations to validate findings beyond synthetic data.
+
+2- Alternative dimensionality reduction techniques – Compare PCA with other methods to see how nonlinear feature reduction affects double descent.
+
+3- Automated variance retention – Instead of using fixed thresholds (e.g., 95%), implement adaptive selection of PCA components based on cross-validation performance.
 
 ## References
 
