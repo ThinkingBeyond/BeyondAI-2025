@@ -89,7 +89,7 @@ $$
 
 ```
 ├── README.md
-
+├── double_descent_animation.gif
 
 
 ```
