@@ -38,7 +38,7 @@ Currently, the use of Large Language Models (LLMs) is widespread in various appl
 
 ## How to run our project
 
-To start the projet, simply run all the cells in the provided Jupyter Notebook file `Comparing_Transformers_to_LSTMs_with_Attention.ipynb` in the provided order. To change the hyperparameters of the models, modify the respective variables located in the Configuration section.
+To run the project, simply run all the cells in the provided Jupyter Notebook file `Comparing_Transformers_to_LSTMs_with_Attention.ipynb` in the given order. To change the hyperparameters of the models, modify the respective variables located in the Configuration section.
 
 ## What we have done
 
@@ -54,8 +54,7 @@ The Transformer model consists of an embedding layer, followed by multiple layer
 Both models were trained using the Adam optimizer with a learning rate of 0.001 and a batch size of 32. We have explored combinations of a small number of attention heads and layers. The models were pretrained for 8 epochs on 500 wikipedia articles, and fine-tuned using 3 epochs of 25000 IMDb movie reviews from the IMDb movie reviews dataset. The performance of the models was evaluated using accuracy, precision, recall, and F1-score metrics. The evaluation was performed on a held-out 25000 movie review test set from the IMDb dataset.
 
 ## Our results and conclusion
-We have also recorded the training time for each model, and found out that there was no significant difference in training time between the two architectures,.
-It is without a doubt that our conclusions are inconclusive, as the results we obtained were not consistent across different model sizes and configurations. In some cases, the LSTM with attention outperformed the Transformer, while in other cases, the Transformer performed better. This inconsistency has persisted with models having only 1 layer and 1 attention head, up to models with 2 layers and 4 attention heads. However, all models were able to achieve reasonable performance on the sentiment analysis task, with accuracy ranging from 82% to 87% depending on the model size and configuration. Our results suggest, merely for our case of text-based sentiment analysis under such low-resource environments, that there is no clear winner between LSTMs with attention and Transformers, and none has the clear advantage over the other.
+It is without a doubt that our conclusions are inconclusive, as the results we obtained were not consistent across different model sizes and configurations. In some cases, the LSTM with attention outperformed the Transformer, while in other cases, the Transformer performed better. This inconsistency has persisted with models having only 1 layer and 1 attention head, up to models with 2 layers and 4 attention heads. However, all models were able to achieve reasonable performance on the sentiment analysis task, with accuracy ranging from 82% to 87% depending on the model size and configuration. We have also recorded the training time for each model, and found out that there was no significant difference in training time between the two architectures with different model sizes. Our results suggest, merely for our case of text-based sentiment analysis under such low-resource environments, that there is no clear winner between LSTMs with attention and Transformers, and none has the clear advantage over the other.
 
 ## Your next subsection
 
