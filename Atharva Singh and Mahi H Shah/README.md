@@ -1,40 +1,81 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-# State Your Project Title Here With Capitalised Letters as Shown
+# Mitigating Oversmoothing in GNNs on Heterophilic Graphs
 
-***Provide a description of your project including*** 
+# Research Question 
+Our research seeks to evaluate how effectively two prominent techniques, **GCNII** and **DropEdge**, mitigate the **oversmoothing** problem in graph neural networks. We evaluate their performance on **heterophilic graph datasets** to determine whether methods originally designed for homophilic settings retain their advantage when node similarity assumptions break down.
 
-1. motivating your research question
-2. stating your research question
-3. explaining your method and implementation
-4. Briefly mention and discuss your results
-5. Draw your conclusions
-6. State what future investigations could be conducted
-7. State your references 
+# Motivation
 
-### Further Guidance: Formating
-- Structure this readme using subsections
-- Your job is to 
-    - keep it clear
-    - provide sufficient detail, so what you did is understandable to the reader. This way other researchers and future cohorts of BeyondAI will be able to build on your research
-    - List all your references at the end
-- utilise markdown like *italics*, **bold**, numbered and unnumbered lists to make your document easier to read
-- if you refer to links use the respective markdown for links, e.g. `[ThinkingBeyond](https://thinkingbeyond.education/)`
-- If you have graphs and pictures you want to embed in your file use `![name](your_graphic.png)`
-- If you want to present your results in a table use
-    | Header 1            | Header 2  |
-    |---------------------|-----------|
-    | Lorem Ipsum         | 12345     |
+## An introduction to GNNs
 
-**Tip:** Use tools to create markdown tables. For example, Obsidian has a table plugin, that makes creating tables much easier than doing it by hand.
+Graph Neural Networks (GNNs) are a class of deep learning architectures designed to operate directly on graph-structured data. Formally, a GNN can be viewed as an optimizable transformation over all components of a graph (its node features, edge attributes, and global structural context) while respecting core graph symmetries.
 
-## Research Question
+Graphs provide an exceptionally versatile modelling framework, capable of representing a wide spectrum of real-world systems in which entities interact in non-Euclidean ways. Social networks, citation networks, molecular structures, transportation systems, and knowledge graphs all naturally encode their information as nodes connected by edges. This flexibility has made GNNs a foundational tool in modern machine learning.
 
-State your research question here and elaborate on it.
+Typical downstream tasks include **node-level classification** (e.g., detecting anomalies or classifying individuals in a network), **edge-level prediction** (e.g., predicting new friendships or molecular bonds), and **graph-level tasks** (e.g., predicting molecular properties or detecting fraudulent subgraphs). Each task requires the model to propagate and refine information across varying neighbourhood radii, which introduces both expressive opportunities and structural challenges, including, most notably, *the oversmoothing problem.*
 
-## Motivation
+## The Oversmoothing Problem in GNNs
 
-Explain your motivation for your chosen research question here.
+A well-documented limitation of deep GNNs is **oversmoothing**, a phenomenon in which node representations become progressively indistinguishable as the number of layers increases. Because each layer aggregates information from local neighbours, deeper architectures repeatedly mix information across larger neighbourhoods. Past a certain depth, this leads to a homogenization of node embeddings such that the model loses its ability to discriminate between distinct structural roles or feature patterns. Ultimately, oversmoothing degrades task performance, especially on graphs with sparse or heterophilic connectivity. 
+
+(To visualise the oversmoothing problem, we have also created a short animation, to be attached separately.) 
+
+
+# Architectures Addressing Oversmoothing
+
+## GCNII
+
+GCNII introduces two crucial innovations: **initial residual connections** and **identity mapping.** These counteract oversmoothing by preserving information from earlier layers. Specifically, each layer blends the transformed node representation with the **original input features**, ensuring that deeper layers do not fully drift toward an over-mixed equilibrium.
+
+
+## DropEdge 
+DropEdge is a regularization technique that **randomly removes a subset of edges during training**. By injecting structural noise, DropEdge reduces feature correlation between neighboring nodes, effectively delaying the onset of oversmoothing and improving generalization.
+
+# Methodology
+
+## Datasets
+
+We conducted our experiments on the **WebKB dataset**, which consists of multiple heterophilic graphs (Texas, Cornell, Wisconsin). Heterophilic graphs present a more challenging test environment because connected nodes often belong to *different* classes, making them particularly relevant for tasks involving structural anomalies or irregular connectivity patterns.
+
+## Experimental Setup
+
+We evaluated GCNII and DropEdge across **2, 4, 8, 16, and 32 layers** (with computational limits preventing extensions beyond that). For comparison, we also implemented baseline **GCN** and **GraphSAGE** models to isolate the impact of architectural design on depth scalability.
+
+To verify the reliability of our implementations, we additionally replicated results from the original papers on benchmark citation networks. Our reproduction closely matched the reported outcomes. Notably, the GCNII authors provide official WebKB implementations for their GCN baselines, lending further confidence to the validity of their comparative claims, whereas DropEdge’s authors primarily benchmarked on homophilic citation graphs.
+
+# Results
+
+## Test accuracy comparison table (we will insert this soon) 
+
+# Discussion
+
+The experimental results consistently show that **GCNII outperforms DropEdge** on heterophilic datasets across deeper architectures. This could be attributed to the fact that GCNII’s identity mapping stabilises the flow of information throughout the network, preserving node-specific characteristics even at depth. Because heterophilic graphs require models to resist oversmoothing aggressively (since neighbors are often of different classes), GCNII’s feature-preserving design confers a strong advantage.
+
+By contrast, **DropEdge performs well in the original citation networks** (which are typically homophilic) because removing edges in a redundant, densely connected environment does not meaningfully disrupt the underlying class-consistent neighborhoods. In heterophilic graphs like WebKB, however, random edge removal risks discarding structurally important, low-redundancy connections. This may inadvertently break the weakly informative relational paths that models rely on, leading to the degraded performance observed.
+
+Overall, the experiments highlight that techniques designed to mitigate oversmoothing are **highly sensitive to the structural properties of the graph**. Methods that rely on structural noise may excel in homophilic regimes but struggle in heterophily.
+
+# Conclusion and Future Work
+Our project demonstrates that depth-robust GNN architectures behave fundamentally differently on heterophilic datasets compared to the homophilic benchmarks where they were originally validated. By testing GCNII and DropEdge across multiple WebKB subsets and increasing depths, we provide empirical evidence that **oversmoothing manifests earlier and more severely in heterophilic settings**, making conventional regularization techniques like DropEdge far less effective. In contrast, GCNII’s identity mapping and initial residual connections preserve discriminative node information even at substantial depth, highlighting its suitability for real-world networks where relational similarity cannot be assumed.
+
+These findings are significant for two main reasons:
+
+1. Most GNN research (and many industry applications) implicitly assumes homophily, which can lead to misleading conclusions about model reliability on heterogeneous or noisy graphs.
+2. Many high-stakes domains such as cybersecurity, fraud detection, biological interaction networks, and irregular web-graph analysis are inherently heterophilic. Models that fail under oversmoothing in such environments risk obscuring critical anomalies or rare structural patterns.
+
+By showing that architectural design plays a decisive role in depth scalability under heterophily, our results underscore the need for **context-sensitive GNN evaluation** rather than relying solely on results from citation networks.
+
+Future extensions of this research could explore:
+- Scaling experiments to **64 and 128 layers** to evaluate the true depth limits of GCNII and test the breaking point of oversmoothing.
+- Investigating **DropGNN**, a different method that removes nodes rather than edges, potentially suppressing noise by pruning inactive or weakly informative nodes.
+- Incorporating **adaptive node and edge pruning strategies** into DropEdge for application-specific sparsification.
+- Applying the models to additional heterophilic datasets (e.g., Actor, Amazon, Chameleon) to generalize observations.
+
+
+# References 
+
+(to be added) 
 
 ## Your next subsection
 
