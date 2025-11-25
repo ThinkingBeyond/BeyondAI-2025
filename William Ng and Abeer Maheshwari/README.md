@@ -1,66 +1,54 @@
-![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
+# A Qualitative Study of CNN Optimisers with Weight Decay  
+**BeyondAI Research Project • 2025**
 
-# A Qualitative Study of CNN Optimisers with Weight Decay
-
-***Provide a description of your project including*** 
-
-1. motivating your research question
-2. stating your research question
-3. explaining your method and implementation
-4. Briefly mention and discuss your results
-5. Draw your conclusions
-6. State what future investigations could be conducted
-7. State your references 
-
-### Further Guidance: Formating
-- Structure this readme using subsections
-- Your job is to 
-    - keep it clear
-    - provide sufficient detail, so what you did is understandable to the reader. This way other researchers and future cohorts of BeyondAI will be able to build on your research
-    - List all your references at the end
-- utilise markdown like *italics*, **bold**, numbered and unnumbered lists to make your document easier to read
-- if you refer to links use the respective markdown for links, e.g. `[ThinkingBeyond](https://thinkingbeyond.education/)`
-- If you have graphs and pictures you want to embed in your file use `![name](your_graphic.png)`
-- If you want to present your results in a table use
-    | Header 1            | Header 2  |
-    |---------------------|-----------|
-    | Lorem Ipsum         | 12345     |
-
-**Tip:** Use tools to create markdown tables. For example, Obsidian has a table plugin, that makes creating tables much easier than doing it by hand.
+*1D linear interpolation in loss landscape for 10 different optimisers (20 epochs on Human Faces Dataset). Blue = Train Loss, Red = Test Loss.*
 
 ## Research Question
-
-State your research question here and elaborate on it.
+**How does the introduction of weight decay (L2 regularisation) affect the linearity of the loss barrier between the initialisation and the converged solution across modern CNN optimisers?**  
 
 ## Motivation
+- Classic works (Garipov et al., 2018) showed SGD solutions often lie in the same wide valley.
+- Modern adaptive optimisers (Adam, RMSProp, AdamW, NAdam, etc.) are known to find solutions that are **not linearly connected**.
+- Weight decay is ubiquitous, yet its **geometric effect** on the loss landscape is under-explored beyond test accuracy.
+- A simple, visual, side-by-side comparison of 10 optimisers on the same task reveals intuitive patterns that tables of numbers cannot.
 
-Explain your motivation for your chosen research question here.
+## Method & Implementation
 
-## Your next subsection
+### Dataset
+Human Faces Dataset (Kaggle) – ~10k real vs AI-generated face images (binary classification).
 
-Continue working through the points listed above with the help of sensibly named subsections. 
+### Model
+Lightweight 3-block CNN:  
+`3→32 → 64 → 128` channels → ReLU + MaxPool → 512-unit FC + Dropout(0.5) → 2 classes.
 
-If you want to see some good examples of README files check out:
-- [Example 1](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/warenya-loulia/README.md)
-- [Example 2](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/shaana-karuna/README.md)
+### Training (`CNN_train.py`)
+- Fully deterministic
+- 20 epochs, LR = 0.01, batch size 128, no scheduler
+- For each of the **10 optimisers**, train **two models** from the **exact same initial weights**:
+  - Without weight decay
+  - With weight decay = 0.01
+- Save everything (weights, dataset split indices, hyperparams) into `trained_models.pth`
 
-[ ... ]
+### Interpolation & Visualisation (`CNN_inference.py`)
+- Loads the saved bundle
+- Performs **three 1D interpolations** per optimiser:
+  1. Initial → Trained (no WD)
+  2. Trained (no WD) → Trained (with WD)
+  3. Initial → Trained (with WD)
+- Custom α-ranges per optimiser
+- Evaluates exact train & test loss at 100 points
+- Generates a clean **10×3 grid plot** with automatic log-scale when loss > 10
 
-## Future Work
-
-State and explain what follow-up research could be conducted based on your work.
-
-## References
-
-List all your references here. Remember to put links into markdown. For example:
-
-1.  Einstein, A. (1905). *On the Electrodynamics of Moving Bodies*. Annalen der Physik, 17, 891-921. [Internet Archive](https://archive.org/details/einstein-1905-relativity)
-
-**Tip**: *If you have you references in BibTex, Google Scholar or Zotero*
-1. Create/copy a list into ChatGPT
-2. Ask it to turn it into an unsorted list in markdown
-
----
-
-> The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://thinkingbeyond.education/beyondai_proceedings_2025/).
-
+### Optimisers Tested
+| Optimiser     | Decoupled WD Variant? |
+|---------------|-----------------------|
+| SGD           | –                     |
+| SGD+Momentum  | –                     |
+| RMSProp       | –                     |
+| Adagrad       | –                     |
+| Adadelta      | –                     |
+| Adam          | –                     |
+| **AdamW**     | Yes                   |
+| NAdam         | –                     |
+| **NAdamW**    | Yes                   |
+| Adamax        | –                     |
