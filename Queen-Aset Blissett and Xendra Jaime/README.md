@@ -4,7 +4,7 @@
 
 ## Research Question
 
-Building on the elementary proof framework introduced by Shaana Amarawickrama and Karuna Prakash in the BeyondAI 2024 Proceedings, our research question extends on this foundation while bridging theoretical insights and practical application to provide a comprehensive study of the universal approximation theorem. 
+Building on the [elementary proof framework](https://drive.google.com/file/d/1OHn-AuPGZyvG5FMUpfPGxIURVVQsI4ED/view?usp=sharing) introduced by Shaana Amarawickrama and Karuna Prakash in the BeyondAI 2024 Proceedings, our research question extends on this foundation while bridging theoretical insights and practical application to provide a comprehensive study of the universal approximation theorem. 
 
 We examine the BeyondAI 2024 elementary proof framework demonstrating that any continuous function on the real numbers can be approximated by a Multilayer Perceptron (MLP) with several hidden layers and a finite number of neurons using the sigmoid activation function. We extend this framework to include the tanh activation function. Additionally, we investigate their assumption that an MLP with ReLU activation can approximate any continuous function by constructing piecewise linear functions made up of simplices. Furthermore, we bridge theory and practice by empirically evaluating the behaviour of each activation function in simple cases, comparing their practical usability and performance.
 
