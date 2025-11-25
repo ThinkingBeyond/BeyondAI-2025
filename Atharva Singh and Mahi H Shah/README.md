@@ -46,7 +46,18 @@ To verify the reliability of our implementations, we additionally replicated res
 
 # Results
 
-## Test accuracy comparison table (we will insert this soon) 
+**Table 1. Performance of GCNII and DropEdge**
+
+| Database  | Backbone   | 2-layer |        | 4-layer |        | 8-layer |        | 16-layer |        | 32-layer |        |
+|-----------|------------|---------|--------|---------|--------|---------|--------|----------|--------|----------|--------|
+|           |            | GCNII   | DropEdge | GCNII | DropEdge | GCNII | DropEdge | GCNII | DropEdge | GCNII | DropEdge |
+| Texas     | GCN        | 71.89 | 67.57 | 75.41 | 67.57 | 70.27 | 64.86 | 69.73 | 64.86 | 71.35 | 64.86 |
+| Texas     | GraphSAGE  | 78.38 | 83.78 | 69.19 | 81.36 | 58.92 | 81.08 | 59.19 | 72.97 | 59.46 | 70.27 |
+| Cornell   | GCN        | 62.16 | 54.05 | 65.95 | 48.65 | 72.16 | 48.65 | 75.14 | 40.54 | 75.95 | 40.54 |
+| Cornell   | GraphSAGE  | 71.62 | 75.68 | 64.05 | 75.06 | 49.41 | 62.16 | 58.92 | 55.93 | 58.92 | 54.05 |
+| Wisconsin | GCN        | 72.16 | 60.78 | 74.31 | 58.82 | 74.90 | 58.82 | 71.76 | 56.86 | 71.18 | 54.90 |
+| Wisconsin | GraphSAGE  | 75.69 | 78.43 | 67.65 | 76.47 | 72.16 | 72.55 | 48.24 | 72.50 | 47.45 | 56.86 |
+
 
 # Discussion
 
