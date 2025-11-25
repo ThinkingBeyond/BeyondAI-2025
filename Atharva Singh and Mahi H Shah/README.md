@@ -87,30 +87,6 @@ Future extensions of this research could explore:
 10. Bronstein, M., Bruna, J., Cohen, T., & Velickovic, P. *Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges.* Distill (2021).
 11. Weng, L. *A Gentle Introduction to Graph Neural Networks.* Distill (2021).
 12. Wang, K., Zhang, G., Zhang, X., Fang, J., Wu, X., Li, G., Pan, S., Huang, W., & Liang, Y. *The Heterophilic Snowflake Hypothesis: Training and Empowering GNNs 13. for Heterophilic Graphs.* arXiv:2406.12539.
-
-
-## Your next subsection
-
-Continue working through the points listed above with the help of sensibly named subsections. 
-
-If you want to see some good examples of README files check out:
-- [Example 1](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/warenya-loulia/README.md)
-- [Example 2](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/shaana-karuna/README.md)
-
-[ ... ]
-
-## Future Work
-
-State and explain what follow-up research could be conducted based on your work.
-
-## References
-
-List all your references here. Remember to put links into markdown. For example:
-
-1.  Einstein, A. (1905). *On the Electrodynamics of Moving Bodies*. Annalen der Physik, 17, 891-921. [Internet Archive](https://archive.org/details/einstein-1905-relativity)
-
-**Tip**: *If you have you references in BibTex, Google Scholar or Zotero*
-1. Create/copy a list into ChatGPT
 2. Ask it to turn it into an unsorted list in markdown
 
 ---
