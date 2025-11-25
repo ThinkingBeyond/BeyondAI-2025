@@ -2,32 +2,6 @@
 
 # Comparing Transformers to LSTMs with Attention
 
-***Provide a description of your project including*** 
-
-1. motivating your research question
-2. stating your research question
-3. explaining your method and implementation
-4. Briefly mention and discuss your results
-5. Draw your conclusions
-6. State what future investigations could be conducted
-7. State your references 
-
-### Further Guidance: Formating
-- Structure this readme using subsections
-- Your job is to 
-    - keep it clear
-    - provide sufficient detail, so what you did is understandable to the reader. This way other researchers and future cohorts of BeyondAI will be able to build on your research
-    - List all your references at the end
-- utilise markdown like *italics*, **bold**, numbered and unnumbered lists to make your document easier to read
-- if you refer to links use the respective markdown for links, e.g. `[ThinkingBeyond](https://thinkingbeyond.education/)`
-- If you have graphs and pictures you want to embed in your file use `![name](your_graphic.png)`
-- If you want to present your results in a table use
-    | Header 1            | Header 2  |
-    |---------------------|-----------|
-    | Lorem Ipsum         | 12345     |
-
-**Tip:** Use tools to create markdown tables. For example, Obsidian has a table plugin, that makes creating tables much easier than doing it by hand.
-
 ## Research Question
 
 Under low-resource environments, how does Long Short-Term Memory (LSTM) models with attention compare to Transformers in performance and efficiency for text-based sentiment analysis? In our project, we have implemented both architectures and evaluated their performance on a binary classification task measuring metrics such as accuracy, precision, recall, F1-score. We have also varied the model sizes to assess their efficiency in different settings.
@@ -42,7 +16,7 @@ Our project addresses this gap by comparing LSTM with attention models and Trans
 
 To run the project, simply run all the cells in the provided Jupyter Notebook file `Comparing_Transformers_to_LSTMs_with_Attention.ipynb` in the given order. To change the hyperparameters of the models, modify the respective variables located in the Configuration section.
 
-## What we have done
+## Technologies and Implementation
 
 We have implemented two different architectures for text-based sentiment analysis: Long Short-Term Memory (LSTM) models with attention and Transformer models. Both models were pre-trained on a subset of [wikipedia](https://huggingface.co/datasets/wikimedia/wikipedia) articles and evaluated on the [IMDb movie reviews dataset](https://huggingface.co/datasets/stanfordnlp/imdb), which consists of 50,000 movie reviews labeled as positive or negative.
 
@@ -58,15 +32,12 @@ Both models were trained using the Adam optimizer with a learning rate of 0.001 
 ## Our results and conclusion
 It is without a doubt that our conclusions are inconclusive, as the results we obtained were not consistent across different model sizes and configurations. In some cases, the LSTM with attention outperformed the Transformer, while in other cases, the Transformer performed better. This inconsistency has persisted with models having only 1 layer and 1 attention head, up to models with 2 layers and 4 attention heads. However, all models were able to achieve reasonable performance on the sentiment analysis task, with accuracy ranging from 82% to 87% depending on the model size and configuration. We have also recorded the training time for each model, and found out that there was no significant difference in training time between the two architectures with different model sizes. Our results suggest, merely for our case of text-based sentiment analysis under such low-resource environments, that there is no clear winner between LSTMs with attention and Transformers, and none has the clear advantage over the other.
 
-## Your next subsection
+Results for the Transformer model fine-tuning (4 head 2 layers variant):
+![](GPT_finetune_metrics.png)
 
-Continue working through the points listed above with the help of sensibly named subsections. 
+Results for the LSTM with attention model fine-tuning (4 head 2 layers variant):
+![](LSTM_finetune_metrics.png)
 
-If you want to see some good examples of README files check out:
-- [Example 1](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/warenya-loulia/README.md)
-- [Example 2](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/shaana-karuna/README.md)
-
-[ ... ]
 ## Acknowledgments
 
 We are grateful to [ThinkingBeyond](https://thinkingbeyond.education/) and the volunteers behind it for providing the opportunity and resources to learn about AI and conduct this research. We would also like to thank Dr Bar in particular, for his dedication of his personal time to equip us with the necessary knowledge and skills throughout the 4-week course stage. 
@@ -82,14 +53,6 @@ Our conclusions for our work are inconclusive, and there are many avenues for fu
 - **Tuning the hyperparameters**: Future work could explore the impact of hyperparameter tuning on the performance of LSTMs with attention and Transformers. Experiment with different optimizers, learning rates, batch sizes, dropout rates to see how they affect the performance and training efficiency of the models.
 
 ## References
-
-List all your references here. Remember to put links into markdown. For example:
-
-1.  Einstein, A. (1905). *On the Electrodynamics of Moving Bodies*. Annalen der Physik, 17, 891-921. [Internet Archive](https://archive.org/details/einstein-1905-relativity)
-
-**Tip**: *If you have you references in BibTex, Google Scholar or Zotero*
-1. Create/copy a list into ChatGPT
-2. Ask it to turn it into an unsorted list in markdown
 
 LSTM with Attention:
 - Luong, M. T., Pham, H., & Manning, C. D. (2015). *Effective approaches to attention-based neural machine translation*. arXiv preprint arXiv:1508.04025. [arXiv](https://arxiv.org/abs/1508.04025)
