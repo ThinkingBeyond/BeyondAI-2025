@@ -98,7 +98,6 @@ Future extensions of this research could explore:
 10. Bronstein, M., Bruna, J., Cohen, T., & Velickovic, P. *Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges.* Distill (2021).
 11. Weng, L. *A Gentle Introduction to Graph Neural Networks.* Distill (2021).
 12. Wang, K., Zhang, G., Zhang, X., Fang, J., Wu, X., Li, G., Pan, S., Huang, W., & Liang, Y. *The Heterophilic Snowflake Hypothesis: Training and Empowering GNNs 13. for Heterophilic Graphs.* arXiv:2406.12539.
-2. Ask it to turn it into an unsorted list in markdown
 
 ---
 
