@@ -75,7 +75,19 @@ Future extensions of this research could explore:
 
 # References 
 
-(to be added) 
+1. Rong, Y., Huang, W., Xu, T., & Huang, J. *DropEdge: Towards Deep Graph Convolutional Networks on Node Classification.* arXiv:1907.10903.
+2. Chen, M., Wei, Z., Huang, Z., Ding, B., & Li, Y. *Simple and Deep Graph Convolutional Networks.* arXiv:2007.02133.
+3. Kipf, T. N., & Welling, M. *Semi-Supervised Classification with Graph Convolutional Networks.* arXiv:1609.02907.
+4. Veličković, P., Cucurull, G., Casanova, A., Romero, A., Liò, P., & Bengio, Y. *Graph Attention Networks.* arXiv:1710.10903.
+5. Xu, B., Shen, H., Cao, Q., Qiu, Y., & Cheng, X. *Measuring and Relieving the Over-smoothing Problem for Graph Neural Networks from the Topological View.* AAAI Conference on Artificial Intelligence.
+6. Hou, Y., Zhang, J., Cheng, J., Ma, K., Chen, H., & Yang, M.-C. *Measuring and Improving the Use of Graph Information in Graph Neural Networks.* arXiv:2206.13170.
+7. Luan, S., Hua, C., Lu, Q., Zhu, J., Ma, L., Wu, L., Wang, X., Xu, M., Chang, X. W., Precup, D., Ying, R., Li, S. Z., Wolf, G., & Jegelka, S. *The Heterophilic Graph Learning Handbook.* arXiv:2407.09618.
+8. Papp, P. A., Martinkus, K., Faber, L., & Wattenhofer, R. *DropGNN: Random Dropouts Increase the Expressiveness of Graph Neural Networks.* arXiv:2111.06283.
+9. Lampert, M., & Scholtes, I. *The Self-Loop Paradox: Investigating the Impact of Self-Loops on Graph Neural Networks.* arXiv:2312.01721.
+10. Bronstein, M., Bruna, J., Cohen, T., & Velickovic, P. *Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges.* Distill (2021).
+11. Weng, L. *A Gentle Introduction to Graph Neural Networks.* Distill (2021).
+12. Wang, K., Zhang, G., Zhang, X., Fang, J., Wu, X., Li, G., Pan, S., Huang, W., & Liang, Y. *The Heterophilic Snowflake Hypothesis: Training and Empowering GNNs 13. for Heterophilic Graphs.* arXiv:2406.12539.
+
 
 ## Your next subsection
 
