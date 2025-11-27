@@ -1,6 +1,6 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-# The Impact of Class Imbalance on Non-linear Classifiers
+# The Impact of Class Imbalance on Non-linear Classifiers: Evaluating Performance and Mitigation Strategies
 
 ***Provide a description of your project including*** 
 
