@@ -6,6 +6,10 @@
 ## Research Question
 **How does the introduction of weight decay (L2 regularisation) affect the linearity of the loss barrier between the initialisation and the converged solution across modern CNN optimisers?**  
 
+## Overview
+
+Optimisation plays a crucial role in neural network training tasks. There exists several optimisation algorithms, each with its own strengths and weaknesses based on how they perceive the loss landscape. We study ten different gradient-based optimisers: SGD, SGD Momentum, Adagrad, Adadelta, RMSProp, Adam, NAdam, Adamax, and the decoupled weight decay variants of Adam and NAdam, AdamW and NAdamW respectively. For visualisation, we used the ‘1D Linear Interpolation’ approach that qualitatively compares how the different optimisers behave locally. Our study was performed on a binary face classification task for which we train a small CNN twice with each optimiser (one with weight decay, one without). We use the Human Faces Dataset publicly available on Kaggle that consists of 5000 real human images and 5000 AI generated images to train our CNN.
+
 ## Motivation
 - Classic works (Garipov et al., 2018) showed SGD solutions often lie in the same wide valley.
 - Modern adaptive optimisers (Adam, RMSProp, AdamW, NAdam, etc.) are known to find solutions that are **not linearly connected**.
