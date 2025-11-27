@@ -57,8 +57,12 @@ Lightweight 3-block CNN:
 | **NAdamW**    | Yes                   |
 | Adamax        | –                     |
 
+## Future Work
+
+
 
 ### References
+
 [1] Ruder, S. (2016). An overview of gradient descent optimization algorithms. *arXiv preprint arXiv:1609.04747*.
 
 [2] Li, H., Xu, Z., Taylor, G., Studer, C., & Goldstein, T. (2018). Visualizing the loss landscape of neural nets. *Advances in neural information processing systems, 31*.
