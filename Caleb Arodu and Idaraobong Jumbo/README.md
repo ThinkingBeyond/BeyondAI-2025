@@ -1,6 +1,6 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-# State Your Project Title Here With Capitalised Letters as Shown
+# The Impact of Class Imbalance on Non-linear Classifiers
 
 ***Provide a description of your project including*** 
 
