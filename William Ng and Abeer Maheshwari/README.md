@@ -1,5 +1,5 @@
 # A Qualitative Study of CNN Optimisers with Weight Decay  
-**BeyondAI Research Project • 2025**
+**BeyondAI Research Project 9B • 2025**
 
 *1D linear interpolation in loss landscape for 10 different optimisers (20 epochs on Human Faces Dataset). Blue = Train Loss, Red = Test Loss.*
 
@@ -8,7 +8,7 @@
 
 ## Overview
 
-Optimisation plays a crucial role in neural network training tasks. We tested ten different gradient-based optimisers: SGD, SGD Momentum, Adagrad, Adadelta, RMSProp, Adam, NAdam, Adamax, and the decoupled weight decay variants of Adam and NAdam, AdamW and NAdamW respectively. For visualisation, we used the ‘1D Linear Interpolation’ approach that qualitatively compares how the different optimisers behave locally. Our study was performed on a binary face classification task for which we train a small CNN twice with each optimiser (one with weight decay, one without). We use the Human Faces Dataset publicly available on Kaggle that consists of 5000 real human images and 5000 AI generated images to train our CNN.
+Optimisation plays a crucial role in neural network training tasks. We tested ten different gradient-based optimisers: SGD, SGD Momentum, Adagrad, Adadelta, RMSProp, Adam, NAdam, Adamax, and the decoupled weight decay variants of Adam and NAdam, AdamW and NAdamW respectively. For visualisation of the loss landscape, we used the ‘1D Linear Interpolation’ approach that qualitatively compares how the different optimisers behave locally. We also studied the effects of decoupled weight decay on the optimsiers AdamW and NAdamW, and compared them to their coupled weight decay equivalents. Our study was performed on a binary face classification task for which we train a small CNN twice with each optimiser (one with weight decay, one without). We use the Human Faces Dataset publicly available on Kaggle that consists of 5000 real human images and 5000 AI generated images to train our CNN.
 
 ## Motivation
 - Classic works (Garipov et al., 2018) showed SGD solutions often lie in the same wide valley.
