@@ -19,7 +19,7 @@ Optimisation plays a crucial role in neural network training tasks. We tested te
 ## Method & Implementation
 
 ### Dataset
-Human Faces Dataset (Kaggle) – ~10k real vs AI-generated face images (binary classification).
+Human Faces Dataset (Kaggle) – 5k real and 5k AI-generated face images (binary image classification).
 
 ### Model
 Lightweight 3-block CNN:  
@@ -27,7 +27,7 @@ Lightweight 3-block CNN:
 
 ### Training (`CNN_train.py`)
 - Fully deterministic
-- 20 epochs, LR = 0.01, batch size 128, no scheduler
+- 20 epochs, LR = 0.01, batch size 256, no scheduler
 - For each of the **10 optimisers**, train **two models** from the **exact same initial weights**:
   - Without weight decay
   - With weight decay = 0.01
