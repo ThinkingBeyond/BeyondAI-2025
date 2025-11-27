@@ -59,7 +59,8 @@ Lightweight 3-block CNN:
 
 ## Future Work
 
-
+1. Repeat this experiment for neural network architechtures of a higher complexity and see if the results still hold or not.
+2. Expand on the visualisation techniques, from a 1D linear interpolation to using a 2D contour plot, or filter-wise normalisation.
 
 ### References
 
