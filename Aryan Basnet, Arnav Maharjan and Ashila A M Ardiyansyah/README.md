@@ -19,7 +19,36 @@ We evaluated four deep learning models (Baseline CNN, MobileNetV2, EfficientNet8
 Each dataset was split into training (~70%), validation (~15%), and test sets (~15%). All models were train validation test, adam optimizer, categorical cross-entropy loss, early stopping, and learning rate reduction on plateau, models are under identical conditions. Model performance was measured and evaluated using weighted F1-score, per-class F1, confusion matrices, and training time.
 
 ## Result and Discussion
+F1 Scores Model For Each Datasets
 
+(images)
+
+The results showed model performance varied depending on datasets origin (HICs and LMICs) and disease type (Pneumonia and TB). Across all HIC datasets (Dataset 1, 2, and 5) achieve consistently high F1 scores, followed by Baseline CNN and ResNet50. EfficientNetB0 showed weaker performance indicating sensitivity to dataset and training.
+In LMICs datasets, similar to HIC datasets, MobileNetV2 again achieved the strongest result in dataset 3 and 6, followed by Baseline CNN and ResNet50. In contrast, EfficientNetB0 struggles significantly. Unexpectedly, baseline CNN outperformed deep learning model in dataset 4.
+
+1. HICs VS LMICs Comparison
+
+(image)
+
+The box and whiskers graph shows that the model performed differed significantly. Across both income levels MobileNetV2 (0.88-0.90) consistently achieves the highest F1 scores. Followed by Baseline CNN and ResNet50. However, EfficientNetBO performance dropped on LMICs and underperformed in HICs datasets. Overall this indicates that datasets characteristic (image quality) impact performance more than model complexity.
+
+2. Disease Difficulty (TB vs Pneumonia)
+
+(image)
+
+The box and whisker graph shows that Tuberculosis (TB) achieves higher F1 scores in both HICs and LMICs datasets. While in Pneumonia varies more especially in LMIC datasets where image conditions affect model accuracy. LMIC Pneumonia datasets show significant drop giving that pneumonia is more sensitive to inconsistent image or labelling issues.
+
+3. Training Time vs F1 Score
+
+(image)
+
+The graph plot shows no linear relationship between training time and F1 score, except in LMIC EfficientNetBO shows linear negative correlation. Models like MobileNetV2 achieve a high F1 score above 0.80 with a relatively short amount of time with less than 100 minutes. However, longer training times (some dataset in ResNet50) do not always mean better performance. This indicates that more complex models don't guarantee a better performance and accuracy
+
+4. Best Model per Dataset
+
+(image)
+
+The bar graph shows that MobileNetV2 dominates as the top performer in most of the HICs and LMICs datasets in all of the pneumonia and some in TB datasets. In addition, Baseline CNN surprisingly outperformed more complex architecture in dataset 4 classifying TB in LMICs, this highlights that simpler models can be more strong when data is limited or inconsistent.
 
 ## Conclusion 
 Overall, the findings of the model performance for chest X-ray classification are more highly influenced by dataset characteristics and disease type than the level income source country. MobileNetV2 appears as the strong model overall, achieving high and stable performance in both HICs and several LMICs datasets, specifically consistently having the highest F1-scores on HICs datasets. However, baseline CNN also has performed well on LMICs datasets, with ResNet50 remaining competitive for TB classification. This shows that simple architecture can outperform deeper models when trained with varied image qualities and giving the importance of selecting models based on dataset-specific factors such as size, balance, and quality rather than relying solely on model complexity or conventional expectations. 
@@ -30,15 +59,13 @@ Incorporating tailored model selection and transfer learning strategies can opti
 
 
 ## References
-List all your references here. Remember to put links into markdown. For example:
+1. Zhang K, Kermany D, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification [dataset]. Version 2. Mendeley Data; 2018. DOI: 10.17632/rscbjbr9sj.2.
+2. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable Tuberculosis Detection using Chest X ray with Deep Learning, Segmentation and Visualization. IEEE Access. 2020;8:191586 191601. doi:10.1109/ACCESS.2020.3031384.
+3. Musa A, Adamu MI, Kakudi HA, Lawal Y. Nigeria Chest X ray Dataset. Kaggle; 2024. doi:10.34740/KAGGLE/DSV/9370352.
+4. Kermany D, Zhang K, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification. Mendeley Data. 2018;2. doi:10.17632/rscbjbr9sj.2.
+5. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. A Primary Chest X ray Dataset of Normal and Pneumonia Cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2.
+6. Kiran S, Saira, Jabeen DI. Dataset of Tuberculosis Chest X-rays Images. Mendeley Data. 2024;v2. doi: 10.17632/8j2g3csprk.2.
 
-1.  Einstein, A. (1905). *On the Electrodynamics of Moving Bodies*. Annalen der Physik, 17, 891-921. [Internet Archive](https://archive.org/details/einstein-1905-relativity)
-
-**Tip**: *If you have you references in BibTex, Google Scholar or Zotero*
-1. Create/copy a list into ChatGPT
-2. Ask it to turn it into an unsorted list in markdown
-
----
 
 > The research poster for this project can be found in the [BeyondAI Proceedings 2025]([https://thinkingbeyond.education/beyondai_proceedings_2025/](https://www.canva.com/design/DAG56NGHhz8/gdlWMbL8WpTcnPAaTZ2ijA/edit)).
 
