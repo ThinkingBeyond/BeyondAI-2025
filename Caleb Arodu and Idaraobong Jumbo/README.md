@@ -79,33 +79,23 @@ To assess model performance, we used accuracy, precision, recall, and F1-score. 
 
 1. Accuracy – measures overall correctness, but can be misleading in imbalanced datasets because predicting the majority class (non-fraud) correctly dominates the score.
     - In fraud detection: high accuracy might just mean the model is correctly predicting legitimate transactions while missing most frauds.
+$$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
 
 2. Precision – the proportion of predicted frauds that are actually frauds, showing how well the model avoids false alarms.
     - In fraud detection: high precision means that when the model flags a transaction as fraud, it is likely correct, reducing unnecessary alerts.
+$$\text{Precision} = \frac{TP}{TP + FP}$$
 
 3. Recall – the proportion of actual frauds correctly identified, highlighting the model’s ability to detect minority-class instances.
     - In fraud detection: high recall means the model catches most fraudulent transactions, minimizing losses from undetected fraud.
+$$\text{Recall} = \frac{TP}{TP + FN}$$
 
 4. F1-score – the harmonic mean of precision and recall, providing a balanced metric when both false positives and false negatives matter.
     - In fraud detection: F1 balances catching as many frauds as possible (recall) while avoiding too many false alarms (precision).
+$$F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
 
 These metrics together allow us to evaluate both overall performance and the ability to detect rare fraud cases, which is crucial in highly imbalanced datasets
 
-\begin{equation}
-\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
-\end{equation}
 
-\begin{equation}
-\text{Precision} = \frac{TP}{TP + FP}
-\end{equation}
-
-\begin{equation}
-\text{Recall} = \frac{TP}{TP + FN}
-\end{equation}
-
-\begin{equation}
-F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-\end{equation}
 
 
 ## Your next subsection
