@@ -3,8 +3,6 @@
 Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification
 Across High and Low Resource Chest X-Ray Datasets
 
-***Provide a description of your project including*** 
-
 ## Motivation
 While most research focuses on large, well-curated datasets from high-income countries.The motivation arises from challenge of accurately and unexplored diagnosing Pneumonia and Tuberculosis (TB) using chest X-rays, particularly in lower Middle Income Country (LMICs) where radiology expert, high quality equipment, image quality, and standardized datasets are limited. This study systematically evaluates four deep learning models across six diverse chest X-ray datasets to understand how disease type, dataset size, balance, and income level affect model performance identifying what actually works in resource-constrained contexts.
 
