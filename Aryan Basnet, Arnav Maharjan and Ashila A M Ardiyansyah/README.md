@@ -61,6 +61,13 @@ Overall, the findings of the model performance for chest X-ray classification ar
 ## Future Work
 We think future work should focus on reducing the performance gap between HICs and LMICs datasets. Incorporating tailored model selection and transfer learning strategies can optimize diagnostic performance, adding more diverse datasets (especially in LMICs regions), offering practical guidance for deploying AI effectively across diverse healthcare resource contexts and generalizability of models.
 
+## How to Install and Run the Project **(WARNING)**
+**Disclaimer :** Running this hour and hour of work, highly recommended to run it online in Google Colab or the final file.
+
+## Credits
+**Student Researchers:** Arnav Maharjan, Ashila Atha Makkah Ardiyansyah, Aryan Basnet <br> 
+**Mentors:** Dr. Devendra Singh Dhami
+
 ## References
 1. Zhang K, Kermany D, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification [dataset]. Version 2. Mendeley Data; 2018. DOI: 10.17632/rscbjbr9sj.2. [Mendelay Data](https://data.mendeley.com/datasets/rscbjbr9sj/2)
 2. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable Tuberculosis Detection using Chest X ray with Deep Learning, Segmentation and Visualization. IEEE Access. 2020;8:191586 191601. doi:10.1109/ACCESS.2020.3031384. [IEE Access](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9224622)
