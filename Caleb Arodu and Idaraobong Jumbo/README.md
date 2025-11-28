@@ -41,6 +41,23 @@ Understanding which metrics truly reflect model performance under imbalance is e
 
 There is also a need to determine which mitigation techniques effectively address this issue. Methods such as random undersampling, SMOTE oversampling, and cost-sensitive learning offer different trade-offs in performance. Comparing these approaches across non-linear models allows us to identify strategies that improve recall without greatly increasing false positives, helping build more reliable and balanced classifiers.
 
+## Methodology
+
+### Dataset
+
+For this project, we used the [Credit Card Fraud Detection dataset from Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) . The dataset contains transactions made by European credit cardholders over two days in September 2013. It is highly imbalanced, with only 492 fraudulent transactions out of 284,807 total transactions (approximately 0.172% of all transactions).
+
+All input features are numerical and result from a PCA transformation due to confidentiality reasons. The dataset includes 28 principal components, labeled V1, V2, …, V28, as well as 'Time' and 'Amount', which were not transformed. The 'Time' feature represents the seconds elapsed between each transaction and the first transaction in the dataset, while 'Amount' is the transaction value. The response variable is 'Class', where 1 indicates a fraudulent transaction and 0 indicates a legitimate one.
+
+### Data Preprocessing
+
+Before training the models, the following preprocessing steps were applied to prepare the dataset:
+- The 'Amount' feature was scaled using a Standard Scaler to ensure zero mean and unit variance.
+- The 'Time' feature was dropped, as it was not relevant to the task at hand.
+- Any missing values were identified and handled appropriately.
+- The dataset was split into training and testing sets using a standard train-test split. A copy of the original test set was preserved to evaluate all models consistently across different mitigation strategies.
+- No additional feature selection was performed; all remaining features were used in model training.
+  
 ## Your next subsection
 
 Continue working through the points listed above with the help of sensibly named subsections. 
