@@ -90,7 +90,9 @@ To assess model performance, we used accuracy, precision, recall, and F1-score. 
     - In fraud detection: F1 balances catching as many frauds as possible (recall) while avoiding too many false alarms (precision).
 
 These metrics together allow us to evaluate both overall performance and the ability to detect rare fraud cases, which is crucial in highly imbalanced datasets
-  
+
+$$F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}$$
+
 ## Your next subsection
 
 Continue working through the points listed above with the help of sensibly named subsections. 
