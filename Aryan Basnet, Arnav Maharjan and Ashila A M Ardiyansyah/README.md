@@ -1,7 +1,6 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification
-Across High and Low Resource Chest X-Ray Datasets
+## Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High and Low Resource Chest X-Ray Datasets
 
 ## Motivation
 While most research focuses on large, well-curated datasets from high-income countries.The motivation arises from challenge of accurately and unexplored diagnosing Pneumonia and Tuberculosis (TB) using chest X-rays, particularly in lower Middle Income Country (LMICs) where radiology expert, high quality equipment, image quality, and standardized datasets are limited. This study systematically evaluates four deep learning models across six diverse chest X-ray datasets to understand how disease type, dataset size, balance, and income level affect model performance identifying what actually works in resource-constrained contexts.
@@ -18,38 +17,52 @@ Each dataset was split into training (~70%), validation (~15%), and test sets (~
 
 ## Result and Discussion
 F1 Scores Model For Each Datasets
+Dataset 1 (Pneumonia HIC)|Dataset 2 (TB HIC)
+:-------------------------:|:-------------------------:
+![Dataset 1](https://github.com/user-attachments/assets/0766d26c-a5c3-4fb8-9114-17fba505a2b0)  |  ![Dataset 2](https://github.com/user-attachments/assets/6147bfbb-2f99-45a5-867f-afb392dd87eb)
 
-![Dataset 1](https://github.com/user-attachments/assets/0766d26c-a5c3-4fb8-9114-17fba505a2b0)
-![Dataset 2](https://github.com/user-attachments/assets/6147bfbb-2f99-45a5-867f-afb392dd87eb)
-![Dataset 3](https://github.com/user-attachments/assets/fc4fc5fd-0c48-4cfa-8bfc-49b52087721a)
-![Dataset 4](https://github.com/user-attachments/assets/d3eec016-2e69-4752-a1d8-6118dc565cf8)
-![Dataset 5](https://github.com/user-attachments/assets/508ad5bf-59e6-481b-a232-c34bd99bfbef)
-![Dataset 6](https://github.com/user-attachments/assets/4fd18d01-6519-49bf-844b-ffddd7bf58e1)
+Dataset 3 (Nigeria LMIC)|Dataset 4 (TB LMIC)
+:-------------------------:|:-------------------------:
+![Dataset 3](https://github.com/user-attachments/assets/fc4fc5fd-0c48-4cfa-8bfc-49b52087721a)  |  ![Dataset 4](https://github.com/user-attachments/assets/d3eec016-2e69-4752-a1d8-6118dc565cf8)
+
+Dataset 5 (Pneumonia HIC)|Dataset 6 (Bangladesh LMIC)
+:-------------------------:|:-------------------------:
+![Dataset 5](https://github.com/user-attachments/assets/508ad5bf-59e6-481b-a232-c34bd99bfbef)  |  ![Dataset 6](https://github.com/user-attachments/assets/4fd18d01-6519-49bf-844b-ffddd7bf58e1)
 
 The results showed model performance varied depending on datasets origin (HICs and LMICs) and disease type (Pneumonia and TB). Across all HIC datasets (Dataset 1, 2, and 5) achieve consistently high F1 scores, followed by Baseline CNN and ResNet50. EfficientNetB0 showed weaker performance indicating sensitivity to dataset and training.
 In LMICs datasets, similar to HIC datasets, MobileNetV2 again achieved the strongest result in dataset 3 and 6, followed by Baseline CNN and ResNet50. In contrast, EfficientNetB0 struggles significantly. Unexpectedly, baseline CNN outperformed deep learning model in dataset 4.
 
-1. HICs VS LMICs Comparison
+## 1. 
 
-![Comparison](https://github.com/user-attachments/assets/d2ac1d17-795f-43b6-bb50-477647cbbc30)
+HICs VS LMICs Comparison|  
+:-------------------------:|
+![Comparison](https://github.com/user-attachments/assets/d2ac1d17-795f-43b6-bb50-477647cbbc30) | 
+
+
 
 The box and whiskers graph shows that the model performed differed significantly. Across both income levels MobileNetV2 (0.88-0.90) consistently achieves the highest F1 scores. Followed by Baseline CNN and ResNet50. However, EfficientNetBO performance dropped on LMICs and underperformed in HICs datasets. Overall this indicates that datasets characteristic (image quality) impact performance more than model complexity.
 
-2. Disease Difficulty (TB vs Pneumonia)
+## 2.
 
-![Disease Difficulty](https://github.com/user-attachments/assets/8fcf3dc8-a6ee-4a33-b74c-b57e8215ca0c)
+Disease Difficulty (TB vs Pneumonia)|  
+:-------------------------:|
+![Disease Difficulty](https://github.com/user-attachments/assets/8fcf3dc8-a6ee-4a33-b74c-b57e8215ca0c) | 
 
 The box and whisker graph shows that Tuberculosis (TB) achieves higher F1 scores in both HICs and LMICs datasets. While in Pneumonia varies more especially in LMIC datasets where image conditions affect model accuracy. LMIC Pneumonia datasets show significant drop giving that pneumonia is more sensitive to inconsistent image or labelling issues.
 
-3. Training Time vs F1 Score
+## 3. 
 
-![Training Time VS F1 Score](https://github.com/user-attachments/assets/cd312eaf-62ee-4540-96a5-61d475a08a8b)
+Training Time vs F1 Score|  
+:-------------------------:|
+![Training Time VS F1 Score](https://github.com/user-attachments/assets/cd312eaf-62ee-4540-96a5-61d475a08a8b)| 
 
 The graph plot shows no linear relationship between training time and F1 score, except in LMIC EfficientNetBO shows linear negative correlation. Models like MobileNetV2 achieve a high F1 score above 0.80 with a relatively short amount of time with less than 100 minutes. However, longer training times (some dataset in ResNet50) do not always mean better performance. This indicates that more complex models don't guarantee a better performance and accuracy
 
-4. Best Model per Dataset
+## 4. 
 
-![Top Performer](https://github.com/user-attachments/assets/232151f0-f893-447e-b7cb-74fad5bc6c47)
+Best Model per Dataset|  
+:-------------------------:|
+![Top Performer](https://github.com/user-attachments/assets/232151f0-f893-447e-b7cb-74fad5bc6c47)| 
 
 The bar graph shows that MobileNetV2 dominates as the top performer in most of the HICs and LMICs datasets in all of the pneumonia and some in TB datasets. In addition, Baseline CNN surprisingly outperformed more complex architecture in dataset 4 classifying TB in LMICs, this highlights that simpler models can be more strong when data is limited or inconsistent.
 
