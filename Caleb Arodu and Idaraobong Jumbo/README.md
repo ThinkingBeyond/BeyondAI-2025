@@ -2,6 +2,9 @@
 
 # The Impact of Class Imbalance on Non-linear Classifiers: Evaluating Performance and Mitigation Strategies
 
+## Research Question
+How does class imbalance affect non-linear classifiers, which metrics best capture this impact, and which mitigation strategies most effectively improve their performance?
+
 ***Provide a description of your project including*** 
 
 1. motivating your research question
