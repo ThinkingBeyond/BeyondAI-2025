@@ -1,0 +1,152 @@
+!pip install autodistill
+!pip install autodistill-metaclip
+!pip install roboflow
+!pip install matplotlib
+!pip install scikit-learn
+
+
+###########################################################
+import time
+start = time.perf_counter()
+###########################################################
+
+
+###########################################################
+# DATABASE: https://huggingface.co/datasets/bumbledeep/eyepacs?library=datasets
+from datasets import load_dataset
+
+# Login using e.g. `huggingface-cli login` to access this dataset
+ds = load_dataset("bumbledeep/eyepacs")
+
+training_data = ds["train"]
+###########################################################
+
+
+###########################################################
+import warnings
+import os
+import torch
+import numpy as np
+import types
+
+
+warnings.filterwarnings("ignore")
+# https://blog.roboflow.com/how-to-use-metaclip/
+
+from autodistill_metaclip import MetaCLIP
+from autodistill.detection import CaptionOntology
+
+# The problematic line is inside MetaCLIP's __init__ method in autodistill-metaclip v0.1.3
+# It tries to load a pretrained model using a file path that open_clip doesn't recognize as a valid tag or path after deletion.
+# The actual tag for this model, as indicated by open_clip's error message, is "metaclip_400m".
+
+# To fix this, we'll patch the MetaCLIP class's __init__ method at runtime to use the correct tag.
+import autodistill_metaclip.metaclip_model
+import open_clip
+
+def patched_metaclip_init(self, ontology: CaptionOntology):
+    HOME = os.path.expanduser('~')
+    self.model, _, self.preprocess = open_clip.create_model_and_transforms(
+        "ViT-B-32-quickgelu",
+        pretrained="metaclip_400m", # This is the fix: use the recognized tag
+        cache_dir=os.path.join(HOME, '.cache', 'autodistill', 'open_clip') # Specify cache directory
+    )
+    self.ontology = ontology
+    self.model.eval()
+
+autodistill_metaclip.metaclip_model.MetaCLIP.__init__ = patched_metaclip_init
+
+# The previous code to manually remove the model file is no longer needed
+# as open_clip will handle downloading and caching correctly when given a tag.
+
+actual_labels = []
+predicted_labels = []
+confidence_scores = []
+confidence_score = []
+
+classes = ["no_diabetic_retinopathy", "mild_diabetic_retinopathy", "moderate_diabetic_retinopathy", "severe_diabetic_retinopathy", "proliferative_diabetic_retinopathy"]
+
+base_model = MetaCLIP(ontology = CaptionOntology({
+    "a healthy retina, free of any lesions, microaneurysms, hemorrhages, or exudates; optic disc and macula appear normal": "no_diabetic_retinopathy",
+    "a retina with very few microaneurysms, possibly some minor dot hemorrhages, but no signs of severe damage": "mild_diabetic_retinopathy",
+    "A retina with numerous microaneurysms and intraretinal hemorrhages in at least one quadrant, often accompanied by hard exudates and/or cotton wool spots; however, no signs of severe venous beading, IRMA, or neovascularization are present.": "moderate_diabetic_retinopathy",
+    "a retina with extensive intraretinal hemorrhages, venous beading, severe intraretinal microvascular abnormalities (IRMA), but without new vessel formation": "severe_diabetic_retinopathy",
+    "A retina characterized by the undeniable presence of new, abnormal blood vessels (neovascularization) growing on the optic disc or elsewhere, often with associated vitreous hemorrhage, preretinal hemorrhage, or fibrous proliferation; this is the most advanced and vision-threatening stage.": "proliferative_diabetic_retinopathy"
+}))
+
+for i, row in enumerate(training_data):
+  try:
+    image = row["image"]
+    actual_label = row["label"]
+
+    # path = f"/content/image_{i}.jpg"
+    # image.save(path)
+
+    results = base_model.predict(image, confidence = 0.00)
+    confidence_scores.append(results.confidence)
+    confidence_score.append(float(results.confidence.max()))
+    predicted = classes[results.confidence.argmax()]
+    predicted_labels.append(predicted)
+
+    actual_labels.append(actual_label)
+  except RecursionError:
+    print(f"Recursion Error at image {i}")
+    continue
+
+  # if i == 50:
+  #   break
+###########################################################
+
+
+###########################################################
+end = time.perf_counter()
+print(f"{end-start} seconds")
+###########################################################
+
+
+###########################################################
+# PRECISION, RECALL, AND F1 SCORES
+
+import matplotlib.pyplot as plt
+from sklearn.metrics import precision_score, recall_score, f1_score, classification_report
+
+class_names = ["none", "mild", "moderate", "severe", "proliferative"]
+
+recall_score_list = recall_score(actual_labels, predicted_labels, labels=classes, average = None).tolist()
+plt.bar(class_names, recall_score_list)
+plt.title("Recall Scores")
+plt.xlabel("Classes")
+plt.ylabel("Recall Score")
+plt.ylim(0, 1)
+
+
+precision_score_list = precision_score(actual_labels, predicted_labels, labels=classes, average = None).tolist()
+plt.bar(class_names, precision_score_list)
+plt.title("Precision Scores")
+plt.xlabel("Classes")
+plt.ylabel("Precision Score")
+plt.ylim(0, 1)
+plt.show()
+
+
+f1_score_list = f1_score(actual_labels, predicted_labels, labels=classes, average=None).tolist()
+plt.bar(class_names, f1_score_list)
+plt.title("F1 Scores")
+plt.xlabel("Classes")
+plt.ylabel("F1 Score")
+plt.ylim(0, 1)
+plt.show()
+###########################################################
+
+
+###########################################################
+count_dr = [predicted_labels.count("no_diabetic_retinopathy"), predicted_labels.count("mild_diabetic_retinopathy"), predicted_labels.count("moderate_diabetic_retinopathy"), predicted_labels.count("severe_diabetic_retinopathy"), predicted_labels.count("proliferative_diabetic_retinopathy")]
+
+print(count_dr)
+
+plt.bar(class_names, count_dr)
+plt.title("Count of Each Class")
+plt.xlabel("Classes")
+plt.ylabel("Count")
+plt.show()
+###########################################################
