@@ -57,6 +57,21 @@ Before training the models, the following preprocessing steps were applied to pr
 - Any missing values were identified and handled appropriately.
 - The dataset was split into training and testing sets using a standard train-test split. A copy of the original test set was preserved to evaluate all models consistently across different mitigation strategies.
 - No additional feature selection was performed; all remaining features were used in model training.
+
+### Models Trained
+
+We trained three non-linear classifiers on the dataset: Support Vector Machines (SVM), Decision Trees, and Random Forests. All models were used with their default hyperparameters.
+
+To address class imbalance, we evaluated each model across multiple dataset scenarios:
+
+- Original imbalanced dataset
+- Random undersampled dataset
+- SMOTE oversampled dataset
+- Cost-weighted original dataset (class_weight='balanced' or 'balanced_subsample' for Random Forest)
+- Cost-weighted random undersampled dataset
+- Cost-weighted SMOTE oversampled dataset
+
+For each scenario, we measured model performance using accuracy, precision, recall, and F1-score to capture both overall performance and minority-class detection effectiveness.
   
 ## Your next subsection
 
