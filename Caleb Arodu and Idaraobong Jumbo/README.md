@@ -72,6 +72,24 @@ To address class imbalance, we evaluated each model across multiple dataset scen
 - Cost-weighted SMOTE oversampled dataset
 
 For each scenario, we measured model performance using accuracy, precision, recall, and F1-score to capture both overall performance and minority-class detection effectiveness.
+
+### Evaluation Metrics
+
+To assess model performance, we used accuracy, precision, recall, and F1-score. Each metric provides different insight into how the models handle imbalanced data:
+
+- Accuracy – measures overall correctness, but can be misleading in imbalanced datasets because predicting the majority class (non-fraud) correctly dominates the score.
+    In fraud detection: high accuracy might just mean the model is correctly predicting legitimate transactions while missing most frauds.
+
+- Precision – the proportion of predicted frauds that are actually frauds, showing how well the model avoids false alarms.
+    In fraud detection: high precision means that when the model flags a transaction as fraud, it is likely correct, reducing unnecessary alerts.
+
+- Recall – the proportion of actual frauds correctly identified, highlighting the model’s ability to detect minority-class instances.
+    In fraud detection: high recall means the model catches most fraudulent transactions, minimizing losses from undetected fraud.
+
+-    F1-score – the harmonic mean of precision and recall, providing a balanced metric when both false positives and false negatives matter.
+    In fraud detection: F1 balances catching as many frauds as possible (recall) while avoiding too many false alarms (precision).
+
+These metrics together allow us to evaluate both overall performance and the ability to detect rare fraud cases, which is crucial in highly imbalanced datasets
   
 ## Your next subsection
 
