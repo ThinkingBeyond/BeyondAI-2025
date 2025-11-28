@@ -98,8 +98,11 @@ $$\text{Recall} = \frac{TP}{TP + FN}$$
 $$F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
 
 TP = True Positives (frauds correctly detected)
+
 TN = True Negatives (legitimate transactions correctly identified)
+
 FP = False Positives (legitimate transactions flagged as fraud)
+
 FN = False Negatives (frauds missed by the model)
 
 These metrics together allow us to evaluate both overall performance and the ability to detect rare fraud cases, which is crucial in highly imbalanced datasets
