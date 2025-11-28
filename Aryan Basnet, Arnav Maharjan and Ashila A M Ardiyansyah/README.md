@@ -62,7 +62,7 @@ Overall, the findings of the model performance for chest X-ray classification ar
 We think future work should focus on reducing the performance gap between HICs and LMICs datasets. Incorporating tailored model selection and transfer learning strategies can optimize diagnostic performance, adding more diverse datasets (especially in LMICs regions), offering practical guidance for deploying AI effectively across diverse healthcare resource contexts and generalizability of models.
 
 ## How to Install and Run the Project **(WARNING)**
-**Disclaimer :** Running this hour and hour of work, highly recommended to run it online in Google Colab or the final file.
+**Disclaimer :** Running this would take hour and hour of work, highly recommended to run it online in Google Colab or run the final file.
 
 ## Credits
 **Student Researchers:** Arnav Maharjan, Ashila Atha Makkah Ardiyansyah, Aryan Basnet <br> 
@@ -73,7 +73,7 @@ We think future work should focus on reducing the performance gap between HICs a
 2. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable Tuberculosis Detection using Chest X ray with Deep Learning, Segmentation and Visualization. IEEE Access. 2020;8:191586 191601. doi:10.1109/ACCESS.2020.3031384. [IEE Access](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9224622)
 3. Musa A, Adamu MI, Kakudi HA, Lawal Y. Nigeria Chest X ray Dataset. Kaggle; 2024. doi:10.34740/KAGGLE/DSV/9370352. [Kaggle](https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset)
 4. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. A Primary Chest X ray Dataset of Normal and Pneumonia Cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2. [Mendelay Data](https://data.mendeley.com/datasets/wndbd5r26y/2)
-6. Kiran S, Saira, Jabeen DI. Dataset of Tuberculosis Chest X-rays Images. Mendeley Data. 2024;v2. doi: 10.17632/8j2g3csprk.2. [Mendelay Data](https://data.mendeley.com/datasets/8j2g3csprk/2)
+5. Kiran S, Saira, Jabeen DI. Dataset of Tuberculosis Chest X-rays Images. Mendeley Data. 2024;v2. doi: 10.17632/8j2g3csprk.2. [Mendelay Data](https://data.mendeley.com/datasets/8j2g3csprk/2)
 
 
 > The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://www.canva.com/design/DAG56NGHhz8/gdlWMbL8WpTcnPAaTZ2ijA/edit).
