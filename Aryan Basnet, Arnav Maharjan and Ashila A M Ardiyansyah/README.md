@@ -1,58 +1,35 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-EVALUATING DEEP LEARNING MODELS FOR PNEUMONIA & TUBERCULOSIS CLASSIFICATION
-ACROSS HIGH AND LOW RESOURCE CHEST X-RAY DATASETS
+Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification
+Across High and Low Resource Chest X-Ray Datasets
 
 ***Provide a description of your project including*** 
 
-1. motivating your research question
-2. stating your research question
-3. explaining your method and implementation
-4. Briefly mention and discuss your results
-5. Draw your conclusions
-6. State what future investigations could be conducted
-7. State your references 
-
-### Further Guidance: Formating
-- Structure this readme using subsections
-- Your job is to 
-    - keep it clear
-    - provide sufficient detail, so what you did is understandable to the reader. This way other researchers and future cohorts of BeyondAI will be able to build on your research
-    - List all your references at the end
-- utilise markdown like *italics*, **bold**, numbered and unnumbered lists to make your document easier to read
-- if you refer to links use the respective markdown for links, e.g. `[ThinkingBeyond](https://thinkingbeyond.education/)`
-- If you have graphs and pictures you want to embed in your file use `![name](your_graphic.png)`
-- If you want to present your results in a table use
-    | Header 1            | Header 2  |
-    |---------------------|-----------|
-    | Lorem Ipsum         | 12345     |
-
-**Tip:** Use tools to create markdown tables. For example, Obsidian has a table plugin, that makes creating tables much easier than doing it by hand.
-
-## Research Question
-
-State your research question here and elaborate on it.
-
 ## Motivation
+While most research focuses on large, well-curated datasets from high-income countries.The motivation arises from challenge of accurately and unexplored diagnosing Pneumonia and Tuberculosis (TB) using chest X-rays, particularly in lower Middle Income Country (LMICs) where radiology expert, high quality equipment, image quality, and standardized datasets are limited. This study systematically evaluates four deep learning models across six diverse chest X-ray datasets to understand how disease type, dataset size, balance, and income level affect model performance identifying what actually works in resource-constrained contexts.
 
-Explain your motivation for your chosen research question here.
+## Research Question 
+“Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High and Low Resource Chest X-Ray Dataset”
 
-## Your next subsection
+Our research performs deep learning classification of chest X-rays into Healthy, Pneumonia, and Tuberculosis using four deep-learning architectures: a Baseline CNN, MobileNetV2, EfficientNet-B0, and ResNet-50. To examine real-world generalizability, we analyze performance across datasets originating from High-Income Countries (HICs), Low- and Middle-Income Countries (LMICs). This comparison highlights both the strengths and vulnerabilities of each model when applied to diverse imaging environments, offering insights for equitable and reliable global lung-disease screening.
 
-Continue working through the points listed above with the help of sensibly named subsections. 
+## Method and Implementation
+We evaluated four deep learning models (Baseline CNN, MobileNetV2, EfficientNet80, and ResNet50) classifying six datasets chest X-Ray into Healthy, Pneumonia and Tuberculosis categories. These were compiled for a total of 23,480 images and group according to their country’s income. Three datasets from High Income Country (HICs) which dataset 1, dataset 2, dataset 5) and another three datasets from Lower Middle Income Country (LMICs) dataset 3, dataset 4, dataset 6. All of these datasets underwent preprocessing as resizing to 224x224 pixels and standardized data to balance the class weighting during the training.
 
-If you want to see some good examples of README files check out:
-- [Example 1](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/warenya-loulia/README.md)
-- [Example 2](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/shaana-karuna/README.md)
+Each dataset was split into training (~70%), validation (~15%), and test sets (~15%). All models were train validation test, adam optimizer, categorical cross-entropy loss, early stopping, and learning rate reduction on plateau, models are under identical conditions. Model performance was measured and evaluated using weighted F1-score, per-class F1, confusion matrices, and training time.
 
-[ ... ]
+## Result and Discussion
+
+
+## Conclusion 
+Overall, the findings of the model performance for chest X-ray classification are more highly influenced by dataset characteristics and disease type than the level income source country. MobileNetV2 appears as the strong model overall, achieving high and stable performance in both HICs and several LMICs datasets, specifically consistently having the highest F1-scores on HICs datasets. However, baseline CNN also has performed well on LMICs datasets, with ResNet50 remaining competitive for TB classification. This shows that simple architecture can outperform deeper models when trained with varied image qualities and giving the importance of selecting models based on dataset-specific factors such as size, balance, and quality rather than relying solely on model complexity or conventional expectations. 
 
 ## Future Work
+Future work should focus on reducing the performance gap between HICs and LMICs datasets.
+Incorporating tailored model selection and transfer learning strategies can optimize diagnostic performance, adding more diverse datasets (especially in LMICs regions), offering practical guidance for deploying AI effectively across diverse healthcare resource contexts and generalizability of models.
 
-State and explain what follow-up research could be conducted based on your work.
 
 ## References
-
 List all your references here. Remember to put links into markdown. For example:
 
 1.  Einstein, A. (1905). *On the Electrodynamics of Moving Bodies*. Annalen der Physik, 17, 891-921. [Internet Archive](https://archive.org/details/einstein-1905-relativity)
@@ -63,5 +40,5 @@ List all your references here. Remember to put links into markdown. For example:
 
 ---
 
-> The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://thinkingbeyond.education/beyondai_proceedings_2025/).
+> The research poster for this project can be found in the [BeyondAI Proceedings 2025]([https://thinkingbeyond.education/beyondai_proceedings_2025/](https://www.canva.com/design/DAG56NGHhz8/gdlWMbL8WpTcnPAaTZ2ijA/edit)).
 
