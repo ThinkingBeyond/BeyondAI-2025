@@ -1,4 +1,4 @@
-![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
+ ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
 ## Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High and Low Resource Chest X-Ray Datasets
 
@@ -75,13 +75,12 @@ Incorporating tailored model selection and transfer learning strategies can opti
 
 
 ## References
-1. Zhang K, Kermany D, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification [dataset]. Version 2. Mendeley Data; 2018. DOI: 10.17632/rscbjbr9sj.2.
-2. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable Tuberculosis Detection using Chest X ray with Deep Learning, Segmentation and Visualization. IEEE Access. 2020;8:191586 191601. doi:10.1109/ACCESS.2020.3031384.
-3. Musa A, Adamu MI, Kakudi HA, Lawal Y. Nigeria Chest X ray Dataset. Kaggle; 2024. doi:10.34740/KAGGLE/DSV/9370352.
-4. Kermany D, Zhang K, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification. Mendeley Data. 2018;2. doi:10.17632/rscbjbr9sj.2.
-5. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. A Primary Chest X ray Dataset of Normal and Pneumonia Cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2.
-6. Kiran S, Saira, Jabeen DI. Dataset of Tuberculosis Chest X-rays Images. Mendeley Data. 2024;v2. doi: 10.17632/8j2g3csprk.2.
+1. Zhang K, Kermany D, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification [dataset]. Version 2. Mendeley Data; 2018. DOI: 10.17632/rscbjbr9sj.2. [Mendelay Data](https://data.mendeley.com/datasets/rscbjbr9sj/2)
+2. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable Tuberculosis Detection using Chest X ray with Deep Learning, Segmentation and Visualization. IEEE Access. 2020;8:191586 191601. doi:10.1109/ACCESS.2020.3031384. [IEE Access](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9224622)
+3. Musa A, Adamu MI, Kakudi HA, Lawal Y. Nigeria Chest X ray Dataset. Kaggle; 2024. doi:10.34740/KAGGLE/DSV/9370352. [Kaggle](https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset)
+4. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. A Primary Chest X ray Dataset of Normal and Pneumonia Cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2. [Mendelay Data](https://data.mendeley.com/datasets/wndbd5r26y/2)
+6. Kiran S, Saira, Jabeen DI. Dataset of Tuberculosis Chest X-rays Images. Mendeley Data. 2024;v2. doi: 10.17632/8j2g3csprk.2. [Mendelay Data](https://data.mendeley.com/datasets/8j2g3csprk/2)
 
 
-> The research poster for this project can be found in the [BeyondAI Proceedings 2025]([https://thinkingbeyond.education/beyondai_proceedings_2025/](https://www.canva.com/design/DAG56NGHhz8/gdlWMbL8WpTcnPAaTZ2ijA/edit)).
+> The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://www.canva.com/design/DAG56NGHhz8/gdlWMbL8WpTcnPAaTZ2ijA/edit).
 
