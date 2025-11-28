@@ -66,7 +66,7 @@ We think future work should focus on reducing the performance gap between HICs a
 
 ## Credits
 **Student Researchers:** Arnav Maharjan, Ashila Atha Makkah Ardiyansyah, Aryan Basnet <br> 
-**Mentors:** Dr. Devendra Singh Dhami
+**Mentor:** Dr. Devendra Singh Dhami
 
 ## References
 1. Zhang K, Kermany D, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification [dataset]. Version 2. Mendeley Data; 2018. DOI: 10.17632/rscbjbr9sj.2. [Mendelay Data](https://data.mendeley.com/datasets/rscbjbr9sj/2)
