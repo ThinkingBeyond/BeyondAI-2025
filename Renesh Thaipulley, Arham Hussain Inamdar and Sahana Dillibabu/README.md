@@ -20,7 +20,6 @@ We wanted to do more testing on machine learning in the medical field to see its
 
 ## Conclusion
 
-From our results, MetaCLIP isn't a good model to detect the differences of degrees of diabietic retinopathy.
 
 ## Future Work
 
