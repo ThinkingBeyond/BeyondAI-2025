@@ -2,9 +2,6 @@
 
 # The Impact of Class Imbalance on Non-linear Classifiers: Evaluating Performance and Mitigation Strategies
 
-## Research Question
-How does class imbalance affect non-linear classifiers, which metrics best capture this impact, and which mitigation strategies most effectively improve their performance?
-
 ***Provide a description of your project including*** 
 
 1. motivating your research question
@@ -33,11 +30,16 @@ How does class imbalance affect non-linear classifiers, which metrics best captu
 
 ## Research Question
 
-State your research question here and elaborate on it.
+How does class imbalance affect non-linear classifiers, which evaluation metrics best capture this impact, and which mitigation strategies most effectively improve their performance?
+
 
 ## Motivation
 
-Explain your motivation for your chosen research question here.
+Class imbalance is a persistent challenge in many machine-learning tasks where one class appears far less frequently than the other. This imbalance can mislead models into focusing heavily on the majority class, causing them to miss rare but important minority cases. As a result, models may report high accuracy while performing poorly on the class that matters most, revealing the limitations of traditional evaluation approaches.
+
+Understanding which metrics truly reflect model performance under imbalance is essential. Metrics such as precision, recall, and F1-score provide insight into minority-class detection and help expose weaknesses that accuracy hides. Analyzing these metrics helps clarify how non-linear classifiers behave when trained on skewed data.
+
+There is also a need to determine which mitigation techniques effectively address this issue. Methods such as random undersampling, SMOTE oversampling, and cost-sensitive learning offer different trade-offs in performance. Comparing these approaches across non-linear models allows us to identify strategies that improve recall without greatly increasing false positives, helping build more reliable and balanced classifiers.
 
 ## Your next subsection
 
