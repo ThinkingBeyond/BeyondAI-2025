@@ -72,7 +72,7 @@ Finally, we would like to thank Dr. Davendra Singh Dhami, our mentor for his val
 **Student Researchers:** Arnav Maharjan (Main Contributor) & Ashila Atha Makkah Ardiyansyah<br> 
 **Mentor:** Dr. Devendra Singh Dhami
 
-##Notes
+## Notes
 One of the inside of the chest X-ray result in the checkpoints, Baseline CNN is incomplete. This only gives a purpose to sort the epochs result so it won't crash or runtime error repeatedly.
 
 ## References
