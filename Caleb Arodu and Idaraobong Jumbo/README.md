@@ -169,27 +169,40 @@ We also used ensembles of cost-weighing with the undersampled and oversampling u
 
 ## Conclusion
 
-Class imbalance significantly affects classifier behavior: Models trained on imbalanced data achieve high precision but likely miss many minority-class instances. We also found out that you can't increase the recall of a model without decreasing the precision which confirms the presicion-recall tradeoff which in turn led to us not having one strategy that had very high recall and precision a shown in the F1-Score table.
+Class imbalance significantly affects classifier behavior as trained on imbalanced data achieve high precision but likely miss many minority-class instances. 
+
+A high F1-Score demonstrates that your model has found the optimal balance as it detects a large percentage of the minority class (high Recall) while ensuring that those detections are reliable enough to be useful in a real-world application (high Precision). It is the single best metric for summarizing the performance of a binary classifier on a highly skewed dataset. In our case, achieving a very high F1-Score(> 0.9) was not achieved due to tradeoffs.
+
+We also found out that you can't increase the recall of a model without decreasing the precision which confirms the presicion-recall tradeoff which in turn led to us not having one strategy that had very high recall and precision as shown in the F1-Score table.
+
 It was seen that while tree-based models handle SMOTE and cost-weighting well, SVM shows a sharp drop in precision with oversampling or undersampling.
-Cost-Weighing on the imbalanced dataset and with SMOTE had their tradeoffs, as the former had better precision and the latter had better recall, therefore for minority class detection, SMOTE + CW is advised.
-Among SVM, Decision Trees, and Random Forests, Random Forest is the most robust and best overall classifier for imbalanced dataset as it achieves the best balance, delivering the highest overall F1-Score across all strategies.
 
+Cost-Weighing on the imbalanced dataset and Cost-Weighing with SMOTE had their tradeoffs, as the former had better precision and the latter had better recall. Therefore for minority class detection, SMOTE + Cost-Weighing is advised.
 
+Among SVM, Decision Tree, and Random Forest, Random Forest is the most robust and best overall classifier for imbalanced dataset as it achieves the best balance, delivering the highest overall F1-Score across all strategies.
 
+## Limitations
 
-## Your next subsection
+- Dataset Constraints: Limited to a specific dataset, may not generalize to other domains or fraud types.
 
-Continue working through the points listed above with the help of sensibly named subsections. 
+- Synthetic Oversampling Issues: SMOTE may create unrealistic minority samples, increasing false positives.
 
-If you want to see some good examples of README files check out:
-- [Example 1](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/warenya-loulia/README.md)
-- [Example 2](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/shaana-karuna/README.md)
+- Model Selection: Only SVM, Decision Tree, and Random Forest were tested; results may differ for other models.
 
-[ ... ]
+- Evaluation & Deployment: Focused mainly on F1-score, precision, and recall; limited feature engineering and no real-world testing, so performance may vary in dynamic environments.
 
 ## Future Work
 
-State and explain what follow-up research could be conducted based on your work.
+- Advanced Oversampling: Explore techniques like Borderline-SMOTE, ADASYN, or GAN-based synthetic data generation to improve minority-class detection.
+
+- Hybrid Sampling & Ensemble Methods: Combine undersampling, oversampling, and cost-weighting in smarter ways, or use ensembles on multiple balanced datasets.
+
+- Model Expansion: Test gradient boosting models (XGBoost, LightGBM) or neural networks with class-weighted loss functions for better imbalance handling.
+
+- Feature Engineering: Investigate feature selection, dimensionality reduction, and feature importance to boost minority-class prediction.
+
+- Real-World Validation: Apply models to live or evolving datasets, monitor performance over time, and consider metrics beyond F1-score for robust evaluation.
+  
 
 ## References
 
