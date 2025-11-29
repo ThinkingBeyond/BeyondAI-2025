@@ -65,7 +65,8 @@ We think future work should focus on reducing the performance gap between HICs a
 **Disclaimer :** Running this would take hour and hour of work, highly recommended to run it online in Google Colab or run the final file.
 
 ## Credits
-**Student Researchers:** Arnav Maharjan, Ashila Atha Makkah Ardiyansyah, Aryan Basnet <br> 
+**Student Researchers:** Arnav Maharjan (Main Contributor) & Ashila Atha Makkah Ardiyansyah<br> 
+
 **Mentor:** Dr. Devendra Singh Dhami
 
 ## References
