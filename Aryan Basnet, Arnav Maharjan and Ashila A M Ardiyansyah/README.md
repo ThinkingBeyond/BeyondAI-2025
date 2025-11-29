@@ -64,10 +64,16 @@ We think future work should focus on reducing the performance gap between HICs a
 ## How to Install and Run the Project **(WARNING)**
 **Disclaimer :** Running this would take hour and hour of work, highly recommended to run it online in Google Colab or run the final file.
 
+## Acknowledgement <br>
+We would like to express our gratitude to BeyondAI for providing and making this AI program available to a selection of people. We also want to thank Dr. Filip Bar and the entire mentors that contributed for their dedication on making this program possible. Especially Dr. Filip Bar on teaching throughout the course stage and guidance at the research development stage. His insight gives us a fundamental stepping stone and vital role in the direction of our study.
+Finally, we would like to thank Dr. Davendra Singh Dhami, our mentor for his valuable advice, constructive feedback, and support throughout the research process. His mentorship was crucial to direct and complete our research successfully.
+
 ## Credits
 **Student Researchers:** Arnav Maharjan (Main Contributor) & Ashila Atha Makkah Ardiyansyah<br> 
-
 **Mentor:** Dr. Devendra Singh Dhami
+
+##Notes
+One of the inside of the chest X-ray result in the checkpoints, Baseline CNN is incomplete. This only gives a purpose to sort the epochs result so it won't crash or runtime error repeatedly.
 
 ## References
 1. Zhang K, Kermany D, Goldbaum M. Labeled Optical Coherence Tomography (OCT) and Chest X Ray Images for Classification [dataset]. Version 2. Mendeley Data; 2018. DOI: 10.17632/rscbjbr9sj.2. [Mendelay Data](https://data.mendeley.com/datasets/rscbjbr9sj/2)
