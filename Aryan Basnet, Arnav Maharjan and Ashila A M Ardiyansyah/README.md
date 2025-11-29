@@ -6,7 +6,7 @@
 While most research focuses on large, well-curated datasets from high-income countries. Our motivation arises from challenge of accurately and unexplored diagnosing Pneumonia and Tuberculosis (TB) using chest X-rays, particularly in lower Middle Income Country (LMICs) where radiology expert, high quality equipment, image quality, and standardized datasets are limited. This study systematically evaluates four deep learning models across six diverse chest X-ray datasets to understand how disease type, dataset size, balance, and income level affect model performance identifying what actually works in resource-constrained contexts.
 
 ## Research Question 
-### “Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High and Low Resource Chest X-Ray Dataset” <br>
+### Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High and Low Resource Chest X-Ray Dataset <br>
 Our research performs deep learning classification of chest X-rays into Healthy, Pneumonia, and Tuberculosis using four deep-learning architectures: a Baseline CNN, MobileNetV2, EfficientNet-B0, and ResNet-50. To examine real-world generalizability, we analyze performance across datasets originating from High-Income Countries (HICs), Lower Middle Income Countries (LMICs). This comparison highlights both the strengths and vulnerabilities of each model when applied to diverse imaging environments, offering insights for equitable and reliable global lung-disease screening.
 
 ## Method and Implementation
