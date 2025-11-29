@@ -30,11 +30,19 @@
 
 ## Research Question
 
-State your research question here and elaborate on it.
+In non-linear, nonparametric models how does the optimal level of regularization change when dataset conditions, such as dimensions and noise, are changed? Regularization occurs by tuning the model’s hyperparameters. The optimal settings of these hyperparameters are influenced by the dataset and its properties, for example: 
+- noise     - dimensionality    - distribution      - number of classes
+
+We focused on investigating the first two options: noise and dimensionality. We did so across 3 nonparametric nonlinear Machine Learning models:
+- kNN    - SVM    - Decision Trees
+
+We focused on the most influential hyperparameter for each of these models (k - kNN, C - SVM, max_depth - Decision Trees), and observed how the optimal settings of these hyperparameters change when the noise changes in the make_moons synthetic dataset, and the dimensions in the make_classifications synthetic dataset.
 
 ## Motivation
 
-Explain your motivation for your chosen research question here.
+Nonparametric, nonlinear models have more freedom when drawing decision boundaries due to their minimal, intuitive underlying assumptions. However, this makes them prone to overfitting, especially as dataset conditions such as noise and dimensionality vary.
+
+Theoretical guidelines are set to bound these modes’ behaviour; however, practically, their behaviour highly depends on specific dataset factors. That’s why our motivation was to explore the approximate trends in the behaviours of these models by changing these two dataset factors one at a time.
 
 ## Your next subsection
 
