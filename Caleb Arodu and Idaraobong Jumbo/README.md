@@ -135,6 +135,17 @@ Limitation: Can introduce noise and create borderline samples that increase fals
 
 Why it matters: Helps the model detect more frauds (higher recall) but may increase the number of incorrect fraud predictions (lower precision).
 
+### Cost-Weighted Learning (Class Weighting)
+
+We applied class weighting using class_weight='balanced' in SVM and Decision Trees, and class_weight='balanced_subsample' in Random Forest.
+The minority class is assigned a higher penalty during training, forcing the model to prioritize detecting fraud.
+
+Advantage: No change to dataset size; works directly inside the algorithm.
+
+Limitation: Can make decision boundaries more aggressive, increasing false positives.
+
+Why it matters: Helps the model be more sensitive to fraud, improving recall while balancing precision.
+
 ## Your next subsection
 
 Continue working through the points listed above with the help of sensibly named subsections. 
