@@ -17,7 +17,7 @@ There is also a need to determine which mitigation techniques effectively addres
 
 ## Methodology
 
-The versionof the imported packages used in the code can be found in the [requirements file]()
+The versionof the imported packages used in the code can be found in the [requirements file](requirements.txt)
 ### Dataset
 
 For this project, we used the [Credit Card Fraud Detection dataset from Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) . The dataset contains transactions made by European credit cardholders over two days in September 2013. It is highly imbalanced, with only 492 fraudulent transactions out of 284,807 total transactions (approximately 0.172% of all transactions).
