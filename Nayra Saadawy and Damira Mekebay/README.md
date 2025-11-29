@@ -1,6 +1,6 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-# State Your Project Title Here With Capitalised Letters as Shown
+# Non-linear Classifiers: How Dataset Conditions Such As Noise And Dimensionality Affect Regularization
 
 ***Provide a description of your project including*** 
 
