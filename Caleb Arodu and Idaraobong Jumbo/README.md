@@ -169,6 +169,11 @@ We also used ensembles of cost-weighing with the undersampled and oversampling u
 
 ## Conclusion
 
+Class imbalance significantly affects classifier behavior: Models trained on imbalanced data achieve high precision but likely miss many minority-class instances. We also found out that you can't increase the recall of a model without decreasing the precision which confirms the presicion-recall tradeoff which in turn led to us not having one strategy that had very high recall and precision a shown in the F1-Score table.
+It was seen that while tree-based models handle SMOTE and cost-weighting well, SVM shows a sharp drop in precision with oversampling or undersampling.
+Cost-Weighing on the imbalanced dataset and with SMOTE had their tradeoffs, as the former had better precision and the latter had better recall, therefore for minority class detection, SMOTE + CW is advised.
+Among SVM, Decision Trees, and Random Forests, Random Forest is the most robust and best overall classifier for imbalanced dataset as it achieves the best balance, delivering the highest overall F1-Score across all strategies.
+
 
 
 
