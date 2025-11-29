@@ -37,10 +37,6 @@ Benchmarks used to frame k selection:
 - Cover–Hart theorem (1‑NN): when k = 1, the asymptotic error rate of 1‑NN is at most twice the Bayes error rate. This shows 1‑NN can be effective but is noisy.
 - n‑NN (k = n, the training set size): the set of nearest neighbours is the entire training set, so predictions always equal the majority class (a constant predictor), which has maximal smoothing and high bias.
 
-Practical notes:
-- Scale features before using kNN (StandardScaler or MinMaxScaler) because kNN is distance‑based.
-- Consider the distance metric (p in Minkowski: p=1 → Manhattan, p=2 → Euclidean) and the weights parameter ('uniform' or 'distance').
-- k acts like an inverse flexibility parameter — tune it (and optionally weights/p) with cross‑validation.
 
 scikit-learn classifier signature:
 
