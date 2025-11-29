@@ -107,7 +107,27 @@ FN = False Negatives (frauds missed by the model)
 
 These metrics together allow us to evaluate both overall performance and the ability to detect rare fraud cases, which is crucial in highly imbalanced datasets
 
+## Mitigation Strategies
 
+To address the severe class imbalance in the dataset, we applied three different strategies and evaluated how each affected model performance.
+
+### Random Undersampling (RUS)
+
+Random undersampling reduces the size of the majority class by randomly removing samples until both classes are closer in proportion.
+
+Advantage: Simplifies the dataset and speeds up training.
+
+Limitation: Discards useful data, which may cause loss of important decision-boundary information.
+
+Why it matters: With fewer legitimate transactions, models become more sensitive to the fraud class, often increasing recall but reducing precision.
+
+### SMOTE (Synthetic Minority Oversampling Technique)
+
+SMOTE generates synthetic minority-class samples by interpolating between existing minority samples and their nearest neighbors.
+
+Formula:
+
+$$x_{\text{new}} = x_i + \lambda (x_{\text{nn}} - x_i), \quad \lambda \in [0, 1]$$
 
 
 ## Your next subsection
