@@ -2,32 +2,6 @@
 
 # The Impact of Class Imbalance on Non-linear Classifiers: Evaluating Performance and Mitigation Strategies
 
-***Provide a description of your project including*** 
-
-1. motivating your research question
-2. stating your research question
-3. explaining your method and implementation
-4. Briefly mention and discuss your results
-5. Draw your conclusions
-6. State what future investigations could be conducted
-7. State your references 
-
-### Further Guidance: Formating
-- Structure this readme using subsections
-- Your job is to 
-    - keep it clear
-    - provide sufficient detail, so what you did is understandable to the reader. This way other researchers and future cohorts of BeyondAI will be able to build on your research
-    - List all your references at the end
-- utilise markdown like *italics*, **bold**, numbered and unnumbered lists to make your document easier to read
-- if you refer to links use the respective markdown for links, e.g. `[ThinkingBeyond](https://thinkingbeyond.education/)`
-- If you have graphs and pictures you want to embed in your file use `![name](your_graphic.png)`
-- If you want to present your results in a table use
-    | Header 1            | Header 2  |
-    |---------------------|-----------|
-    | Lorem Ipsum         | 12345     |
-
-**Tip:** Use tools to create markdown tables. For example, Obsidian has a table plugin, that makes creating tables much easier than doing it by hand.
-
 ## Research Question
 
 How does class imbalance affect non-linear classifiers, which evaluation metrics best capture this impact, and which mitigation strategies most effectively improve their performance?
@@ -132,8 +106,11 @@ $$x_{\text{new}} = x_i + \lambda (x_{\text{nn}} - x_i), \quad \lambda \in [0, 1]
 Where:
 
 $x_{\text{new}}$ — the newly generated synthetic sample
+
 $x_i$ — the original minority class sample
+
 $x_{\text{nn}}$ — the selected nearest neighbor of $x_i$
+
 $\lambda$ — a random value drawn uniformly from 0 to 1
 
 The formula generates a new sample along the line between $x_i$ and $x_{\text{nn}}$.
@@ -154,6 +131,9 @@ Advantage: No change to dataset size; works directly inside the algorithm.
 Limitation: Can make decision boundaries more aggressive, increasing false positives.
 
 Why it matters: Helps the model be more sensitive to fraud, improving recall while balancing precision.
+
+We also used ensembles of cost-weighing with the undersampled and oversampling using SMOTE
+
 
 ## Your next subsection
 
