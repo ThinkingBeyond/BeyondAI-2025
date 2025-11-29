@@ -129,6 +129,11 @@ Formula:
 
 $$x_{\text{new}} = x_i + \lambda (x_{\text{nn}} - x_i), \quad \lambda \in [0, 1]$$
 
+Advantage: Adds new minority samples without duplication, improving model exposure to fraud cases.
+
+Limitation: Can introduce noise and create borderline samples that increase false positives.
+
+Why it matters: Helps the model detect more frauds (higher recall) but may increase the number of incorrect fraud predictions (lower precision).
 
 ## Your next subsection
 
