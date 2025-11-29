@@ -134,6 +134,17 @@ Why it matters: Helps the model be more sensitive to fraud, improving recall whi
 
 We also used ensembles of cost-weighing with the undersampled and oversampling using SMOTE
 
+## Results
+
+### F1-Score across all strategies
+| Classifier        | Imbalanced | Undersampled | SMOTE | Cost-Weighting | US + CW | SMOTE + CW |
+| ----------------- | ---------- | ------------ | ----- | -------------- | ------- | ---------- |
+| **SVM**           | 0.745      | 0.151        | 0.163 | 0.402          | 0.151   | 0.163      |
+| **Decision Tree** | 0.717      | 0.032        | 0.500 | 0.666          | 0.035   | 0.507      |
+| **Random Forest** | 0.819      | 0.116        | 0.809 | 0.804          | 0.106   | 0.808      |
+
+
+
 
 ## Your next subsection
 
