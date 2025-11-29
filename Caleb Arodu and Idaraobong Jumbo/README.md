@@ -132,11 +132,8 @@ $$x_{\text{new}} = x_i + \lambda (x_{\text{nn}} - x_i), \quad \lambda \in [0, 1]
 Where:
 
 $x_{\text{new}}$ — the newly generated synthetic sample
-
 $x_i$ — the original minority class sample
-
 $x_{\text{nn}}$ — the selected nearest neighbor of $x_i$
-
 $\lambda$ — a random value drawn uniformly from 0 to 1
 
 The formula generates a new sample along the line between $x_i$ and $x_{\text{nn}}$.
