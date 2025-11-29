@@ -143,6 +143,9 @@ We also used ensembles of cost-weighing with the undersampled and oversampling u
 | **Decision Tree** | 0.744      | 0.017        | 0.369 | 0.720          | 0.018   | 0.369      |
 | **Random Forest** | 0.922      | 0.068        | 0.831 | 0.920          | 0.056   | 0.841      |
 
+- The imbalanced dataset had the best precision across all classifiers due to the model's overwhelming bias toward the Majority Class.
+- It was also observed that Random Forest had the best precision across all strategies.
+
 ### Recall Across All Strategies
 | Classifier        | Imbalanced | Undersampled | SMOTE | Cost-Weighting | US + CW | SMOTE + CW |
 | ----------------- | ---------- | ------------ | ----- | -------------- | ------- | ---------- |
@@ -150,12 +153,21 @@ We also used ensembles of cost-weighing with the undersampled and oversampling u
 | **Decision Tree** | 0.706      | 0.916        | 0.726 | 0.621          | 0.895   | 0.739      |
 | **Random Forest** | 0.737      | 0.895        | 0.779 | 0.716          | 0.895   | 0.779      |
 
+-  The imbalanced dataset had the worst recall across all classifiers.
+-  Random undersampling had the best recall at the expense of unacceptable precision which made it not proper for real world use.
+-  Random Forest still had the best recall across all strategies it is an ensemble of many independent Decision Trees which provides superior structural resilience against the extreme bias caused by data imbalance.
+
 ### F1-Score Across All Strategies
 | Classifier        | Imbalanced | Undersampled | SMOTE | Cost-Weighting | US + CW | SMOTE + CW |
 | ----------------- | ---------- | ------------ | ----- | -------------- | ------- | ---------- |
 | **SVM**           | 0.745      | 0.151        | 0.163 | 0.402          | 0.151   | 0.163      |
 | **Decision Tree** | 0.717      | 0.032        | 0.500 | 0.666          | 0.035   | 0.507      |
 | **Random Forest** | 0.819      | 0.116        | 0.809 | 0.804          | 0.106   | 0.808      |
+
+- It was seen that the imbalanced dataset had the best F1-Score but isn't fit for use because of the unacceptable recall.
+- The imbalanced dataset + Cost-Weighing had the second best F1-Score.
+
+## Conclusion
 
 
 
