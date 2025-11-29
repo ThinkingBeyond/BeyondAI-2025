@@ -8,11 +8,17 @@ How does the optimal level of regularization change across different nonlinear c
 
 In non-linear, nonparametric models, how does the optimal level of regularisation change when dataset conditions, such as dimensions and noise, are changed? Regularisation occurs by tuning the model’s hyperparameters. The optimal settings of these hyperparameters are influenced by the dataset and its properties, for example: 
 
- 1-noise      2-dimensionality     3-distribution       4-number of classes
+1-noise  
+2-dimensionality  
+3-distribution  
+4-number of classes
 
-We focused on investigating the first two options: noise and dimensionality. We did so across 3 nonparametric nonlinear ML models: - kNN    - SVM    - Decision Trees
+We focused on investigating the first two options: noise and dimensionality. We did so across 3 nonparametric nonlinear ML models:
+- kNN
+- SVM
+- Decision Trees
 
- We concentrated on the most influential hyperparameter for each of these models, and observed how the optimal settings of these hyperparameters change when the noise changes in the make_moons synthetic dataset, and the dimensions in the make_classifications.
+We concentrated on the most influential hyperparameter for each of these models, and observed how the optimal settings of these hyperparameters change when the noise changes in the make_moons synthetic dataset, and the dimensions in the make_classifications.
 
 ## Motivation
 
