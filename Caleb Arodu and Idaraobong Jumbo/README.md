@@ -136,7 +136,21 @@ We also used ensembles of cost-weighing with the undersampled and oversampling u
 
 ## Results
 
-### F1-Score across all strategies
+### Precision Across All Strategies
+| Classifier        | Imbalanced | Undersampled | SMOTE | Cost-Weighting | US + CW | SMOTE + CW |
+| ----------------- | ---------- | ------------ | ----- | -------------- | ------- | ---------- |
+| **SVM**           | 0.909      | 0.083        | 0.090 | 0.281          | 0.083   | 0.090      |
+| **Decision Tree** | 0.744      | 0.017        | 0.369 | 0.720          | 0.018   | 0.369      |
+| **Random Forest** | 0.922      | 0.068        | 0.831 | 0.920          | 0.056   | 0.841      |
+
+### Recall Across All Strategies
+| Classifier        | Imbalanced | Undersampled | SMOTE | Cost-Weighting | US + CW | SMOTE + CW |
+| ----------------- | ---------- | ------------ | ----- | -------------- | ------- | ---------- |
+| **SVM**           | 0.631      | 0.884        | 0.832 | 0.706          | 0.884   | 0.832      |
+| **Decision Tree** | 0.706      | 0.916        | 0.726 | 0.621          | 0.895   | 0.739      |
+| **Random Forest** | 0.737      | 0.895        | 0.779 | 0.716          | 0.895   | 0.779      |
+
+### F1-Score Across All Strategies
 | Classifier        | Imbalanced | Undersampled | SMOTE | Cost-Weighting | US + CW | SMOTE + CW |
 | ----------------- | ---------- | ------------ | ----- | -------------- | ------- | ---------- |
 | **SVM**           | 0.745      | 0.151        | 0.163 | 0.402          | 0.151   | 0.163      |
