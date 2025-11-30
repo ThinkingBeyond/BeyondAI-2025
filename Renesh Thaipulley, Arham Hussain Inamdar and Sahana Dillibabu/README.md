@@ -39,10 +39,10 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 | Class                                | Precision | Recall | F1-Score | Support |
 |--------------------------------------|-----------|--------|----------|---------|
 | no_diabetic_retinopathy              | 0.75      | 0.72   | 0.73     | 25,802  |
-| mild_diabetic_retinopathy            | 0.00      | 0.00   | 0.00     | 0       |
-| moderate_diabetic_retinopathy        | 0.00      | 0.00   | 0.00     | 0       |
-| severe_diabetic_retinopathy          | 0.00      | 0.00   | 0.00     | 0       |
-| proliferative_diabetic_retinopathy   | 0.00      | 0.00   | 0.00     | 0       |
+| mild_retinopathy                     | 0.00      | 0.00   | 0.00     | 0       |
+| moderate_retinopathy                 | 0.00      | 0.00   | 0.00     | 0       |
+| severe_retinopathy                   | 0.00      | 0.00   | 0.00     | 0       |
+| proliferative_retinopathy            | 0.00      | 0.00   | 0.00     | 0       |
 
 ### Averages
 
