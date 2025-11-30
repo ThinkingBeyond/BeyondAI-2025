@@ -1,6 +1,6 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-# Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High and Low Resource Chest X-Ray Datasets
+# Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High- and Low-/Middle-Resource Settings
 
 ## Motivation
 
