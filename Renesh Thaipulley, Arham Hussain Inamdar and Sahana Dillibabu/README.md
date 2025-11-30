@@ -3,6 +3,7 @@
 # Deep Learning Models for Diabetic Retinopathy
 
 ***Description*** 
+
 Diabetic retinopathy is an eye disease that can lead to vision loss and blindness in people with diabetes. It is the leading cause of vision impairment in working-age adults worldwide, but early detection and treatment can prevent up to 95% of cases. Thus, it is no surprise that researchers, including those in previous BeyondAI cohorts, have turned to machine learning to facilitate early diagnosis.
 2024's project by Nafiul Haque and Dr. Devendra Singh Dhami [Machiene Learning in Early Detection of Diabetic Retinopathy](https://github.com/ThinkingBeyond/BeyondAI-2024/tree/main/nafiul) focused on comparing the performance of CNNs (convolutional neural networks) and ViTs (vision transformers) on a diabetic retinopathy classification task. They found that each model had its own strengths - ViTs were better at generalization, while CNNs excelled at feature extraction. Building on their work, we studied 3 cutting-edge models to evaluate differences in *speed*, *accuracy*, and *confidence*. These models are: 
 
