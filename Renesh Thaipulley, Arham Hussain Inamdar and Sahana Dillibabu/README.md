@@ -34,7 +34,7 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 
 - Scores:
   
-  | Precision           | Precision           | Recall    | F1-Score  | Support  |
+  |                     | Precision           | Recall    | F1-Score  | Support  |
   |---------------------|---------------------|-----------|-----------|----------|
   | None                | 0.75                | 0.72      | 0.73      | 25802    |
   |---------------------|---------------------|-----------|-----------|----------|
