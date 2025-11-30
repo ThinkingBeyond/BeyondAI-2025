@@ -31,7 +31,9 @@ Performance metrics included Weighted F1-score, per-class F1-score, confusion ma
 
 ## Understanding F1 Score for Image Classification
 
-A common question: isn't F1 score used for NLP tasks? Actually, F1 score is a general classification metric used whenever you're categorizing data into classes, regardless of data type. In NLP, you might classify text as positive or negative sentiment. In our case, we're classifying X-ray images as Normal, Pneumonia, or TB. Same concept, just different input data.
+A common question: isn't F1 score used for NLP tasks?
+
+Actually, F1 score is a general classification metric used whenever you're categorizing data into classes, regardless of data type. In NLP, you might classify text as positive or negative sentiment. In our case, we're classifying X-ray images as Normal, Pneumonia, or TB. Same concept, just different input data.
 
 Think of it this way: the model looks at an X-ray image, predicts "Pneumonia," and the F1 score tells us how reliable that prediction is based on what the image actually shows. F1 score balances precision (not flagging healthy patients as sick) and recall (not missing actual disease cases), making it ideal for medical diagnosis where both false positives
 
