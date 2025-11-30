@@ -29,6 +29,12 @@ All images were resized to 224×224 pixels and preprocessed for class balance. E
 
 Performance metrics included Weighted F1-score, per-class F1-score, confusion matrices, and training time.
 
+## Understanding F1 Score for Image Classification
+
+A common question: isn't F1 score used for NLP tasks? Actually, F1 score is a general classification metric used whenever you're categorizing data into classes, regardless of data type. In NLP, you might classify text as positive or negative sentiment. In our case, we're classifying X-ray images as Normal, Pneumonia, or TB. Same concept, just different input data.
+
+Think of it this way: the model looks at an X-ray image, predicts "Pneumonia," and the F1 score tells us how reliable that prediction is based on what the image actually shows. F1 score balances precision (not flagging healthy patients as sick) and recall (not missing actual disease cases), making it ideal for medical diagnosis where both false positives
+
 ## Results and Discussion
 
 ### F1 Scores per Dataset
@@ -132,10 +138,10 @@ We thank ThinkingBeyond Education and its founder, Dr. Filip Bar, for making the
 ## Credits
 
 **Student Researchers:** Arnav Maharjan (Main Contributor) & Ashila Atha Makkah Ardiyansyah  
-**Mentor:** Dr. Devendra Singh Dhami
+**Research Mentor:** Dr. Devendra Singh Dhami
 
 ## Notes
-One of the checkpoint results for Baseline CNN is incomplete. This serves only to sort epoch results to prevent crashes or repeated runtime errors.
+Checkpoint saving was implemented only for Dataset 5 after we encountered runtime disconnections during earlier training sessions. We thought of this solution later in the project, so it wasn't applied to the first four datasets. This approach saves model weights after each epoch, allowing training to resume from the last checkpoint rather than restarting from scratch. While we didn't implement this feature across all datasets initially, we've included it in the codebase to demonstrate its utility for future work. This is especially valuable for resource-constrained environments like the free version of Colab, where training interruptions are common, and researchers can adopt this strategy to make their workflows more robust against crashes and runtime errors.
 
 ## References
 
