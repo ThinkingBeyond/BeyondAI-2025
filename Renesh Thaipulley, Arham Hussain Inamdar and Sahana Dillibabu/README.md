@@ -1,32 +1,38 @@
 ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
-# Models and Networks in Early Detection of Diabetic Retinopathy
+# Deep Learning Models for Diabetic Retinopathy
 
 ***Description*** 
+Diabetic retinopathy is an eye disease that can lead to vision loss and blindness in people with diabetes. It is the leading cause of vision impairment in working-age adults worldwide, but early detection and treatment can prevent up to 95% of cases. Thus, it is no surprise that researchers, including those in previous BeyondAI cohorts, have turned to machine learning to facilitate early diagnosis.
+2024's project by [Nafiul Haque and Dr. Devendra Singh Dhami(https://github.com/ThinkingBeyond/BeyondAI-2024/tree/main/nafiul) focused on comparing the performance of CNNs (convolutional neural networks) and ViTs (vision transformers) on a diabetic retinopathy classification task. They found that each model had its own strengths - ViTs were better at generalization, while CNNs excelled at feature extraction. Building on their work, we studied 3 cutting-edge models to evaluate differences in *speed*, *accuracy*, and *confidence*. These models are: 
 
-Building off of what [Nafiul Haque and Dr. Devendra Singh Dhami](https://github.com/ThinkingBeyond/BeyondAI-2024/tree/main/nafiul), we looked into more networks and models to evaluate the differences in *speed*, *accuracy*, and *confidence*. The neural networks chosen are **ResNet** (a deep neural network designed to tackle the vanishing gradients problem) and **EfficientNet** (a group of CNNs to provide high performance with low resources), and the model chosen is **MetaCLIP** (a vision model developed off of OpenAI's CLIP model with additional features). We used the papers from *Mingxing Tan and Quoc V. Le* from Google Research; *Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun*; and *Hu Xu, Saining Xie, Xiaoqing Ellen Tan, Po-Yao Huang, Russell Howes, Vasu Sharma, Shang-Wen Li, Gargi Ghosh, Luke Zettlemoyer, and Christoph Feichtenhofer*. All the papers have been referenced below. We have used additional papers and websites to develop our research and those too will be refered below.
+**ResNet** - ResNet is a type of CNN designed to make very deep models easier to train. Normally, when you keep adding more layers to a neural network, the gradient can become extremely small or unstable during backpropagation. This is called the vanishing/exploding gradient problem, and it causes deeper models to perform worse even though they should be more powerful. ResNet solves this by adding residual blocks with skip connections. These connections allow the input of a block to “skip” over a few layers and be added directly to the output. This helps gradients flow through the network more easily, letting the model perform well even when it has dozens or hundreds of layers.
+**EfficientNet** - EfficientNet is a CNN designed to improve performance while keeping the model lightweight. Usually, increasing a network’s accuracy required making it deeper, wider, or using higher quality images, but scaling only one of these dimensions could lead to worse results. EfficientNet introduced a technique called compound scaling, which scales depth, width, and input resolution together in a balanced way. This allows the network to be more complex without slowing things down while increasing accuracy.
+**MetaCLIP** - MetaCLIP is an improved way of training image–text models like CLIP. CLIP models learn by matching an image with the text that describes it, but large web datasets usually have noisy or inaccurate captions that hurt performance. MetaCLIP fixes this by using a better filtering and matching process to create image-text pairings that are more accurate. By improving the quality of the training data, the model learns stronger and more reliable connections, improving its overall accuracy even on very large datasets.
 
 ## Research Methodology
 
-To conduct our research, we each tested a model on a dataset from HuggingFace. The dataset contained ~35k images of eyes labeled no_diabetic_retinopathy, mild_diabetic_retinopathy, moderate_diabetic_retinopathy, severe_diabetic_retinopathy, and proliferative_diabetic_retinopathy. Each label was overall equal in size and each model/network searched through and provided a guess which was then graphed based on Precision, Accuracy, and F1 scores. These scores were then compared to test the properties of speed, accuracy, and confidence for each label.
+To conduct our research, we each tested a model on an EYEPACS dataset sourced from Hugging Face. The dataset contained ~35000 retinal fundus images and comprised 5 classes: (0)no_diabetic_retinopathy, (1)mild_diabetic_retinopathy, (2)moderate_diabetic_retinopathy, (3)severe_diabetic_retinopathy, and (4)proliferative_diabetic_retinopathy. Each model/network was trained on a training set (70% of the dataset) and testing on a validation set (30% of the dataset). The results were then measured through the calculation of Precision, Accuracy, and F1 scores. A comparison of the scores was then carried out to test the properties of speed, accuracy, and confidence for each label.
 
 ## Research Question
 
-How can some other networks and models (such as ResNet, EfficientNet, and MetaCLIP) compare to ViTs (Vision Transformers) and CNNs? Additionally, what makes the properties of these better or worse than others?
+How do cutting-edge networks and models (ResNet, EfficientNet, and MetaCLIP) compare to the vanilla CNN and ViT? Additionally, what properties differentiate performance?
 
 ## Motivation
 
-We wanted to do more testing on machine learning in the medical field to see its effectiveness. Hence, we chose well known and strong image classifiers to test. We thought of combining the knowledge we have gained from each of our respective models and testing them to see how and why they work as well as they do compared to the others. This can help in developing a hybrid machine learning model to provide accurate results, combining properties from the models tested.
+There is a real need for accurate, efficient, and effective diagnostic tools for diabetic retinopathy. However, limited clinical resources and the difficulty of identifying subtle retinal features makes screening at a large scale difficult. Each machine learning architecture has its strengths and weaknesses. We wanted to investigate whether new architectures could offer meaningful improvements in performance over traditional CNNs and vision transformers. By doing this, we hope to gain insights into which modern models are best for screening, and implement what we have learned into real-world situations through hybrid models and other solutions.
+
+## Results
 
 ## Conclusion
 
 
 ## Future Work
-
-In future iterations of this project,
-- finding and testing more properties 
-- a hybrid model could be developed with the best properties from each model and network tested
-- testing other networks to see which one will work the best
+Future iterations of this project could cover: 
+- finding and testing more properties
+- development of a hybrid model with best properties of its components
+- testing more, newer networks to see which one will work the best
+- optimizing a model to work in low-resource settings, or with poor-quality images
 
 ## References
 
