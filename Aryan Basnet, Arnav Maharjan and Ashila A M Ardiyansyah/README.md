@@ -35,30 +35,30 @@ Performance metrics included Weighted F1-score, per-class F1-score, confusion ma
 
 **Dataset 1 (Pneumonia HIC):**
 
-![Dataset 1 F1 Scores](path/to/dataset1_results.png)
+![Dataset 1 F1 Scores](dataset1_results.png)
 
 **Dataset 2 (TB HIC):**
 
-![Dataset 2 F1 Scores](path/to/dataset2_results.png)
+![Dataset 2 F1 Scores](dataset2_results.png)
 
 **Dataset 3 (Nigeria LMIC):**
 
-![Dataset 3 F1 Scores](path/to/dataset3_results.png)
+![Dataset 3 F1 Scores](dataset3_results.png)
 
 **Dataset 4 (TB LMIC):**
 
-![Dataset 4 F1 Scores](path/to/dataset4_results.png)
+![Dataset 4 F1 Scores](dataset4_results.png)
 
 **Dataset 5 (Bangladesh LMIC):**
 
-![Dataset 5 F1 Scores](path/to/dataset5_results.png)
+![Dataset 5 F1 Scores](dataset5_results.png)
 
 * HIC datasets (1, 2) generally showed strong performance from MobileNetV2 and Baseline CNN. EfficientNet-B0 was more sensitive to dataset characteristics and struggled across both HIC and LMIC settings.
 * LMIC datasets (3, 4, 5) showed MobileNetV2 and Baseline CNN consistently performing strongly. Dataset 4 saw Baseline CNN achieve the highest score (0.965), demonstrating that simpler architectures can outperform deeper models when datasets have good balance and augmentation. EfficientNet-B0 continued to struggle in lower-quality or smaller datasets.
 
 ### 1. HICs vs LMICs Comparison
 
-![HIC vs LMIC Comparison](path/to/hic_lmic_comparison.png)
+![HIC vs LMIC Comparison](hic_lmic_comparison.png)
 
 **Mean F1 Score by Model and Income Level:**
 | Model | HIC Mean F1 | LMIC Mean F1 |
@@ -72,7 +72,7 @@ MobileNetV2 and Baseline CNN achieved the highest F1 scores across both settings
 
 ### 2. Disease Difficulty (TB vs Pneumonia)
 
-![Disease Difficulty Comparison](path/to/disease_comparison.png)
+![Disease Difficulty Comparison](disease_comparison.png)
 
 **Mean F1 Score by Disease and Income Level:**
 | Disease | HIC Mean F1 | LMIC Mean F1 |
@@ -84,13 +84,13 @@ TB classification consistently achieved higher F1 scores than Pneumonia across b
 
 ### 3. Training Time vs F1 Score
 
-![Training Time vs F1 Score](path/to/training_time_scatter.png)
+![Training Time vs F1 Score](training_time_scatter.png)
 
 No strong linear correlation was observed between training time and F1 score. MobileNetV2 reached high F1 scores (greater than 0.80) with relatively short training times (under 100 minutes in many cases), showing that longer training doesn't automatically guarantee better performance. EfficientNet-B0 showed extended training times on some LMIC datasets but still achieved lower scores, reinforcing that model architecture and dataset characteristics matter more than training duration alone.
 
 ### 4. Best Model per Dataset
 
-![Best Model per Dataset](path/to/best_model_per_dataset.png)
+![Best Model per Dataset](best_model_per_dataset.png)
 
 **Top Performing Models:**
 | Dataset | Best Model | F1 Score |
