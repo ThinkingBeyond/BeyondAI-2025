@@ -15,7 +15,7 @@ Diabetic retinopathy is an eye disease that can lead to vision loss and blindnes
 
 ## Research Methodology
 
-To conduct our research, we each tested a model on an EYEPACS dataset sourced from Hugging Face. The dataset contained ~35000 retinal fundus images and comprised 5 classes: (0)no_diabetic_retinopathy, (1)mild_diabetic_retinopathy, (2)moderate_diabetic_retinopathy, (3)severe_diabetic_retinopathy, and (4)proliferative_diabetic_retinopathy. Each model/network was trained on a training set (70% of the dataset) and testing on a validation set (30% of the dataset). The results were then measured through the calculation of Precision, Accuracy, and F1 scores. A comparison of the scores was then carried out to test the properties of speed, accuracy, and confidence for each label.
+To conduct our research, we each tested a model on an EYEPACS dataset sourced from Hugging Face. The dataset contained ~35000 retinal fundus images and comprised 5 classes: (0)no_diabetic_retinopathy, (1)mild_retinopathy, (2)moderate_retinopathy, (3)severe_retinopathy, and (4)proliferative_retinopathy. Each model/network was trained on a training set (70% of the dataset) and testing on a validation set (30% of the dataset). The results were then measured through the calculation of Precision, Accuracy, and F1 scores. A comparison of the scores was then carried out to test the properties of speed, accuracy, and confidence for each label.
 
 ## Research Question
 
