@@ -139,19 +139,19 @@ One of the checkpoint results for Baseline CNN is incomplete. This serves only t
 
 ## References
 
-### Dataset References
-6. Kermany D, Zhang K, Goldbaum M. Chest X-ray images (pneumonia) dataset. Mendeley Data. 2018. doi:10.17632/rscbjbr9sj.2. Available from: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
-7. Kiran S, Jabeen I. Dataset of tuberculosis chest X-rays images. Mendeley Data. 2024. doi:10.17632/8j2g3csprk.2. Available from: https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset
-8. Musa A, et al. Nigeria chest X-ray dataset [Internet]. Kaggle; 2025 [cited 2025]. Available from: https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset
-9. Local Pakistan Hospital. Tuberculosis chest X-ray images. Mendeley Data. 2024. doi:10.17632/8j2g3csprk.2. Available from: https://data.mendeley.com/datasets/8j2g3csprk/2
-10. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. Primary chest X-ray dataset of normal and pneumonia cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2. Available from: https://data.mendeley.com/datasets/wndbd5r26y/2
-
 ### Literature Review References
 1. Abdulkarem M, Geman O, Al-Hadhrami T, et al. Deep learning for multi-class chest disease classification using chest X-ray images. J Big Data. 2022. Available from: https://pmc.ncbi.nlm.nih.gov/articles/PMC9090861/
 2. Ozturk T, Talo M, Yildirim EA, Baloglu UB, Yildirim O, Acharya UR. An explainable deep learning approach for detecting COVID-19 and pneumonia from chest X-rays. Comput Biol Med. 2021. Available from: https://pmc.ncbi.nlm.nih.gov/articles/PMC8117675/
 3. Schaaf C, Maduke T, Breuninger T, et al. Performance variation of deep learning-based chest X-ray classifiers across global clinical settings: a multi-country evaluation. BMC Med Imaging. 2022. Available from: https://link.springer.com/article/10.1186/s12880-022-00793-7
 4. Zhang Y, Li H, Xu C, et al. Generalization limits of deep learning for global chest X-ray diagnosis across heterogeneous imaging domains. Sci Rep. 2024. Available from: https://www.nature.com/articles/s41598-024-65703-z
 5. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable tuberculosis detection using chest X-ray with deep learning, segmentation and visualization. IEEE Access. 2020;8:191586-601. doi:10.1109/ACCESS.2020.3031384. Available from: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9224622
+
+### Dataset References
+6. Kermany D, Zhang K, Goldbaum M. Chest X-ray images (pneumonia) dataset. Mendeley Data. 2018. doi:10.17632/rscbjbr9sj.2. Available from: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+7. Kiran S, Jabeen I. Dataset of tuberculosis chest X-rays images. Mendeley Data. 2024. doi:10.17632/8j2g3csprk.2. Available from: https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset
+8. Musa A, et al. Nigeria chest X-ray dataset [Internet]. Kaggle; 2025 [cited 2025]. Available from: https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset
+9. Local Pakistan Hospital. Tuberculosis chest X-ray images. Mendeley Data. 2024. doi:10.17632/8j2g3csprk.2. Available from: https://data.mendeley.com/datasets/8j2g3csprk/2
+10. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. Primary chest X-ray dataset of normal and pneumonia cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2. Available from: https://data.mendeley.com/datasets/wndbd5r26y/2
 
 ---
 
