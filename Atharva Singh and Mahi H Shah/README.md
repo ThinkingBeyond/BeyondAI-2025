@@ -92,11 +92,11 @@ Future extensions of this research could explore:
 3. Kipf, T. N., & Welling, M. *Semi-Supervised Classification with Graph Convolutional Networks.* [arXiv:1609.02907.](https://arxiv.org/abs/1609.02907)
 4. Hamilton, W., Ying, R., & Leskovec, J. [*Inductive Representation Learning on Large Graphs.* (GraphSAGE)](https://arxiv.org/abs/1706.02216)
 5. Veličković, P., Cucurull, G., Casanova, A., Romero, A., Liò, P., & Bengio, Y. *Graph Attention Networks.* [arXiv:1710.10903.](https://arxiv.org/abs/1710.10903)
-6. Xu, B., Shen, H., Cao, Q., Qiu, Y., & Cheng, X. [*Measuring and Relieving the Over-smoothing Problem for Graph Neural Networks from the Topological View.*](https://ojs.aaai.org/index.php/AAAI/article/view/5747) AAAI Conference on Artificial Intelligence.
+6. Xu, B., Shen, H., Cao, Q., Qiu, Y., & Cheng, X. *Measuring and Relieving the Over-smoothing Problem for Graph Neural Networks from the Topological View.* [AAAI Conference on Artificial Intelligence](https://ojs.aaai.org/index.php/AAAI/article/view/5747)
 7. Hou, Y., Zhang, J., Cheng, J., Ma, K., Chen, H., & Yang, M.-C. *Measuring and Improving the Use of Graph Information in Graph Neural Networks.* [arXiv:2206.13170.](https://arxiv.org/abs/2206.13170)
 8. Luan, S., Hua, C., Lu, Q., Zhu, J., Ma, L., Wu, L., Wang, X., Xu, M., Chang, X. W., Precup, D., Ying, R., Li, S. Z., Wolf, G., & Jegelka, S. *The Heterophilic Graph Learning Handbook.* [arXiv:2407.09618.](https://arxiv.org/html/2407.09618v1)
 10. Lampert, M., & Scholtes, I. *The Self-Loop Paradox: Investigating the Impact of Self-Loops on Graph Neural Networks.* [arXiv:2312.01721.](https://arxiv.org/abs/2312.01721)
-12. Sanchez-Lengeling, et al., ["A Gentle Introduction to Graph Neural Networks"](https://distill.pub/2021/gnn-intro/), Distill, 2021.
+12. Sanchez-Lengeling, et al., "A Gentle Introduction to Graph Neural Networks", 2021, [Distill](https://distill.pub/2021/gnn-intro/)
 13. Wang, K., Zhang, G., Zhang, X., Fang, J., Wu, X., Li, G., Pan, S., Huang, W., & Liang, Y. *The Heterophilic Snowflake Hypothesis: Training and Empowering GNNs for Heterophilic Graphs.* [arXiv:2406.12539.](https://arxiv.org/abs/2406.12539)
 14. Pál András Papp, Karolis Martinkus, Lukas Faber & Roger Wattenhofer. *DropGNN: Random Dropouts Increase the Expressiveness of Graph Neural Networks.* [arXiv:2111.06283](https://arxiv.org/abs/2111.06283)
 
