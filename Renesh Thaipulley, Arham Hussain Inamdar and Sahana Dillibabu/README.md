@@ -30,7 +30,10 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 - Time: 29276.318501535003 seconds or about 8 hours
 - Count: (in order) \[24636, 9946, 3, 0, 523]
 <img width="295" height="227.5" alt="image" src="https://github.com/user-attachments/assets/007516e4-0583-4094-98a3-4b2aa7e7a08f" />
-
+- Scores:
+  | Precision           | Recall  | F1-Score  | Support  |
+  |---------------------|-----------|
+  | None         | 12345     |
 ## Conclusion and Discussion
 
 
