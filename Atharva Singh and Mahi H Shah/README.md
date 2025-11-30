@@ -2,7 +2,7 @@
 
 # Mitigating Oversmoothing in GNNs on Heterophilic Graphs
 
-# Research Question 
+# Research question 
 Our research seeks to evaluate how effectively two prominent techniques, **GCNII** and **DropEdge**, mitigate the **oversmoothing** problem in graph neural networks. We evaluate their performance on **heterophilic graph datasets** to determine whether methods originally designed for homophilic settings retain their advantage when node similarity assumptions break down.
 
 # Motivation
@@ -15,7 +15,7 @@ Graphs provide an exceptionally versatile modelling framework, capable of repres
 
 Typical downstream tasks include **node-level classification** (e.g., detecting anomalies or classifying individuals in a network), **edge-level prediction** (e.g., predicting new friendships or molecular bonds), and **graph-level tasks** (e.g., predicting molecular properties or detecting fraudulent subgraphs). Each task requires the model to propagate and refine information across varying neighbourhood radii, which introduces both expressive opportunities and structural challenges, including, most notably, *the oversmoothing problem.*
 
-## The Oversmoothing Problem in GNNs
+## The oversmoothing problem in GNNs
 
 A well-documented limitation of deep GNNs is **oversmoothing**, a phenomenon in which node representations become progressively indistinguishable as the number of layers increases. Because each layer aggregates information from local neighbours, deeper architectures repeatedly mix information across larger neighbourhoods. Past a certain depth, this leads to a homogenization of node embeddings such that the model loses its ability to discriminate between distinct structural roles or feature patterns. Ultimately, oversmoothing degrades task performance, especially on graphs with sparse or heterophilic connectivity. 
 
@@ -38,7 +38,7 @@ DropEdge is a regularization technique that **randomly removes a subset of edges
 
 We conducted our experiments on the **WebKB dataset**, which consists of multiple heterophilic graphs (Texas, Cornell, Wisconsin). Heterophilic graphs present a more challenging test environment because connected nodes often belong to *different* classes, making them particularly relevant for tasks involving structural anomalies or irregular connectivity patterns.
 
-## Experimental Setup
+## Experimental setup
 
 We evaluated GCNII and DropEdge across **2, 4, 8, 16, and 32 layers** (with computational limits preventing extensions beyond that). For comparison, we also implemented baseline **GCN** and **GraphSAGE** models to isolate the impact of architectural design on depth scalability.
 
@@ -46,7 +46,7 @@ To verify the reliability of our implementations, we additionally replicated res
 
 # Results
 
-**Table 1. Performance of GCNII and DropEdge**
+**Table: Performance of GCNII and DropEdge**
 
 | Database  | Backbone   | 2-layer |        | 4-layer |        | 8-layer |        | 16-layer |        | 32-layer |        |
 |-----------|------------|---------|--------|---------|--------|---------|--------|----------|--------|----------|--------|
@@ -67,7 +67,7 @@ By contrast, **DropEdge performs well in the original citation networks** (which
 
 Overall, the experiments highlight that techniques designed to mitigate oversmoothing are **highly sensitive to the structural properties of the graph**. Methods that rely on structural noise may excel in homophilic regimes but struggle in heterophily.
 
-# Conclusion and Future Work
+# Conclusion 
 Our project demonstrates that depth-robust GNN architectures behave fundamentally differently on heterophilic datasets compared to the homophilic benchmarks where they were originally validated. By testing GCNII and DropEdge across multiple WebKB subsets and increasing depths, we provide empirical evidence that **oversmoothing manifests earlier and more severely in heterophilic settings**, making conventional regularization techniques like DropEdge far less effective. In contrast, GCNII’s identity mapping and initial residual connections preserve discriminative node information even at substantial depth, highlighting its suitability for real-world networks where relational similarity cannot be assumed.
 
 These findings are significant for two main reasons:
@@ -77,6 +77,7 @@ These findings are significant for two main reasons:
 
 By showing that architectural design plays a decisive role in depth scalability under heterophily, our results underscore the need for **context-sensitive GNN evaluation** rather than relying solely on results from citation networks.
 
+# Future work 
 Future extensions of this research could explore:
 - Scaling experiments to **64 and 128 layers** to evaluate the true depth limits of GCNII and test the breaking point of oversmoothing.
 - Investigating **DropGNN**, a different method that removes nodes rather than edges, potentially suppressing noise by pruning inactive or weakly informative nodes.
