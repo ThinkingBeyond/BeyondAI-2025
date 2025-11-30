@@ -161,4 +161,4 @@ Checkpoint saving was implemented only for Dataset 5 after we encountered runtim
 
 ---
 
-> The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://www.canva.com/design/DAG56NGHhz8/gdlWMbL8WpTcnPAaTZ2ijA/edit).
+> The research poster for this project can be found in the [BeyondAI Proceedings 2025]().
