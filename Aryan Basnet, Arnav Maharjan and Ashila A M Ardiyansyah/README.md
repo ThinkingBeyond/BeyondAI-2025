@@ -85,7 +85,7 @@ Finally, we would like to thank Dr. Davendra Singh Dhami, our mentor for his val
 One of the inside of the chest X-ray result in the checkpoints, Baseline CNN is incomplete. This only gives a purpose to sort the epochs result so it won't crash or runtime error repeatedly.
 
 ## References
-# Datasets References<br>
+### Datasets References<br>
 1. Kermany D, Zhang K, Goldbaum M. Chest X-Ray Images (Pneumonia) Dataset. Mendeley Data; 2018. DOI: 10.17632/rscbjbr9sj.2. [Dataset 1](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
 2. Saira Kiran, Ishrat Jabeen. Dataset of Tuberculosis Chest X-rays Images. Mendeley Data; 2024. DOI: 10.17632/8j2g3csprk.2. [Dataset 2](https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset)
 3. Nigerian Chest X-ray Dataset (Aminu Musa, et al.). Nigeria Chest X-Ray Dataset. Kaggle Dataset. Accessed 2025. [Dataset 3](https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset)
@@ -94,7 +94,7 @@ One of the inside of the chest X-ray result in the checkpoints, Baseline CNN is 
 6. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. A Primary Chest X ray Dataset of Normal and Pneumonia Cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2. [Dataset 6](https://data.mendeley.com/datasets/wndbd5r26y/2)
 7. RSUA Chest X-Ray Dataset. Airlangga University Hospital, Indonesia; 2023. PubMed-accessible via Mendeley Data — Dataset DOI: 10.17632/2jg8vfdmpm.1. [Dataset 0](https://data.mendeley.com/datasets/2jg8vfdmpm/1)
 
-# Literature Review References <br>
+### Literature Review References <br>
 1. Abdulkarem M, Geman O, Al-Hadhrami T, et al. Deep learning for multi-class chest disease classification using chest X-ray images. Journal of Big Data. 2022. PubMed Central (PMC9090861). [Journal of Big Data](https://pmc.ncbi.nlm.nih.gov/articles/PMC9090861/)
 2. Ozturk T, Talo M, Yildirim EA, Baloglu UB, Yildirim O, Acharya UR. An explainable deep learning approach for detecting COVID-19 and pneumonia from chest X-rays. Computers in Biology and Medicine. 2021. PubMed Central (PMC8117675). [Computers in Biology and Medicine](https://pmc.ncbi.nlm.nih.gov/articles/PMC8117675/)
 3.  Schaaf C, Maduke T, Breuninger T, et al. Performance variation of deep learning–based chest X-ray classifiers across global clinical settings: a multi-country evaluation. BMC Medical Imaging. 2022. [BMC Medical Imaging](https://link.springer.com/article/10.1186/s12880-022-00793-7)
