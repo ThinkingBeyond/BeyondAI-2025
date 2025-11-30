@@ -87,7 +87,7 @@ Future extensions of this research could explore:
 
 # References 
 
-1. Rong, Y., Huang, W., Xu, T., & Huang, J. *DropEdge: Towards Deep Graph Convolutional Networks on Node Classification.* arXiv:1907.10903.
+1. [Rong, Y., Huang, W., Xu, T., & Huang, J. *DropEdge: Towards Deep Graph Convolutional Networks on Node Classification.* arXiv:1907.10903.](https://arxiv.org/abs/1907.10903)
 2. Chen, M., Wei, Z., Huang, Z., Ding, B., & Li, Y. *Simple and Deep Graph Convolutional Networks.* arXiv:2007.02133.
 3. Kipf, T. N., & Welling, M. *Semi-Supervised Classification with Graph Convolutional Networks.* arXiv:1609.02907.
 4. Veličković, P., Cucurull, G., Casanova, A., Romero, A., Liò, P., & Bengio, Y. *Graph Attention Networks.* arXiv:1710.10903.
