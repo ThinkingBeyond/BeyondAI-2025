@@ -127,7 +127,7 @@ This work establishes that effective diagnostic AI doesn't require high-end infr
 
 ## Acknowledgements
 
-We thank BeyondAI for making this program accessible and Dr. Filip Bar, Dr. Davendra Singh Dhami, and all volunteers for guidance and support throughout the research project.
+We thank ThinkingBeyond Education and its founder, Dr. Filip Bar, for making the Beyond AI Research Program 2025 accessible, along with our research mentor, Dr. Devendra Singh Dhami, our PSC mentor, Min Htet, and all volunteers for their guidance and support throughout this programme.
 
 ## Credits
 
