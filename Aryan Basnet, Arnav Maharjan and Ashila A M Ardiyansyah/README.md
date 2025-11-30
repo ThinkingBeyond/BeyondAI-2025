@@ -1,106 +1,158 @@
- ![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
+![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
 
 # Evaluating Deep Learning Models for Pneumonia & Tuberculosis Classification Across High and Low Resource Chest X-Ray Datasets
 
 ## Motivation
-While most existing research relies on large, well-curated chest X-ray datasets from high-income countries, such settings do not reflect the realities of diagnosing Pneumonia and Tuberculosis (TB) in lower-middle-income countries (LMICs), where radiology expertise, imaging quality, and standardized datasets are often limited. Motivated by these gaps, this study systematically evaluates four deep learning models across six diverse chest X-ray datasets to examine how factors such as disease type, dataset size, class balance, and country income level influence model performance, ultimately identifying what truly works in resource-constrained environments.
 
-## Research Question 
-Our research is guided by the central question: How do different deep learning models (Baseline CNN, ResNet50, EfficientNet-B0, and MobileNetV2) perform in classifying Pneumonia and Tuberculosis when evaluated on chest X-ray datasets from both High-Income Countries (HICs) and Low- and Middle-Income Countries (LMICs), and which model is ultimately best suited for resource-constrained LMICs settings? <br>
-Building on this question, we conduct deep learning classification of chest X-rays into Healthy, Pneumonia, and Tuberculosis using the four selected architectures. To assess real-world generalizability, these models are systematically tested across datasets originating from both HIC and LMIC environments. By comparing their performance under varying imaging conditions, resource levels, and dataset characteristics, this study reveals the strengths and weaknesses of each model and offers practical insights into designing equitable and reliable global lung-disease screening systems.
+Most existing research relies on large, well-curated chest X-ray datasets from high-income countries, but these settings don't reflect the realities of diagnosing Pneumonia and Tuberculosis (TB) in lower and middle income countries (LMICs), where radiology expertise, imaging quality, and standardized datasets are often limited. This study systematically evaluates four deep learning models across five diverse chest X-ray datasets to understand how disease type, dataset size, class balance, and country income level influence model performance, helping identify approaches that work best in resource-constrained environments.
+
+## Research Question
+
+We aim to answer: How do different deep learning models (Baseline CNN, ResNet50, EfficientNet-B0, and MobileNetV2) perform in classifying Pneumonia and Tuberculosis across chest X-ray datasets from both High Income Countries (HICs) and LMICs? Which models are best suited for resource-limited settings?
+
+To explore this, we classify chest X-rays into Healthy, Pneumonia, and Tuberculosis using the four architectures. By evaluating performance across HIC and LMIC datasets, we uncover each model's strengths and limitations, providing practical insights for designing equitable global lung disease screening systems.
 
 ## Literature Review
-Deep learning has become central to automated chest X-ray analysis, particularly for pneumonia and tuberculosis detection. Prior studies demonstrate that convolutional neural networks (CNNs) consistently outperform traditional diagnostic algorithms by learning discriminative radiological patterns directly from imaging data (Journal of Big Data 2022). Research also confirms the strong benefit of using pretrained architectures such as ResNet and EfficientNet, whose transfer-learned representations significantly improve pneumonia and TB classification accuracy. This aligns with broader findings that deep learning models can reach expert-level performance when trained on large, high-quality datasets.
 
-However, multiple studies emphasize that performance varies substantially across datasets from different geographical or clinical contexts. A multi-country evaluation showed that domain shift differences in imaging equipment, disease severity, or population characteristics can cause large performance drops when models trained on high-income country (HIC) datasets are applied to low- and middle-income country (LMIC) settings (Springer BMC 2022). As models often generalize poorly outside the environment they were trained on. The literature highlights this as a critical barrier to deploying robust AI for TB and pneumonia diagnosis in global health contexts.
+Deep learning has become central to automated chest X-ray analysis, particularly for Pneumonia and TB detection. CNNs consistently outperform traditional diagnostic methods by learning radiological patterns directly from images.<sup>1</sup> Transfer learning using architectures like ResNet and EfficientNet has further boosted accuracy.<sup>1,2</sup>
 
-Lightweight architectures such as MobileNetV2 and EfficientNetB0 are repeatedly shown to perform well on smaller or lower-quality datasets while requiring far fewer computational resources (Computers in Biology and Medicine 2021). This makes them more convinient for LMIC screening programs where GPU infrastructure is limited. Studies evaluating TB detection pipelines found that these compact models can match or exceed heavier models like ResNet50 when proper augmentation and balancing strategies are used, reinforcing your poster’s results where MobileNetV2 performed competitively across both HIC and LMIC datasets.
-
-Recent work also underscores that transfer learning alone is not always sufficient to guarantee cross-regional robustness. A 2024 Nature study found that although pretrained models significantly boost baseline accuracy, their performance still depends strongly on dataset-specific factors such as disease presentation patterns, imaging quality, and labeling depth. 
+However, performance varies significantly across datasets from different regions. Domain shifts due to imaging equipment, disease severity, or population differences can cause large drops in accuracy when HIC-trained models are applied in LMIC settings.<sup>3,4</sup> Lightweight architectures like MobileNetV2 and EfficientNetB0 perform well on smaller or lower-quality datasets while requiring fewer computational resources.<sup>2</sup> Transfer learning alone doesn't guarantee cross-regional robustness; dataset-specific factors like image quality and labeling depth remain critical.<sup>4</sup>
 
 ## Method and Implementation
-We evaluated four deep learning models (Baseline CNN, MobileNetV2, EfficientNet-B0, and ResNet-50) classifying six datasets chest X-Ray into Healthy, Pneumonia and Tuberculosis categories. These were compiled for a total of 23,480 images and group according to their country level of incomes. Three datasets from High Income Countries (HICs) which dataset 1, dataset 2, dataset 5 and another three datasets from Lower Middle Income Countries Country (LMICs) dataset 3, dataset 4, dataset 6. All of these datasets underwent preprocessing as resizing to 224x224 pixels and standardized data to balance the class weighting during the training.
 
-Each dataset was split into training (~70%), validation (~15%), and test sets (~15%). All models were trained with data augmentation, class weighting to handle imbalance, Adam optimizer, categorical cross-entropy loss, early stopping, and learning rate reduction on plateau. Models are under identical conditions. Model performance was measured and evaluated using Weighted F1-score, per-class F1-score, confusion matrices, and training time.
+We evaluated four deep learning models (Baseline CNN, MobileNetV2, EfficientNet-B0, and ResNet50) across five datasets comprising 17,624 chest X-ray images, grouped by country income level:
 
-## Result and Discussion
-F1 Scores Model For Each Datasets
-Dataset 1 (Pneumonia HIC)|Dataset 2 (TB HIC)
-:-------------------------:|:-------------------------:
-![Dataset 1](https://github.com/user-attachments/assets/0766d26c-a5c3-4fb8-9114-17fba505a2b0)  |  ![Dataset 2](https://github.com/user-attachments/assets/6147bfbb-2f99-45a5-867f-afb392dd87eb)
+* **HICs:** Dataset 1 (Pneumonia)<sup>6</sup>, Dataset 2 (TB)<sup>7</sup>
+* **LMICs:** Dataset 3 (Nigeria)<sup>8</sup>, Dataset 4 (TB)<sup>9</sup>, Dataset 5 (Bangladesh)<sup>10</sup>
 
-Dataset 3 (Nigeria LMIC)|Dataset 4 (TB LMIC)
-:-------------------------:|:-------------------------:
-![Dataset 3](https://github.com/user-attachments/assets/fc4fc5fd-0c48-4cfa-8bfc-49b52087721a)  |  ![Dataset 4](https://github.com/user-attachments/assets/d3eec016-2e69-4752-a1d8-6118dc565cf8)
+All images were resized to 224×224 pixels and preprocessed for class balance. Each dataset was split into approximately 70% training, 15% validation, and 15% test. Models were trained with data augmentation, class weighting, Adam optimizer, categorical cross-entropy loss, early stopping, and learning rate reduction on plateau.
 
-Dataset 5 (Pneumonia HIC)|Dataset 6 (Bangladesh LMIC)
-:-------------------------:|:-------------------------:
-![Dataset 5](https://github.com/user-attachments/assets/508ad5bf-59e6-481b-a232-c34bd99bfbef)  |  ![Dataset 6](https://github.com/user-attachments/assets/4fd18d01-6519-49bf-844b-ffddd7bf58e1)
+Performance metrics included Weighted F1-score, per-class F1-score, confusion matrices, and training time.
 
-The results showed model performance varied depending on datasets origin (HICs and LMICs) and disease type (Pneumonia and TB). Across all HICs datasets (Dataset 1, 2, and 5) achieve consistently high F1-scores, followed by Baseline CNN and ResNet-50. EfficientNet-B0 showed weaker performance indicating sensitivity to dataset and training.
-In LMICs datasets, similar to HICs datasets, MobileNetV2 again achieved the strongest result in dataset 3 and 6, followed by Baseline CNN and ResNet-50. In contrast, EfficientNet-B0 struggles significantly. Unexpectedly, Baseline CNN outperformed deep learning model in dataset 4.
+## Results and Discussion
 
-## 1. <br>
-HICs VS LMICs Comparison|  
-:-------------------------:|
-![Comparison](https://github.com/user-attachments/assets/d2ac1d17-795f-43b6-bb50-477647cbbc30) | <br>
-The box and whiskers diagram shows that the model performed different significantly. Across both income levels MobileNetV2 (0.88-0.90) consistently achieves the highest F1-scores. Followed by Baseline CNN and ResNet-50. However, EfficientNet-B0 performance dropped on LMICs and underperformed in HICs datasets. Overall this indicates that datasets characteristic (image quality) impact performance more than model complexity.
+### F1 Scores per Dataset
 
-## 2. <br>
-Disease Difficulty (TB vs Pneumonia)|  
-:-------------------------:|
-![Disease Difficulty](https://github.com/user-attachments/assets/8fcf3dc8-a6ee-4a33-b74c-b57e8215ca0c) | <br>
-The box and whisker diagram shows that Tuberculosis (TB) achieves higher F1-scores in both HICs and LMICs datasets. While in Pneumonia varies more especially in LMICs datasets where image conditions affect model accuracy. LMICs Pneumonia datasets show significant drop indicating that Pneumonia is more sensitive to inconsistent image or labelling issues.
+**Dataset 1 (Pneumonia HIC):**
 
-## 3. <br>
-Training Time vs F1 Score|  
-:-------------------------:|
-![Training Time VS F1 Score](https://github.com/user-attachments/assets/cd312eaf-62ee-4540-96a5-61d475a08a8b)| <br>
-The plot diagram shows no linear relationship between training time and F1-score, except in LMIC EfficientNet-B0 shows linear negative correlation. Models like MobileNetV2 achieve a high F1-score above 0.80 with a relatively short amount of time with less than 100 minutes. However, longer training times (in some dataset like ResNet-50) do not always mean better performance. This indicates that more complex models don't guarantee a better performance and accuracy.
+![Dataset 1 F1 Scores](path/to/dataset1_results.png)
 
-## 4. <br>
-Best Model per Dataset|  
-:-------------------------:|
-![Top Performer](https://github.com/user-attachments/assets/232151f0-f893-447e-b7cb-74fad5bc6c47)| <br>
-The bar graph shows that MobileNetV2 dominates as the top performer in most of the HICs and LMICs datasets in all of the Pneumonia and some in TB datasets. In addition, Baseline CNN surprisingly outperformed more complex architecture in dataset 4 classifying TB in LMICs, this highlights that simpler models can be more stronger when data is limited or inconsistent.
+**Dataset 2 (TB HIC):**
 
-## Conclusion 
-Overall, the findings of the model performance for chest X-ray classification are more highly influenced by dataset characteristics and disease type than the level income source country. MobileNetV2 appears as the strong model overall, achieving high and stable performance in both HICs and several LMICs datasets, specifically consistently having the highest F1-scores on HICs datasets. However, baseline CNN also has performed well on LMICs datasets, with ResNet-50 remaining competitive for TB classification. This shows that simple architecture can outperform deeper models when trained with varied image qualities and giving the importance of selecting models based on dataset-specific factors such as size, balance, and quality rather than relying solely on model complexity or conventional expectations. 
+![Dataset 2 F1 Scores](path/to/dataset2_results.png)
+
+**Dataset 3 (Nigeria LMIC):**
+
+![Dataset 3 F1 Scores](path/to/dataset3_results.png)
+
+**Dataset 4 (TB LMIC):**
+
+![Dataset 4 F1 Scores](path/to/dataset4_results.png)
+
+**Dataset 5 (Bangladesh LMIC):**
+
+![Dataset 5 F1 Scores](path/to/dataset5_results.png)
+
+* HIC datasets (1, 2) generally showed strong performance from MobileNetV2 and Baseline CNN. EfficientNet-B0 was more sensitive to dataset characteristics and struggled across both HIC and LMIC settings.
+* LMIC datasets (3, 4, 5) showed MobileNetV2 and Baseline CNN consistently performing strongly. Dataset 4 saw Baseline CNN achieve the highest score (0.965), demonstrating that simpler architectures can outperform deeper models when datasets have good balance and augmentation. EfficientNet-B0 continued to struggle in lower-quality or smaller datasets.
+
+### 1. HICs vs LMICs Comparison
+
+![HIC vs LMIC Comparison](path/to/hic_lmic_comparison.png)
+
+**Mean F1 Score by Model and Income Level:**
+| Model | HIC Mean F1 | LMIC Mean F1 |
+|-------|-------------|--------------|
+| Baseline CNN | 0.851 | 0.936 |
+| EfficientNetB0 | 0.584 | 0.417 |
+| MobileNetV2 | 0.903 | 0.937 |
+| ResNet50 | 0.763 | 0.780 |
+
+MobileNetV2 and Baseline CNN achieved the highest F1 scores across both settings. Surprisingly, LMIC datasets matched or exceeded HIC performance for these models, likely due to better class balance, clearer disease presentations at advanced stages, and effective data augmentation. EfficientNet-B0 underperformed across both settings, indicating dataset quality and balance impact performance more than model complexity alone.
+
+### 2. Disease Difficulty (TB vs Pneumonia)
+
+![Disease Difficulty Comparison](path/to/disease_comparison.png)
+
+**Mean F1 Score by Disease and Income Level:**
+| Disease | HIC Mean F1 | LMIC Mean F1 |
+|---------|-------------|--------------|
+| Pneumonia | 0.721 | 0.719 |
+| TB | 0.832 | 0.833 |
+
+TB classification consistently achieved higher F1 scores than Pneumonia across both income levels, likely reflecting TB's more distinctive radiological patterns (cavitations, nodules, consolidations) that CNNs can readily learn. Pneumonia exhibits more variable and less specific presentations across patients, creating harder classification tasks. Performance remained remarkably consistent between HIC and LMIC settings for both diseases.
+
+### 3. Training Time vs F1 Score
+
+![Training Time vs F1 Score](path/to/training_time_scatter.png)
+
+No strong linear correlation was observed between training time and F1 score. MobileNetV2 reached high F1 scores (greater than 0.80) with relatively short training times (under 100 minutes in many cases), showing that longer training doesn't automatically guarantee better performance. EfficientNet-B0 showed extended training times on some LMIC datasets but still achieved lower scores, reinforcing that model architecture and dataset characteristics matter more than training duration alone.
+
+### 4. Best Model per Dataset
+
+![Best Model per Dataset](path/to/best_model_per_dataset.png)
+
+**Top Performing Models:**
+| Dataset | Best Model | F1 Score |
+|---------|------------|----------|
+| Dataset 1 (Pneumonia HIC) | MobileNetV2 | 0.877 |
+| Dataset 2 (TB HIC) | MobileNetV2 | 0.929 |
+| Dataset 3 (Nigeria LMIC) | Baseline CNN / MobileNetV2 | 0.962 |
+| Dataset 4 (TB LMIC) | Baseline CNN | 0.965 |
+| Dataset 5 (Bangladesh LMIC) | MobileNetV2 | 0.912 |
+
+MobileNetV2 dominated most HIC and LMIC datasets, achieving the highest or tied-highest scores in 4 out of 5 datasets. Baseline CNN outperformed all other models in Dataset 4, showing that simpler architectures can excel when data is properly preprocessed, balanced, and augmented. This challenges the assumption that deeper, more complex models always perform better.
+
+## Conclusion
+
+Our findings reveal that dataset characteristics (balance, disease presentation clarity, augmentation quality) drive model performance more than imaging infrastructure or country income level. LMIC datasets achieved comparable or higher F1 scores than HIC datasets (Baseline CNN: 0.936 LMIC vs 0.851 HIC; MobileNetV2: 0.937 LMIC vs 0.903 HIC), challenging conventional assumptions about resource settings and model performance.
+
+MobileNetV2 emerged as the most robust and efficient choice across contexts, achieving high accuracy with lower computational requirements than heavier architectures. Surprisingly, our simple Baseline CNN remained highly competitive in LMIC settings, particularly excelling in the TB LMIC dataset. TB consistently outperformed Pneumonia classification across all settings, probably reflecting TB's more distinctive radiological features.
+
+The key takeaway: dataset quality, balance, and preprocessing matter more than geographic origin or imaging equipment sophistication. This suggests practical diagnostic AI can succeed in resource-limited settings when models are properly matched to local dataset properties rather than defaulting to the most complex architectures.
 
 ## Future Work
-We think future work should focus on reducing the performance gap between HICs and LMICs datasets. Incorporating tailored model selection and transfer learning strategies can optimize diagnostic performance, adding more diverse datasets (especially in LMICs regions), offering practical guidance for deploying AI effectively across diverse healthcare resource contexts and generalizability of models.
+
+Future research should focus on:
+* Validating these patterns across larger, multi-regional LMIC datasets with varied imaging equipment and protocols
+* Testing ensemble methods that combine lightweight models to improve accuracy without increasing computational demands
+* Conducting prospective clinical trials in resource-limited settings to evaluate real-world diagnostic performance and physician adoption
+* Exploring reverse transfer learning by training models on LMIC data and testing generalization to HIC datasets
+
+This work establishes that effective diagnostic AI doesn't require high-end infrastructure. Properly matched models and careful dataset curation can enable successful deployment across diverse healthcare contexts.
 
 ## How to Install and Run the Project **(WARNING)**
-**Disclaimer**: Not recommended to run this, because running this code locally may require several hours due to the computational demands of training deep learning models. It is highly recommended to execute it in Google Colab or directly run the final file (AA_master_analysis_all_datasets), preprocessed notebook for a smoother and faster experience.
 
-## Acknowledgement <br>
-We would like to express our gratitude to BeyondAI for providing and making this AI program available to a selection of people. We also want to thank Dr. Filip Bar and the entire volunteers that contributed and their dedication on making this program possible. Especially Dr. Filip Bar on teaching throughout the course stage and guidance at the research development stage. His insight gives us a fundamental stepping stone and vital role in the direction of our study.
-Finally, we would like to thank Dr. Davendra Singh Dhami, our mentor for his valuable advice, constructive feedback, and support throughout the research process. His mentorship was crucial to direct and complete our research successfully.
+**Disclaimer:** Running this code locally may take several hours due to computational demands. We recommend using Google Colab or the preprocessed notebook (`AA_master_analysis_all_datasets.ipynb`) for a faster, smoother experience.
+
+## Acknowledgements
+
+We thank BeyondAI for making this program accessible and Dr. Filip Bar, Dr. Davendra Singh Dhami, and all volunteers for guidance and support throughout the research project.
 
 ## Credits
-**Student Researchers:** Arnav Maharjan (Main Contributor) & Ashila Atha Makkah Ardiyansyah<br> 
+
+**Student Researchers:** Arnav Maharjan (Main Contributor) & Ashila Atha Makkah Ardiyansyah  
 **Mentor:** Dr. Devendra Singh Dhami
 
 ## Notes
-One of the inside of the chest X-ray result in the checkpoints, Baseline CNN is incomplete. This only gives a purpose to sort the epochs result so it won't crash or runtime error repeatedly.
+One of the checkpoint results for Baseline CNN is incomplete. This serves only to sort epoch results to prevent crashes or repeated runtime errors.
 
 ## References
 
 ### Dataset References
-1. Kermany D, Zhang K, Goldbaum M. Chest X-ray images (pneumonia) dataset. Mendeley Data; 2018. doi:10.17632/rscbjbr9sj.2. [Dataset 1](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
-2. Kiran S, Jabeen I. Dataset of tuberculosis chest X-rays images. Mendeley Data; 2024. doi:10.17632/8j2g3csprk.2. [Dataset 2](https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset)
-3. Musa A, et al. Nigeria chest X-ray dataset [dataset]. Kaggle; 2025. Accessed 2025. [Dataset 3](https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset)
-4. Local Pakistan Hospital. Tuberculosis chest X-ray images. Mendeley Data; 2024. doi:10.17632/8j2g3csprk.2. [Dataset 4](https://data.mendeley.com/datasets/8j2g3csprk/2)
-5. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. Primary chest X-ray dataset of normal and pneumonia cases from Epic Chittagong, Bangladesh. Mendeley Data; 2025;2. doi:10.17632/wndbd5r26y.2. [Dataset 6](https://data.mendeley.com/datasets/wndbd5r26y/2)
-6. Airlangga University Hospital. RSUA chest X-ray dataset. Indonesia; 2023. doi:10.17632/2jg8vfdmpm.1. [Dataset 0](https://data.mendeley.com/datasets/2jg8vfdmpm/1)
+6. Kermany D, Zhang K, Goldbaum M. Chest X-ray images (pneumonia) dataset. Mendeley Data. 2018. doi:10.17632/rscbjbr9sj.2. Available from: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+7. Kiran S, Jabeen I. Dataset of tuberculosis chest X-rays images. Mendeley Data. 2024. doi:10.17632/8j2g3csprk.2. Available from: https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset
+8. Musa A, et al. Nigeria chest X-ray dataset [Internet]. Kaggle; 2025 [cited 2025]. Available from: https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset
+9. Local Pakistan Hospital. Tuberculosis chest X-ray images. Mendeley Data. 2024. doi:10.17632/8j2g3csprk.2. Available from: https://data.mendeley.com/datasets/8j2g3csprk/2
+10. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. Primary chest X-ray dataset of normal and pneumonia cases from Epic Chittagong, Bangladesh. Mendeley Data. 2025;2. doi:10.17632/wndbd5r26y.2. Available from: https://data.mendeley.com/datasets/wndbd5r26y/2
 
 ### Literature Review References
-1. Abdulkarem M, Geman O, Al-Hadhrami T, et al. Deep learning for multi-class chest disease classification using chest X-ray images. J Big Data. 2022. PMC9090861. [Journal of Big Data](https://pmc.ncbi.nlm.nih.gov/articles/PMC9090861/)
-2. Ozturk T, Talo M, Yildirim EA, Baloglu UB, Yildirim O, Acharya UR. An explainable deep learning approach for detecting COVID-19 and pneumonia from chest X-rays. Comput Biol Med. 2021. PMC8117675. [Computers in Biology and Medicine](https://pmc.ncbi.nlm.nih.gov/articles/PMC8117675/)
-3. Schaaf C, Maduke T, Breuninger T, et al. Performance variation of deep learning-based chest X-ray classifiers across global clinical settings: a multi-country evaluation. BMC Med Imaging. 2022. [BMC Medical Imaging](https://link.springer.com/article/10.1186/s12880-022-00793-7)
-4. Zhang Y, Li H, Xu C, et al. Generalization limits of deep learning for global chest X-ray diagnosis across heterogeneous imaging domains. Sci Rep. 2024. [Scientific Reports (Nature)](https://www.nature.com/articles/https://www.nature.com/articles/s41598-024-65703-z)
-5. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable tuberculosis detection using chest X-ray with deep learning, segmentation and visualization. IEEE Access. 2020;8:191586–191601. doi:10.1109/ACCESS.2020.3031384. [IEE Access](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9224622)
+1. Abdulkarem M, Geman O, Al-Hadhrami T, et al. Deep learning for multi-class chest disease classification using chest X-ray images. J Big Data. 2022. Available from: https://pmc.ncbi.nlm.nih.gov/articles/PMC9090861/
+2. Ozturk T, Talo M, Yildirim EA, Baloglu UB, Yildirim O, Acharya UR. An explainable deep learning approach for detecting COVID-19 and pneumonia from chest X-rays. Comput Biol Med. 2021. Available from: https://pmc.ncbi.nlm.nih.gov/articles/PMC8117675/
+3. Schaaf C, Maduke T, Breuninger T, et al. Performance variation of deep learning-based chest X-ray classifiers across global clinical settings: a multi-country evaluation. BMC Med Imaging. 2022. Available from: https://link.springer.com/article/10.1186/s12880-022-00793-7
+4. Zhang Y, Li H, Xu C, et al. Generalization limits of deep learning for global chest X-ray diagnosis across heterogeneous imaging domains. Sci Rep. 2024. Available from: https://www.nature.com/articles/s41598-024-65703-z
+5. Rahman T, Khandakar A, Kadir MA, Islam KR, Islam KF, Mahbub ZB, Ayari MA, Chowdhury MEH. Reliable tuberculosis detection using chest X-ray with deep learning, segmentation and visualization. IEEE Access. 2020;8:191586-601. doi:10.1109/ACCESS.2020.3031384. Available from: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9224622
 
+---
 
 > The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://www.canva.com/design/DAG56NGHhz8/gdlWMbL8WpTcnPAaTZ2ijA/edit).
-
