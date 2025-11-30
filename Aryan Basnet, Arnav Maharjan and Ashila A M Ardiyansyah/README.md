@@ -35,23 +35,23 @@ Performance metrics included Weighted F1-score, per-class F1-score, confusion ma
 
 **Dataset 1 (Pneumonia HIC):**
 
-![Dataset 1 F1 Scores](dataset1_results.png)
+![Dataset 1 F1 Scores](dataset1_f1_scores.png)
 
 **Dataset 2 (TB HIC):**
 
-![Dataset 2 F1 Scores](dataset2_results.png)
+![Dataset 2 F1 Scores](dataset2_f1_scores.png)
 
 **Dataset 3 (Nigeria LMIC):**
 
-![Dataset 3 F1 Scores](dataset3_results.png)
+![Dataset 3 F1 Scores](dataset3_f1_scores.png)
 
 **Dataset 4 (TB LMIC):**
 
-![Dataset 4 F1 Scores](dataset4_results.png)
+![Dataset 4 F1 Scores](dataset4_f1_scores.png)
 
 **Dataset 5 (Bangladesh LMIC):**
 
-![Dataset 5 F1 Scores](dataset5_results.png)
+![Dataset 5 F1 Scores](dataset5_f1_scores.png)
 
 * HIC datasets (1, 2) generally showed strong performance from MobileNetV2 and Baseline CNN. EfficientNet-B0 was more sensitive to dataset characteristics and struggled across both HIC and LMIC settings.
 * LMIC datasets (3, 4, 5) showed MobileNetV2 and Baseline CNN consistently performing strongly. Dataset 4 saw Baseline CNN achieve the highest score (0.965), demonstrating that simpler architectures can outperform deeper models when datasets have good balance and augmentation. EfficientNet-B0 continued to struggle in lower-quality or smaller datasets.
