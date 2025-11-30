@@ -91,9 +91,8 @@ One of the inside of the chest X-ray result in the checkpoints, Baseline CNN is 
 2. Kiran S, Jabeen I. Dataset of tuberculosis chest X-rays images. Mendeley Data; 2024. doi:10.17632/8j2g3csprk.2. [Dataset 2](https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset)
 3. Musa A, et al. Nigeria chest X-ray dataset [dataset]. Kaggle; 2025. Accessed 2025. [Dataset 3](https://www.kaggle.com/datasets/aminumusa/nigeria-chest-x-ray-dataset)
 4. Local Pakistan Hospital. Tuberculosis chest X-ray images. Mendeley Data; 2024. doi:10.17632/8j2g3csprk.2. [Dataset 4](https://data.mendeley.com/datasets/8j2g3csprk/2)
-5. Manna A. NIH chest X-ray retrieval dataset. Mendeley Data; 2024. doi:10.17632/c5x35tmj5v.1. [Dataset 5](https://data.mendeley.com/datasets/c5x35tmj5v/1)
-6. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. Primary chest X-ray dataset of normal and pneumonia cases from Epic Chittagong, Bangladesh. Mendeley Data; 2025;2. doi:10.17632/wndbd5r26y.2. [Dataset 6](https://data.mendeley.com/datasets/wndbd5r26y/2)
-7. Airlangga University Hospital. RSUA chest X-ray dataset. Indonesia; 2023. doi:10.17632/2jg8vfdmpm.1. [Dataset 0](https://data.mendeley.com/datasets/2jg8vfdmpm/1)
+5. Hira MIK, Bithee MMA, Ahmed S, Akter L, Anonna MJM. Primary chest X-ray dataset of normal and pneumonia cases from Epic Chittagong, Bangladesh. Mendeley Data; 2025;2. doi:10.17632/wndbd5r26y.2. [Dataset 6](https://data.mendeley.com/datasets/wndbd5r26y/2)
+6. Airlangga University Hospital. RSUA chest X-ray dataset. Indonesia; 2023. doi:10.17632/2jg8vfdmpm.1. [Dataset 0](https://data.mendeley.com/datasets/2jg8vfdmpm/1)
 
 ### Literature Review References
 1. Abdulkarem M, Geman O, Al-Hadhrami T, et al. Deep learning for multi-class chest disease classification using chest X-ray images. J Big Data. 2022. PMC9090861. [Journal of Big Data](https://pmc.ncbi.nlm.nih.gov/articles/PMC9090861/)
