@@ -30,7 +30,7 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 - Time: 29276.318501535003 seconds or about 8 hours
 - 
 - 
-<img width="589" height="455" alt="image" src="https://github.com/user-attachments/assets/007516e4-0583-4094-98a3-4b2aa7e7a08f" />
+<img width="295" height="227.5" alt="image" src="https://github.com/user-attachments/assets/007516e4-0583-4094-98a3-4b2aa7e7a08f" />
 
 ## Conclusion and Discussion
 
