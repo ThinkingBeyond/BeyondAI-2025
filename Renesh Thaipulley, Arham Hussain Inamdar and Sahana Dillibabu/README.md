@@ -34,17 +34,24 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 
 - Scores:
   
-  |                     | Precision           | Recall    | F1-Score  | Support  |
-  |---------------------|---------------------|-----------|-----------|----------|
-  | None                | 0.75                | 0.72      | 0.73      | 25802    |
-  |---------------------|---------------------|-----------|-----------|----------|
-  | Mild                | 0.00                | 0.00      | 0.00      | 0        |
-  |---------------------|---------------------|-----------|-----------|----------|
-  | Moderate            | 0.00                | 0.00      | 0.00      | 0        |
-  |---------------------|---------------------|-----------|-----------|----------|
-  | Severe              | 0.00                | 0.00      | 0.00      | 0        |
-  |---------------------|---------------------|-----------|-----------|----------|
-  | Proliferative       | 0.00                | 0.00      | 0.00      | 0        |
+### Classification Report
+
+| Class                                | Precision | Recall | F1-Score | Support |
+|--------------------------------------|-----------|--------|----------|---------|
+| no_diabetic_retinopathy              | 0.75      | 0.72   | 0.73     | 25,802  |
+| mild_diabetic_retinopathy            | 0.00      | 0.00   | 0.00     | 0       |
+| moderate_diabetic_retinopathy        | 0.00      | 0.00   | 0.00     | 0       |
+| severe_diabetic_retinopathy          | 0.00      | 0.00   | 0.00     | 0       |
+| proliferative_diabetic_retinopathy   | 0.00      | 0.00   | 0.00     | 0       |
+
+### Averages
+
+| Average Type | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Micro Avg    | 0.53      | 0.72   | 0.61     | 25,802  |
+| Macro Avg    | 0.15      | 0.14   | 0.15     | 25,802  |
+| Weighted Avg | 0.75      | 0.72   | 0.73     | 25,802  |
+
 
 ## Conclusion and Discussion
 
