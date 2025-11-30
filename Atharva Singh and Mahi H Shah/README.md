@@ -19,7 +19,7 @@ Typical downstream tasks include **node-level classification** (e.g., detecting 
 
 A well-documented limitation of deep GNNs is **oversmoothing**, a phenomenon in which node representations become progressively indistinguishable as the number of layers increases. Because each layer aggregates information from local neighbours, deeper architectures repeatedly mix information across larger neighbourhoods. Past a certain depth, this leads to a homogenization of node embeddings such that the model loses its ability to discriminate between distinct structural roles or feature patterns. Ultimately, oversmoothing degrades task performance, especially on graphs with sparse or heterophilic connectivity. 
 
-(To visualise the oversmoothing problem, we have also created a short animation, to be attached separately.) 
+(To visualise the oversmoothing problem, we have also created a short animation, attached separately in this repository.) 
 
 
 # Architectures Addressing Oversmoothing
