@@ -8,7 +8,7 @@ Most existing research relies on large, well-curated chest X-ray datasets from h
 
 ## Research Question
 
-We aim to answer: How do different deep learning models (Baseline CNN, ResNet50, EfficientNet-B0, and MobileNetV2) perform in classifying Pneumonia and Tuberculosis across chest X-ray datasets from both High Income Countries (HICs) and  Lower and Middle Income Countries LMICs? Which models are best suited for resource-limited settings?
+We aim to answer: How do different deep learning models (Baseline CNN, ResNet50, EfficientNet-B0, and MobileNetV2) perform in classifying Pneumonia and Tuberculosis across chest X-ray datasets from both High Income Countries (HICs) and  Lower and Middle Income Countries (LMICs)? Which models are best suited for resource-limited settings?
 
 To explore this, we classify chest X-rays into Healthy, Pneumonia, and Tuberculosis using the four architectures. By evaluating performance across HIC and LMIC datasets, we uncover each model's strengths and limitations, providing practical insights for designing equitable global lung disease screening systems.
 
