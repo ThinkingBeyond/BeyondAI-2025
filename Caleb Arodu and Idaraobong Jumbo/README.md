@@ -210,6 +210,7 @@ Among SVM, Decision Tree, and Random Forest, Random Forest is the most robust an
 1. Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: synthetic minority over-sampling technique. Journal of artificial intelligence research, 16, 321-357. [JAIR](https://www.jair.org/index.php/jair/article/view/10302/24590)
 2. Abd Elrahman, S. M., & Abraham, A. (2013). A review of class imbalance problem. Journal of Network and Innovative Computing, 1, 9-9. [Download](https://cspub-jnic.org/index.php/jnic/article/download/42/33)
 3. Picek, S., Heuser, A., Jovic, A., Bhasin, S., & Regazzoni, F. (2019). The curse of class imbalance and conflicting metrics with machine learning for side-channel evaluations. IACR Transactions on Cryptographic Hardware and Embedded Systems, 209-237. [IACR](https://moving-the-social.ub.rub.de/index.php/TCHES/article/view/7339)
+4. Mishra, S. (2017). Handling imbalanced data: SMOTE vs. random undersampling. Int. Res. J. Eng. Technol, 4(8), 317-320.[Download](https://www.academia.edu/download/54374027/IRJET-V4I857.pdf)
 
 
 ---
