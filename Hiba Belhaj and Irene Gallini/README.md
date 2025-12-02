@@ -1,66 +1,222 @@
-![BeyondAI Banner for Research Projects](../BeyondAI_Banner_Research_Projects_2025.png)
+LSTM VS TRANSFORMER: Predicting Stock Movement Using News Embeddings
+Research Question
 
-# State Your Project Title Here With Capitalised Letters as Shown
+Do text embeddings from an LSTM with Attention or a Transformer built from scratch provide better predictive power for next-day stock movement when trained on financial news headlines?
 
-***Provide a description of your project including*** 
+We specifically investigate whether the type of text embedding (LSTM-based vs Transformer-based) affects the accuracy of Up/Down stock prediction.
 
-1. motivating your research question
-2. stating your research question
-3. explaining your method and implementation
-4. Briefly mention and discuss your results
-5. Draw your conclusions
-6. State what future investigations could be conducted
-7. State your references 
+Motivation
 
-### Further Guidance: Formating
-- Structure this readme using subsections
-- Your job is to 
-    - keep it clear
-    - provide sufficient detail, so what you did is understandable to the reader. This way other researchers and future cohorts of BeyondAI will be able to build on your research
-    - List all your references at the end
-- utilise markdown like *italics*, **bold**, numbered and unnumbered lists to make your document easier to read
-- if you refer to links use the respective markdown for links, e.g. `[ThinkingBeyond](https://thinkingbeyond.education/)`
-- If you have graphs and pictures you want to embed in your file use `![name](your_graphic.png)`
-- If you want to present your results in a table use
-    | Header 1            | Header 2  |
-    |---------------------|-----------|
-    | Lorem Ipsum         | 12345     |
+Financial markets react instantly to news. Analysts, traders, and machine learning engineers all attempt to model how headlines influence next-day stock prices.
+While many studies use pretrained models like FinBERT, our project asks a more fundamental question:
 
-**Tip:** Use tools to create markdown tables. For example, Obsidian has a table plugin, that makes creating tables much easier than doing it by hand.
+What happens when we remove pretraining and train both architectures from scratch on the same dataset?
 
-## Research Question
+By doing so, we isolate the impact of architecture alone (LSTM vs Transformer) while holding the dataset, labels, vocabulary, tokenizer, sequence length, and training conditions constant.
 
-State your research question here and elaborate on it.
+This helps us understand:
 
-## Motivation
+How much these architectures can learn without pretraining
 
-Explain your motivation for your chosen research question here.
+Whether transformers are still strong when built with no pretrained embeddings
 
-## Your next subsection
+Whether the choice of embedding method affects classification performance
 
-Continue working through the points listed above with the help of sensibly named subsections. 
+Dataset
 
-If you want to see some good examples of README files check out:
-- [Example 1](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/warenya-loulia/README.md)
-- [Example 2](https://github.com/ThinkingBeyond/BeyondAI-2024/blob/main/shaana-karuna/README.md)
+We use the Massive Stock News Analysis Database from Kaggle, focusing on the file:
 
-[ ... ]
+analyst_ratings_processed.csv
 
-## Future Work
+We then:
 
-State and explain what follow-up research could be conducted based on your work.
+Collected price data for the 10 most frequent tickers:
+MRK, MS, MU, NVDA, QQQ, M, EBAY, NFLX, GILD, VZ
 
-## References
+Merged each news headline with the price on the same day
 
-List all your references here. Remember to put links into markdown. For example:
+Created the next-day label:
 
-1.  Einstein, A. (1905). *On the Electrodynamics of Moving Bodies*. Annalen der Physik, 17, 891-921. [Internet Archive](https://archive.org/details/einstein-1905-relativity)
+UpDownLabel = 1 if NextClose > ClosePrice
 
-**Tip**: *If you have you references in BibTex, Google Scholar or Zotero*
-1. Create/copy a list into ChatGPT
-2. Ask it to turn it into an unsorted list in markdown
+Otherwise 0
 
----
+Performed a strict time-based split:
 
-> The research poster for this project can be found in the [BeyondAI Proceedings 2025](https://thinkingbeyond.education/beyondai_proceedings_2025/).
+Train: news before 2019
+
+Test: news from 2019–2020
+
+Cleaned text and filtered only valid rows
+
+This produced:
+
+Training samples: 24,090
+
+Testing samples: 5,794
+
+Balanced classes: ~47 percent Up, ~53 percent Down
+
+Methodology
+1. Building the Dataset Pipeline
+
+We implemented:
+
+Full price collection with yfinance
+
+Date alignment between news and prices
+
+Next-day return labeling
+
+Time-based train–test split (to avoid leakage)
+
+Shared tokenizer for both models
+
+Maximum sequence length = 40 tokens
+
+2. LSTM With Attention (Scratch-Built)
+Architecture
+
+Embedding layer
+
+Bidirectional LSTM (64 units)
+
+Custom Attention Layer
+
+Learns which tokens matter most in the headline
+
+Dense (64) + Dropout (0.3)
+
+Sigmoid output (binary classification)
+
+This produces a learned vector representation (embedding) of each headline that emphasizes important words such as “beats,” “downgrade,” “lawsuit,” “miss,” “upgrade,” etc.
+
+3. Transformer (Scratch-Built)
+
+We built a minimal Transformer encoder from scratch, including:
+
+Token embeddings
+
+Positional embeddings
+
+2 encoder layers
+
+Multi-Head Attention (4 heads)
+
+Feed-forward network (128 hidden units)
+
+Layer normalization
+
+Global average pooling
+
+Final classifier
+
+This model also learns embeddings but relies on:
+
+Self-attention across tokens
+
+Positional context learned from the embedding table
+
+Unlike standard BERT, our model has no pretraining, meaning it must learn patterns purely from the headline dataset.
+
+4. Training Setup
+
+Both models share:
+
+Sequence length: 40
+
+Embedding dimension: 64
+
+Batch size: 64
+
+Epochs: 5
+
+Optimizer: Adam (1e-3 learning rate)
+
+Loss: Binary cross-entropy
+
+Results
+Performance Summary
+Model	Accuracy	F1 Score
+LSTM + Attention	0.5005	0.4680
+Transformer (Scratch)	0.4803	0.4332
+Interpretation
+
+Both models perform better than random guessing (50 percent for accuracy, 0.0 for F1)
+
+The LSTM consistently outperforms the transformer across metrics
+
+The transformer struggled because scratch-built transformers usually require massive data and pretraining
+
+The LSTM benefits from sequential inductive bias and attention, which helps with short headlines
+
+The results are inconclusive, but show the LSTM has a slight consistent edge
+
+Conclusions
+
+Scratch-built LSTM with Attention performed slightly better than a scratch-built Transformer
+
+Without pretraining, Transformers lose their usual advantage
+
+Headlines alone (short text) may favor LSTM architectures
+
+Market movement prediction remains extremely challenging due to noise, randomness, and data sparsity
+
+Future work should test pretrained embeddings, such as FinBERT
+
+Future Work
+
+Use pretrained Transformer embeddings
+
+FinBERT
+
+BERT base
+
+Finance-specific RoBERTa
+
+Test longer text (full articles instead of headlines)
+
+Apply time-series models:
+
+Temporal fusion transformer
+
+LSTM-attention hybrids
+
+Use more robust prediction targets:
+
+Return buckets
+
+Volatility prediction
+
+Multi-day movement
+
+Cross-ticker generalization experiments
+
+Statistical tests (McNemar test, bootstrap confidence intervals)
+
+References
+
+Devlin, J., Chang, M-W., Lee, K., & Toutanova, K. (2019).
+BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.
+arXiv:1810.04805.
+
+Araci, D. (2019).
+FinBERT: Financial Sentiment Analysis with Pre-trained Language Models.
+arXiv:1908.10063.
+
+Zeng, Qingyun & Jiang, Tingsong (2025).
+Financial Sentiment Analysis Using FinBERT with Application in Predicting Stock Movement.
+arXiv:2306.02136v3.
+
+Vaswani, A. et al. (2017).
+Attention Is All You Need.
+arXiv:1706.03762.
+
+Kaggle — Massive Stock News Database
+https://www.kaggle.com/datasets/miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests
+
+TensorFlow 2.20.0 Documentation
+
+yfinance Documentation
+
 
