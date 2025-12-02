@@ -196,13 +196,10 @@ Among SVM, Decision Tree, and Random Forest, Random Forest is the most robust an
 
 - Advanced Oversampling: Explore techniques like Borderline-SMOTE, ADASYN, or GAN-based synthetic data generation to improve minority-class detection.
 
-- Hybrid Sampling & Ensemble Methods: Combine undersampling, oversampling, and cost-weighting in smarter ways, or use ensembles on multiple balanced datasets.
-
 - Model Expansion: Test gradient boosting models (XGBoost, LightGBM) or neural networks with class-weighted loss functions for better imbalance handling.
 
 - Feature Engineering: Investigate feature selection, dimensionality reduction, and feature importance to boost minority-class prediction.
 
-- Real-World Validation: Apply models to live or evolving datasets, monitor performance over time, and consider metrics beyond F1-score for robust evaluation.
   
 
 ## References
