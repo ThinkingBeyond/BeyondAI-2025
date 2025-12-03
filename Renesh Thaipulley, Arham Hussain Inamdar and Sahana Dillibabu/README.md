@@ -2,8 +2,8 @@
 
 # Deep Learning Models for Diabetic Retinopathy
 
-### Student Researcher
-Nafiul Haque
+### Student Researchers
+Renesh Thaipulley, Arham Hussain Inamdar and Sahana Dillibabu
 
 ### Mentor
 Dr. Devendra Singh Dhami
