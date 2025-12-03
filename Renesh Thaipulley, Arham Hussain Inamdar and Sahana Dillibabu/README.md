@@ -58,7 +58,7 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 | Weighted Avg | 0.75      | 0.72   | 0.73     | 25,802  |
 
 ### EfficientNet
-- Time:
+- Time: 
 - Count:
 
 **Classification Report**
@@ -66,13 +66,29 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 **Averages**
 
 ### Resnet
-- Time:
-- Count:
+- Time: 121.9s per epoch (dependent on GPU and runtime)
+- Count: (in order, total) \[25802, 2438, 5288, 872, 708]
 
 **Classification Report**
 
+| Class                                | Precision | Recall | F1-Score | 
+|--------------------------------------|-----------|--------|----------|
+| no_diabetic_retinopathy              | 0.79      | 0.97   | 0.87     | 
+| mild_retinopathy                     | 0.00      | 0.00   | 0.00     | 
+| moderate_retinopathy                 | 0.49      | 0.21   | 0.30     | 
+| severe_retinopathy                   | 0.31      | 0.54   | 0.40     | 
+| proliferative_retinopathy            | 0.80      | 0.02   | 0.04     |
+
+
 **Averages**
-###
+
+| Average Type | Precision | Recall | F1-Score |
+|--------------|-----------|--------|----------|
+| Micro Avg    | 0.75      | 0.75   | 0.32     |
+| Macro Avg    | 0.48      | 0.35   | 0.75     |
+| Weighted Avg | 0.67      | 0.75   | 0.71     |
+
+
 ## Conclusion and Discussion
 
 
