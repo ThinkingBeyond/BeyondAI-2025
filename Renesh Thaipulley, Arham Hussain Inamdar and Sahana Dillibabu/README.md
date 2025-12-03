@@ -57,7 +57,22 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 | Macro Avg    | 0.15      | 0.14   | 0.15     | 25,802  |
 | Weighted Avg | 0.75      | 0.72   | 0.73     | 25,802  |
 
+### EfficientNet
+- Time:
+- Count:
 
+**Classification Report**
+
+**Averages**
+
+### Resnet
+- Time:
+- Count:
+
+**Classification Report**
+
+**Averages**
+###
 ## Conclusion and Discussion
 
 
