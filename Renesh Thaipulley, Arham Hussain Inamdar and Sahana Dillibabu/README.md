@@ -38,7 +38,6 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 - Count: (in order) \[24636, 9946, 3, 0, 523]
 <img width="295" height="227.5" alt="image" src="https://github.com/user-attachments/assets/007516e4-0583-4094-98a3-4b2aa7e7a08f" />
 
-- Scores:
   
 **Classification Report**
 
