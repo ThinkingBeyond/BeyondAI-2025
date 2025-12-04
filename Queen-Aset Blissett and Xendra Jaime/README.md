@@ -4,11 +4,13 @@
 
 ## Research Question
 
-Building on the [elementary proof framework](https://drive.google.com/file/d/1OHn-AuPGZyvG5FMUpfPGxIURVVQsI4ED/view?usp=sharing) introduced by Shaana Amarawickrama and Karuna Prakash in the BeyondAI 2024 Proceedings, our research question extends on this foundation while bridging theoretical insights and practical application to provide a comprehensive study of the universal approximation theorem. 
+Building on the [elementary proof framework](https://drive.google.com/file/d/1OHn-AuPGZyvG5FMUpfPGxIURVVQsI4ED/view?usp=sharing) introduced by Shaana Amarawickrama and Karuna Prakash in the BeyondAI 2024 Proceedings, our research question **extends on this foundation while bridging theoretical insights and practical application to provide a comprehensive study of the universal approximation theorem.**
 
-We examine the BeyondAI 2024 elementary proof framework demonstrating that any continuous function on the real numbers can be approximated by a Multilayer Perceptron (MLP) with several hidden layers and a finite number of neurons using the sigmoid activation function. We extend this framework to include the tanh activation function. Additionally, we investigate their assumption that an MLP with ReLU activation can approximate any continuous function by constructing piecewise linear functions made up of simplices. Furthermore, we bridge theory and practice by empirically evaluating the behaviour of each activation function in simple cases, comparing their practical usability and performance.
+## Key contributions
 
-We complement these evaluations with visual aids that illustrate the theoretical proof concepts, and present plots and graphs summarizing the empirical experiment results. Our aim is to close the theoretical gaps in the original elementary proof framework and work towards generalizing the framework, while also exploring the practical reasons for why developers may choose one activation function over another in neural network design.
+We examine the BeyondAI 2024 elementary proof framework demonstrating that any continuous function on the real numbers can be approximated by a Multilayer Perceptron (MLP) with several hidden layers and a finite number of neurons using the sigmoid activation function. We extend this framework to include the **tanh activation function**. Additionally, we investigate their assumption that an MLP with ReLU activation can approximate any continuous function by constructing piecewise linear functions made up of **simplices**. Furthermore, we bridge theory and practice by **empirically evaluating the behaviour of each activation function in simple cases**, comparing their practical usability and performance.
+
+We complement these evaluations with **visual aids that illustrate the theoretical proof concepts**, and present plots and graphs summarizing the empirical experiment results. Our aim is to close the theoretical gaps in the original elementary proof framework and work towards generalizing the framework, while also exploring the practical reasons for why developers may choose one activation function over another in neural network design.
 
 ## Motivation
 
@@ -56,31 +58,38 @@ ReLU naturally produces piecewise linear functions; this phase rigorously proves
 | **Network Realization (Gap Closure)** | Prove ReLU activations realize linear inequalities defining simplex boundaries. | Closes key assumption; confirms ReLU MLPs realize complex piecewise affine geometry. |
 
 ## Visualisations
-For phase 4, we are incorporating the existing static visualizations for our poster, and are currently creating three ManimCE animations for supporting the proof structure and clarifying the connection between theory/empirical. At this point, they have yet to be added to the GitHub page.
-+ Step, Bump, Tower, Piecewise constant animation to show the progression in Sigmoid/Tanh cases
-+ Input passing through an MLP (video graphic for what happens in a neural network)
-+ Visuals of piecewise linear functions built by ReLU (the simplices being assembled)
+For phase 4, we are incorporating the existing static visualizations for our poster from last cohort, and extending on new visualizations for a better understanding.
+
+**Modified visualizations**:
++ Step, Bump, Tower, Piecewise constant animation to show the progression in Sigmoid/Tanh cases ([`2025_Visualisations_for_Poster_Final.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/2025_Visualisations_for_Poster_Final.ipynb))
++ Visuals of piecewise linear functions built by ReLU (the simplices being assembled) ([`2025_Simplex_Construction_For_Poster.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/2025_Simplex_Construction_For_Poster.ipynb))
++ Continuity $\epsilon -\delta$ definition (to be added)
+  
+**New visualizations**:
++ Explanation of bounded versus unbounded for the 3 presented activation functions (to be added)
++ Input passing through an MLP (video graphic for what happens in a neural network) (to be added)
 
 ## Empirical Framework
 For phase 3, we examined the performance of the activations, sigmoid, tanh and ReLU, in a shallow network to precisely examine how the inherent mathematical structures of these activations translate to practice, and influence neural network design and deep learning.
 
-The present computational experiment in `Empirical_Validation_of_the_UAT.ipynb` followed the sequence below:
+The present computational experiment in [`Empirical_Validation_of_the_UAT.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Empirical_Validation_of_the_UAT.ipynb) followed the sequence below:
 1. **Capacity Analysis**: Can we find a neural network that approximates our target function to our fixed threshold, as the UAT states?
 2. **Efficiency Analysis**: Now that we have found one network, what parameters offer the best computational efficiency?
 3. **Generalization Analysis**: Now that we have our optimized neural network, can it approximate outside of the given domain training?
 
 Our work fully completes Step 1 and partially addresses Step 2, using metrics such as the Minimum viable width, Marginal Efficiency, Convergence time and Approximation Accuracy (MSE, MAE, Maximum Error and $R^2$).
 
-To produce the experiment, run `Empirical_Validation_of_the_UAT.ipynb` on Google Colab.
+To produce the experiment, run [`Empirical_Validation_of_the_UAT.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Empirical_Validation_of_the_UAT.ipynb) on Google Colab.
 
 **Versions used**:
 * torch= 2.9.0+cu126
 * numpy= 2.0.2
 * matplotlib==3.10.0
 
-Moreover, the `uat_code_manual` provides an overview on the provided code.
+Moreover, the [`uat_code_manual`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/uat_code_manual.md) provides an overview on the provided code.
 
-# Empirical Findings 
+# Conclusions
+## Empirical findings
 - **The models benefit from the number of neurons up to a variable point:** While there was a significant improvement when increasing from 10N → 50N across all activations, there were also diminishing returns beyond ~500-1000 neurons for all tested cases
 - **The UAT's "sufficient neurons" statement implicitly requires sufficient optimization:** To achieve good approximations, it is needed a careful tuning of hyperparameters (LR, epochs) beyond just adding neurons.
 - **Activation-specific efficiency for sin(2πx) experiment:**
@@ -88,7 +97,7 @@ Moreover, the `uat_code_manual` provides an overview on the provided code.
     - **ReLU:** Moderate (50N, 4.37s)
     - **Sigmoid:** Slower but achieves convergence (50N, 1.09s)
 
-**Conclusion:**
+**Experimental conclusion:**
 The "sufficient number of neurons" required to approximate a target function depends not only on network width, but critically on optimization dynamics, such as the learning rate, training epochs and activation function properties. The Universal Approximation Theorem guarantees the existence of suitable weights, but does not prescribe how to find them via gradient descent.
 Some configurations never converged despite UAT guarantees, highlighting the gap between existence (theory) and discoverability (practice), concluding that, even if the desired neural networks exists, it may be not easy to find.
 
