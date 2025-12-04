@@ -61,8 +61,8 @@ ReLU naturally produces piecewise linear functions; this phase rigorously proves
 For phase 4, we are incorporating the existing static visualizations for our poster from last cohort, and extending on new visualizations for a better understanding.
 
 **Modified visualizations**:
-+ Step, Bump, Tower, Piecewise constant animation to show the progression in Sigmoid/Tanh cases ([`2025_Visualisations_for_Poster_Final.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/2025_Visualisations_for_Poster_Final.ipynb))
-+ Visuals of piecewise linear functions built by ReLU (the simplices being assembled) ([`2025_Simplex_Construction_For_Poster.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/2025_Simplex_Construction_For_Poster.ipynb))
++ Step, Bump, Tower, Piecewise constant animation to show the progression in Sigmoid/Tanh cases ([`2025_Visualisations_for_Poster_Final.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Visualisations_for_Poster_Final.ipynb))
++ Visuals of piecewise linear functions built by ReLU (the simplices being assembled) ([`2025_Simplex_Construction_For_Poster.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Simplex_Construction_For_Poster.ipynb))
 + Continuity $\epsilon -\delta$ definition (to be added)
   
 **New visualizations**:
