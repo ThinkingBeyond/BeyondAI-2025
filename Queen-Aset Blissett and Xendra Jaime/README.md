@@ -45,6 +45,9 @@ This phase establishes how activation functions approximate step functions and b
 | **Part 2: Bump and Tower Construction** | Combine shifted step functions to construct a 1D bump function $$c(x)$$ and extend to $$n$$ dimensions via tower function $$t(x)$$. | Builds **indicator functions** localizing input space regions, which are the building blocks of approximation. |
 | **Part 3: Piecewise Constant Approximation** | Use uniform continuity to partition domain into cells $$\{D_i\}$$ and define piecewise constant $$h(x) = f(u_i)$$ within each cell. | Bounds geometric error $$\| f(x) - h(x) \| \leq \epsilon$$; final approximation is a finite sum of scaled tower functions. |
 
+![Image of Piecewise Constant Construction](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Images/Piecewise%20Constant%20Function%20Formation.png)
+*An image visualising the steps taken in the Bounded activation case (Sigmoid/Tanh) to approximate continuous functions*
+
 ---
 
 ### Project Phase 2: ReLU Activation (Piecewise Linear Approximation)
@@ -57,10 +60,13 @@ ReLU naturally produces piecewise linear functions; this phase rigorously proves
 | **Higher-D Simplicial Partitioning** | Partition domain into simplices; define piecewise affine function $$g(x)$$ on these. | Provides geometric blueprint for multi-dimensional approximation with error control. |
 | **Network Realization (Gap Closure)** | Prove ReLU activations realize linear inequalities defining simplex boundaries. | Closes key assumption; confirms ReLU MLPs realize complex piecewise affine geometry. |
 
+![Image of Simplices Construction](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Images/Simplices%20Construction.png)
+*An image visualising the formation of simplices in the ReLU activation case*
+
 ## Visualisations
 For phase 4, we are incorporating the existing static visualizations for our poster from last cohort, and extending on new visualizations for a better understanding.
 
-**Modified visualizations**:
+**Modified visualizations from 2024 Proceedings**:
 + Step, Bump, Tower, Piecewise constant animation to show the progression in Sigmoid/Tanh cases ([`2025_Visualisations_for_Poster_Final.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Visualisations_for_Poster_Final.ipynb))
 + Visuals of piecewise linear functions built by ReLU (the simplices being assembled) ([`2025_Simplex_Construction_For_Poster.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Simplex_Construction_For_Poster.ipynb))
 + Continuity $\epsilon -\delta$ definition (to be added)
