@@ -22,15 +22,35 @@ We have implemented two different architectures for text-based sentiment analysi
 
 ## Model Architectures
 ### LSTM with Attention
-The LSTM with attention model consists of an embedding layer, followed by multiple layers of bidirectional LSTM layer and multi-head attention mechanism, and finally a fully connected output layer. 
+This model processes input sequences using recurrent LSTM layers, which are effective at capturing temporal relationships. Each LSTM block is enhanced with a multi-head attention mechanism that helps the model focus on the most relevant parts of the sequence, and is followed by residual connections and layer normalization to support stable training. After passing through all blocks, the token representations are globally pooled into a single vector that summarizes the entire input. This vector is then passed to a linear layer for sentiment classification.
 ### Transformer
-The Transformer model consists of an embedding layer, followed by multiple layers of self-attention and feed-forward neural networks, and finally a fully connected output layer. 
+This model is built from several stacked blocks, each containing a multi-head attention layer and a position-wise feed-forward network. These components are supported by residual connections and layer normalization to keep training stable. For classification, the model applies global average pooling to the final hidden states and then passes the result to a linear classification layer. The model also includes a language-modeling head for pre-training, which uses tied weights and relies on the Transformer’s bidirectional attention to perform masked-language modeling rather than next-token prediction.
 
 ## Training and Evaluation
 Both models were trained using the Adam optimizer with a learning rate of 0.0001 and a batch size of 32. We have explored combinations of a small number of attention heads and layers. The models were pretrained for 8 epochs on 500 wikipedia articles, and fine-tuned using 3 epochs of 25000 IMDb movie reviews from the IMDb movie reviews dataset. The performance of the models was evaluated using accuracy, precision, recall, and F1-score metrics. The evaluation was performed on a held-out 25000 movie review test set from the IMDb dataset.
 
 ## Our results and conclusion
 It is without a doubt that our conclusions are inconclusive, as the results we obtained were not consistent across different model sizes and configurations. In some cases, the LSTM with attention outperformed the Transformer, while in other cases, the Transformer performed better. This inconsistency has persisted with models having only 1 layer and 1 attention head, up to models with 2 layers and 4 attention heads. However, all models were able to achieve reasonable performance on the sentiment analysis task, with accuracy ranging from 82% to 87% depending on the model size and configuration. We have also recorded the training time for each model, and found out that there was no significant difference in training time between the two architectures with different model sizes. Our results suggest, merely for our case of text-based sentiment analysis under such low-resource environments, that there is no clear winner between LSTMs with attention and Transformers, and none has the clear advantage over the other.
+
+### Explanation of metrics
+#### Loss vs. Epochs
+Shows how the training (or validation) loss decreases or fluctuates as the number of epochs increases. Lower loss generally means the model is getting better at minimizing the objective function.
+
+#### Accuracy vs. Epochs
+Tracks how often the model predicts the correct label as training progresses. A rising accuracy curve indicates better classification performance.
+
+#### F1 Score vs. Epochs
+Shows changes in the F1 score across epochs, combining precision and recall into a single metric. Useful when classes are imbalanced; rising F1 means the model handles both positive and negative cases more consistently.
+
+#### Loss vs. Time
+Same as loss-vs-epochs, but plotted against real training time instead of training cycles. Useful for comparing model efficiency: which model improves faster in actual minutes/seconds.
+
+#### Accuracy vs. Time
+Displays how accuracy improves over the course of real training time. Helps you see which model reaches good performance sooner.
+
+#### F1 Score vs. Time
+Shows how the F1 score evolves as time passes during training. Good for comparing practical training speed vs. quality between Transformer and LSTM.
+
 
 Results for the Transformer model fine-tuning (4 head 2 layers variant):
 ![](GPT_finetune_metrics.png)
