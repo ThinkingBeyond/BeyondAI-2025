@@ -91,6 +91,9 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 
 ## Conclusion and Discussion
 
+### MetaCLIP
+The model ran and tested the different different labels. From the graph it can be seen that the accuracy of the model wasn't very good. For `no_diabetic_retinopathy` the model could somwhat accurately predict most of them with the precision score being around 0.75. However, for the other labels, it wasn't really the same.  This can mostly be caused by having the normalization of the images to not be proper, however, it could also be the case where the model decided that the highest chance of getting the image right was to guess that there was no diabetic retinopathy. Addtionally, the model took about eight hours to fully run through all images in the dataset. Now, this can be fixed with a stronger GPU and CPU along with more efficient code but the amount of time taken was about one second per image.
+
 
 ## Future Work
 Future iterations of this project could cover: 
