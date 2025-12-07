@@ -62,7 +62,12 @@ Lightweight 3-block CNN:
 1. Repeat this experiment for neural network architechtures of a higher complexity and see if the results still hold or not.
 2. Expand on the visualisation techniques, from a 1D linear interpolation to using a 2D contour plot, or filter-wise normalisation.
 
-### References
+### Related Work
+1. Poster for the BeyondAI 2025 Fair: https://www.canva.com/design/DAG5KQh2MVg/sFYujYUvKuYGZySXvsTSmA/view?utm_content=DAG5KQh2MVg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1549a82cdf
+2. Paper/ Observation Report: (Almost Finished)
+
+
+## References
 
 [1] Ruder, S. (2016). An overview of gradient descent optimization algorithms. *arXiv preprint arXiv:1609.04747*.
 
