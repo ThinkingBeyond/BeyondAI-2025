@@ -69,11 +69,10 @@ For phase 4, we are incorporating the existing static visualizations for our pos
 **Modified visualizations from 2024 Proceedings**:
 + Step, Bump, Tower, Piecewise constant animation to show the progression in Sigmoid/Tanh cases ([`2025_Visualisations_for_Poster_Final.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Visualisations_for_Poster_Final.ipynb))
 + Visuals of piecewise linear functions built by ReLU (the simplices being assembled) ([`2025_Simplex_Construction_For_Poster.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Simplex_Construction_For_Poster.ipynb))
-+ Continuity $\epsilon -\delta$ definition (to be added)
++ Continuity $\epsilon -\delta$ definition ([`2025_Continuity_Video_Final.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Continuity_Video_Final.ipynb))
   
 **New visualizations**:
-+ Explanation of bounded versus unbounded for the 3 presented activation functions (to be added)
-+ Input passing through an MLP (video graphic for what happens in a neural network) (to be added)
++ Explanation of the core difference between the bounded nature of Sigmoid and Tanh when compared to the unbounded nature of ReLU ([`2025_Bounded_Activations_versus_Unbounded_Activation.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Visualizations/2025_Bounded_Activations_versus_Unbounded_Activation.ipynb))
 
 ## Empirical Framework
 For phase 3, we examined the performance of the activations, sigmoid, tanh and ReLU, in a shallow network to precisely examine how the inherent mathematical structures of these activations translate to practice, and influence neural network design and deep learning.
