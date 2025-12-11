@@ -65,6 +65,7 @@ Lightweight 3-block CNN:
 ### Related Work
 1. Poster for the BeyondAI 2025 Fair: https://www.canva.com/design/DAG5KQh2MVg/sFYujYUvKuYGZySXvsTSmA/view?utm_content=DAG5KQh2MVg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1549a82cdf
 2. Paper/ Observation Report: https://www.overleaf.com/read/kcpgftbqvrqg#08ad11
+3. Google Colab code: https://colab.research.google.com/drive/1v97lhrarRbJnyGTKZrb56wZxL3doER2c?usp=sharing
 
 
 ## References
