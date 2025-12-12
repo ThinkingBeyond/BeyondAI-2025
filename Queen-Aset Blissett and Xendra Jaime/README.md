@@ -114,10 +114,11 @@ Additionally, we supported our project findings with visualisations located in o
 
 ## References
 
-List all your references here. Remember to put links into markdown. For example:
 
 1. Shaana Amarawickrama and Karuna Prakash. *An Elementary Proof of the Universal Approximation Theorem for Multilayer Perceptrons*. 2024. [GitHub Tree](https://github.com/ThinkingBeyond/BeyondAI-2024/tree/main/shaana-karuna)
 2. Michael A. Nielsen. *Neural Networks and Deep Learning*. 2019. [Chapter 4: Visual Proof](http://neuralnetworksanddeeplearning.com/chap4.html)
+3. Raman Arora et al. *Understanding Deep Neural Networks with Rectified Linear Units*.
+In: International Conference on Learning Representations. 2018. [Read more](https://openreview.net/forum?id=B1J_rgWRW)
 
 ---
 
