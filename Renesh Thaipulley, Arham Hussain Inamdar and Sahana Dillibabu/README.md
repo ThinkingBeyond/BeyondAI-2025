@@ -96,6 +96,8 @@ The model ran and tested the different different labels. From the graph it can b
 ### EfficientNet
 
 ### ResNet
+The ResNet model performed strongly in identifying no diabetic retinopathy, with a high recall(0.97) and F1 score (0.87). However, the model struggles with minority classes, especially mild retinopathy. For moderate and severe retinopathy, that have low recall and moderate F1 scores, the performance is inconsistent, while proliferative retinopathy has a high precision but a low recall. When we account for class imbalance, the weighted F1 score of 0.71 shows decent performance, but the macro average recall of 0.35 shows that the performance across classes is uneven. Improving the quality of our dataset by finding more images from other classes and using more aggressive data augmentation methods could improve the model's clinical usefulness. 
+
 ## Future Work
 Future iterations of this project could cover: 
 - finding and testing more properties
