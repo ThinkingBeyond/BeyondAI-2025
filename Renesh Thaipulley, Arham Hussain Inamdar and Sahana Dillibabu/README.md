@@ -8,6 +8,10 @@ Renesh Thaipulley, Arham Hussain Inamdar and Sahana Dillibabu
 ### Mentor
 Dr. Devendra Singh Dhami
 
+## Research Question
+
+How do cutting-edge networks and models (ResNet, EfficientNet, and MetaCLIP) compare to the vanilla CNN and ViT? Additionally, what properties differentiate performance?
+
 ## Description 
 
 Diabetic retinopathy is an eye disease that can lead to vision loss and blindness in people with diabetes. It is the leading cause of vision impairment in working-age adults worldwide, but early detection and treatment can prevent up to 95% of cases. Thus, it is no surprise that researchers, including those in previous BeyondAI cohorts, have turned to machine learning to facilitate early diagnosis.
