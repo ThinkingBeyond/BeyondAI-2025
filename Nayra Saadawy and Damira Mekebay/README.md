@@ -4,7 +4,7 @@
 
 
 ## Research Question
-How does the optimal level of regularization change across different nonlinear classifiers when dataset conditions such as size, feature dimensionality and noise are changed?
+How does the optimal capacity-controlling hyperparameter change across different nonlinear classifiers when feature dimensionality and noise are varied?
 
 In non-linear, nonparametric models, how does the optimal level of regularisation change when dataset conditions, such as dimensions and noise, are changed? Regularisation occurs by tuning the model’s hyperparameters. The optimal settings of these hyperparameters are influenced by the dataset and its properties, for example: 
 
@@ -56,7 +56,7 @@ We focused mainly on n_neighbors as the most influential hyperparameter, but wei
 The SVM we used optimises the following objective (soft-margin C‑SVM):
 
 $$
-\min_{w,\,b,\,\xi} \;\; \frac{1}{2}\|w\|^2 \;+\; C\sum_{i=1}^{n}\xi_i
+\min_{w,\,b,\,\xi} \\ \frac{1}{2}\|w\|^2 \+\ C\sum_{i=1}^{n}\xi_i
 $$
 
 subject to the usual constraints
@@ -180,6 +180,107 @@ The results are saved in a dataframe, then displayed in plots for visualisation.
 * Synthetic data may not represent real-world feature noise or correlations, so results may not generalise to noisy or correlated features.
 * We tune only one hyperparameter per model, so other settings (e.g., tree splitting rules or SVM kernel parameters) are fixed.
 * Evaluation relies on accuracy alone, which may hide behaviour visible in other metrics.
+### Models vs Dimensions:
+
+### kNN vs Dimensionality
+
+Optimal **k** follows a *U-shaped relationship* with dimensionality.
+
+- Starts high at **D = 2** (mean *k* ≈ 17)
+- Drops to a minimum around **D = 4–6** (mean *k* ≈ 7)
+- Rises steadily to **k ≈ 23** at **D = 21**
+
+The **generalization gap** remains nearly flat throughout (**≈ 0.01–0.018** across all conditions), indicating that kNN compensates for higher dimensionality by selecting larger neighborhood sizes. The model effectively adapts its capacity without accumulating additional overfitting.
+
+#### Interpretation
+
+- **Low dimension (D = 2):**  
+  The problem is trivially simple. kNN requires many neighbors to avoid fitting noise along an almost trivial boundary.
+
+- **Moderate dimension (D = 3–6):**  
+  Added informative dimensions enrich structure, allowing smaller neighborhoods to capture decision boundaries efficiently.
+
+- **High dimension (D ≥ 7):**  
+  The **curse of dimensionality** dominates. Distances become less informative, forcing *k* to increase to maintain stable estimation.
+
+---
+
+#### Decision Trees vs Dimensionality
+
+Optimal **max_depth** evolves as follows:
+
+- ≈ **5** at **D = 2**
+- Peaks at **≈ 11–12** around **D = 9–11**
+- Plateaus at **≈ 8–9** for **D ≥ 12**
+
+Unlike kNN, the **generalization gap increases substantially**:
+
+- **0.012** at D = 2  
+- **0.099** at D = 10  
+- (~8× increase)
+
+Even after depth stabilizes, the gap remains high, indicating that tuning `max_depth` alone cannot sufficiently control overfitting in higher dimensions.
+
+#### Implication
+
+Additional regularization is required, such as:
+
+- `ccp_alpha` pruning  
+- `min_samples_leaf`  
+- `min_samples_split`
+
+---
+
+#### SVM vs Dimensionality (RBF Kernel)
+
+Joint tuning of **C** and **gamma** reveals three clear regimes:
+
+###### Regime 1 — Low Dimension (D = 2–7)
+- Winning configs:
+  - `C = 100, γ = 1.0`
+  - `C = 10, γ = 1.0`
+- **High C + High γ**
+- Tight, highly local decision boundary.
+
+###### Regime 2 — Transition Zone (D = 8–15)
+- Winning config:
+  - `C = 10, γ = 0.1`
+- At **D = 10**, all 30 seeds agree.
+- **Medium C + Medium γ**
+- Represents a clean structural regime shift.
+
+###### Regime 3 — High Dimension (D = 16–21)
+- Winning config:
+  - `C = 100, γ = 0.01`
+- **High C + Very Low γ**
+- Wide influence radius compensates for sparsity in high-dimensional space.
+
+#### Generalization Behavior
+
+The generalization gap increases monotonically:
+
+- ≈ **0.0003** at D = 2  
+- ≈ **0.043** at D = 21  
+
+However, it remains substantially lower than Decision Trees, indicating stronger robustness to dimensionality when **C–γ joint tuning** is performed.
+
+---
+
+##### Model Comparison
+
+| Model            | Gap at D = 2 | Gap at D = 21 | Adapts Successfully? |
+|------------------|-------------|--------------|----------------------|
+| kNN              | 0.004       | 0.013        | ✅ Yes — gap stays flat |
+| Decision Tree    | 0.012       | 0.078        | ⚠️ Partially — gap grows 8× |
+| SVM (RBF)        | 0.0003      | 0.043        | ✅ Partially — gap grows but remains low |
+
+---
+
+#### Key Takeaway
+
+- **kNN** adapts by increasing neighborhood size.
+- **Decision Trees** struggle without additional regularization.
+- **RBF SVM** shows the strongest robustness through coordinated hyperparameter adaptation.
 
 ## Conclusion:
 
