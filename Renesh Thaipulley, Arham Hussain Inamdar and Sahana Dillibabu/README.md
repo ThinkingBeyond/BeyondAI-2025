@@ -34,6 +34,7 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 ## Results
 
 ### MetaCLIP
+### <ins>Zero Shot</ins>
 - Time: 29276.318501535003 seconds or about 8 hours
 - Count: (in order) \[24636, 9946, 3, 0, 523]
 <img width="295" height="227.5" alt="image" src="https://github.com/user-attachments/assets/007516e4-0583-4094-98a3-4b2aa7e7a08f" />
@@ -57,14 +58,15 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 | Macro Avg    | 0.15      | 0.14   | 0.15     | 25,802  |
 | Weighted Avg | 0.75      | 0.72   | 0.73     | 25,802  |
 
-### EfficientNet
-- Time: 
-- Count:
+### <ins>Fine Tuning</ins>
+| Epoch | Training Loss | Validation Loss | Accuracy |
+|-------|--------------|-----------------|----------|
+| 1 | 0.8264 | 0.7128 | 76.83% |
+| 2 | 0.6736 | 0.6245 | 79.28% |
+| 3 | 0.6321 | 0.5959 | 80.41% |
+| 4 | 0.5818 | 0.5755 | 81.14% |
 
-**Classification Report**
-
-**Averages**
-
+Final test accuracy: **81.1%** | Test loss: **0.575** | Evaluation speed: **50.8 samples/second**
 ### Resnet
 - Time: 121.9s per epoch (dependent on GPU and runtime)
 - Count: (in order, total) \[25802, 2438, 5288, 872, 708]
@@ -92,8 +94,9 @@ There is a real need for accurate, efficient, and effective diagnostic tools for
 ## Conclusion and Discussion
 
 ### MetaCLIP
-The model ran and tested the different different labels. From the graph it can be seen that the accuracy of the model wasn't very good. For `no_diabetic_retinopathy` the model could somwhat accurately predict most of them with the precision score being around 0.75. However, for the other labels, it wasn't really the same.  This can mostly be caused by having the normalization of the images to not be proper, however, it could also be the case where the model decided that the highest chance of getting the image right was to guess that there was no diabetic retinopathy. Addtionally, the model took about eight hours to fully run through all images in the dataset. Now, this can be fixed with a stronger GPU and CPU along with more efficient code but the amount of time taken was about one second per image.
-### EfficientNet
+The zero shot model ran and tested the different different labels. From the graph it can be seen that the accuracy of the model wasn't very good. For `no_diabetic_retinopathy` the model could somwhat accurately predict most of them with the precision score being around 0.75. However, for the other labels, it wasn't really the same. This can mostly be caused by having the normalization of the images to not be proper, however, it could also be the case where the model decided that the highest chance of getting the image right was to guess that there was no diabetic retinopathy. Addtionally, the model took about eight hours to fully run through all images in the dataset. Now, this can be fixed with a stronger GPU and CPU along with more efficient code but the amount of time taken was about one second per image.
+
+With fine tuning the model, the class imbalance was fixed using `RandomOverSampler` to even out the imbalances. For example, if the moderate class had 5000 images while severe had 2500 images, all the rows that was connected with the severe class would be duplicated to have 5000 images, matching the moderate class. In the code, the image distribution changed from `{0: 25802, 2: 5288, 1: 2438, 3: 872, 4: 708}` to `{0: 25802, 1: 25802, 2: 25802, 4: 25802, 3: 25802}`. This fixed the class imbalance issue. Additionally, changing the properties of the images with size and rotation allowed allowed for the model to be better at detecting variabilities. The images were rotated randomly and the sharpness was adjusted in this case. Four epochs were implemented using the HuggingFace Trainer. All of these changed led to about a 50% increase in the accuracy for better detection of diabetic retinopathy.     
 
 ### ResNet
 The ResNet model performed strongly in identifying no diabetic retinopathy, with a high recall(0.97) and F1 score (0.87). However, the model struggles with minority classes, especially mild retinopathy. For moderate and severe retinopathy, that have low recall and moderate F1 scores, the performance is inconsistent, while proliferative retinopathy has a high precision but a low recall. When we account for class imbalance, the weighted F1 score of 0.71 shows decent performance, but the macro average recall of 0.35 shows that the performance across classes is uneven. Improving the quality of our dataset by finding more images from other classes and using more aggressive data augmentation methods could improve the model's clinical usefulness. 
