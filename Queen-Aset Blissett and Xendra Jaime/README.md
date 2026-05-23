@@ -84,10 +84,10 @@ The present computational experiment in [`Empirical_Validation_of_the_UAT.ipynb`
 
 Our work fully completes Step 1 and partially addresses Step 2, using metrics such as the Minimum viable width, Marginal Efficiency, Convergence time and Approximation Accuracy (MSE, MAE, Maximum Error and $R^2$).
 
-To produce the experiment, run [`Empirical_Validation_of_the_UAT.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Empirical_Validation_of_the_UAT.ipynb) on Google Colab.
+To produce the experiment, run [`Empirical_Validation_of_the_UAT.ipynb`](https://github.com/ThinkingBeyond/BeyondAI-2025/blob/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Empirical_Validation_of_the_UAT.ipynb) on Google Colab. Its results can be found in [`Experiment results`](https://github.com/ThinkingBeyond/BeyondAI-2025/tree/main/Queen-Aset%20Blissett%20and%20Xendra%20Jaime/Experiment%20results)
 
 **Versions used**:
-* torch= 2.9.0+cu126
+* torch= 2.9.0
 * numpy= 2.0.2
 * matplotlib==3.10.0
 
